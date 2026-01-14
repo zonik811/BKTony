@@ -1,0 +1,293 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Galería - KBTony" lang="es">
+	<main>
+		<!-- Hero Section -->
+		<section class="gallery-hero">
+			<div class="container">
+				<h1>Nuestro Portafolio</h1>
+				<p class="tagline">Explore nuestras impresionantes transformaciones de cocinas, baños y exteriores</p>
+			</div>
+		</section>
+
+		<!-- Gallery Content -->
+		<section class="section">
+			<div class="container">
+				<div class="gallery-intro">
+					<h2>Transforme su Espacio</h2>
+					<p>Navegue por nuestra colección de proyectos completados e inspírese para su propia renovación del hogar. Cada proyecto muestra nuestro compromiso con la artesanía de calidad y atención al detalle.</p>
+				</div>
+
+				<!-- Filter Tabs -->
+				<div class="gallery-filters">
+					<button class="filter-btn active" data-category="all">Todos los Proyectos</button>
+					<button class="filter-btn" data-category="kitchen">Cocinas</button>
+					<button class="filter-btn" data-category="bathroom">Baños</button>
+					<button class="filter-btn" data-category="exterior">Exteriores</button>
+				</div>
+
+				<!-- Gallery Grid -->
+				<div class="gallery-grid">
+					<!-- Kitchen Projects -->
+					<div class="gallery-item" data-category="kitchen">
+						<img src="/images/kitchen-after.png" alt="Remodelación de Cocina Moderna" />
+						<div class="gallery-overlay">
+							<h3>Transformación de Cocina Moderna</h3>
+							<p>Remodelación completa con gabinetes personalizados y encimeras de cuarzo</p>
+						</div>
+					</div>
+
+					<div class="gallery-item" data-category="kitchen">
+						<img src="/images/kitchen-l-shape.png" alt="Cocina en Forma de L" />
+						<div class="gallery-overlay">
+							<h3>Diseño de Cocina en L</h3>
+							<p>Diseño contemporáneo con electrodomésticos premium</p>
+						</div>
+					</div>
+
+					<div class="gallery-item" data-category="kitchen">
+						<img src="/images/kitchen-island.png" alt="Cocina con Isla" />
+						<div class="gallery-overlay">
+							<h3>Cocina con Isla Personalizada</h3>
+							<p>Isla espaciosa con asientos y almacenamiento</p>
+						</div>
+					</div>
+
+					<!-- Bathroom Projects -->
+					<div class="gallery-item" data-category="bathroom">
+						<img src="/images/bathroom-after.png" alt="Baño de Lujo" />
+						<div class="gallery-overlay">
+							<h3>Baño Principal de Lujo</h3>
+							<p>Retiro tipo spa con ducha walk-in</p>
+						</div>
+					</div>
+
+					<div class="gallery-item" data-category="bathroom">
+						<img src="/images/bath-whole.png" alt="Remodelación Completa de Baño" />
+						<div class="gallery-overlay">
+							<h3>Renovación Completa de Baño</h3>
+							<p>Accesorios modernos y elegante trabajo de azulejos</p>
+						</div>
+					</div>
+
+					<div class="gallery-item" data-category="bathroom">
+						<img src="/images/bath-shower.png" alt="Ducha Walk-In" />
+						<div class="gallery-overlay">
+							<h3>Instalación de Ducha Walk-In</h3>
+							<p>Vidrio sin marco con azulejo personalizado</p>
+						</div>
+					</div>
+
+					<!-- Exterior Projects -->
+					<div class="gallery-item" data-category="exterior">
+						<img src="/images/roof-new.png" alt="Instalación de Techo Nuevo" />
+						<div class="gallery-overlay">
+							<h3>Reemplazo de Techo</h3>
+							<p>Tejas duraderas con protección mejorada</p>
+						</div>
+					</div>
+
+					<div class="gallery-item" data-category="exterior">
+						<img src="/images/siding-service.png" alt="Instalación de Revestimiento" />
+						<div class="gallery-overlay">
+							<h3>Mejora de Revestimiento</h3>
+							<p>Revestimiento eficiente con atractivo moderno</p>
+						</div>
+					</div>
+
+					<div class="gallery-item" data-category="exterior">
+						<img src="/images/painting-service.png" alt="Pintura Exterior" />
+						<div class="gallery-overlay">
+							<h3>Pintura Exterior</h3>
+							<p>Capa fresca para mejor apariencia exterior</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="section cta-section">
+			<div class="container text-center">
+				<h2>¿Listo para Crear su Espacio de Ensueño?</h2>
+				<p>Demos vida a su visión con nuestra artesanía experta.</p>
+				<a href="/es/contacto" class="btn btn-primary btn-large">Comience su Proyecto</a>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<script>
+	// Gallery filtering
+	document.querySelectorAll('.filter-btn').forEach(btn => {
+		btn.addEventListener('click', () => {
+			const category = btn.dataset.category;
+			
+			// Update active button
+			document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+			btn.classList.add('active');
+			
+			// Filter items
+			document.querySelectorAll('.gallery-item').forEach(item => {
+				if (category === 'all' || item.dataset.category === category) {
+					item.style.display = 'block';
+				} else {
+					item.style.display = 'none';
+				}
+			});
+		});
+	});
+</script>
+
+<style>
+	/* Same styles as English version */
+	.gallery-hero {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+		padding: 5rem 0 4rem;
+		text-align: center;
+	}
+
+	.gallery-hero h1 {
+		font-size: 3.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.tagline {
+		font-size: 1.3rem;
+		opacity: 0.95;
+	}
+
+	.gallery-intro {
+		text-align: center;
+		max-width: 700px;
+		margin: 0 auto var(--spacing-xl);
+	}
+
+	.gallery-intro h2 {
+		color: var(--color-primary);
+		font-size: 2.5rem;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.gallery-intro p {
+		font-size: 1.1rem;
+		color: #666;
+		line-height: 1.6;
+	}
+
+	.gallery-filters {
+		display: flex;
+		justify-content: center;
+		gap: var(--spacing-md);
+		margin: var(--spacing-xl) 0;
+		flex-wrap: wrap;
+	}
+
+	.filter-btn {
+		padding: 0.75rem 2rem;
+		background: white;
+		border: 2px solid var(--color-primary);
+		color: var(--color-primary);
+		border-radius: 25px;
+		font-weight: 600;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.filter-btn:hover, .filter-btn.active {
+		background: var(--color-primary);
+		color: white;
+	}
+
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+		gap: var(--spacing-lg);
+		margin-top: var(--spacing-xl);
+	}
+
+	.gallery-item {
+		position: relative;
+		overflow: hidden;
+		border-radius: 12px;
+		box-shadow: var(--shadow-md);
+		transition: transform 0.3s ease;
+		aspect-ratio: 4/3;
+	}
+
+	.gallery-item:hover {
+		transform: translateY(-8px);
+		box-shadow: var(--shadow-lg);
+	}
+
+	.gallery-item img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.gallery-overlay {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: linear-gradient(to top, rgba(0, 45, 98, 0.95), transparent);
+		padding: var(--spacing-lg);
+		color: white;
+		transform: translateY(100%);
+		transition: transform 0.3s ease;
+	}
+
+	.gallery-item:hover .gallery-overlay {
+		transform: translateY(0);
+	}
+
+	.gallery-overlay h3 {
+		color: white;
+		margin-bottom: var(--spacing-xs);
+		font-size: 1.3rem;
+	}
+
+	.gallery-overlay p {
+		color: rgba(255,255,255,0.9);
+		font-size: 0.95rem;
+	}
+
+	.cta-section {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+	}
+
+	.cta-section h2 {
+		color: white;
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.cta-section p {
+		font-size: 1.2rem;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.btn-large {
+		padding: 1.2rem 3rem;
+		font-size: 1.1rem;
+	}
+
+	.text-center {
+		text-align: center;
+	}
+
+	@media (max-width: 768px) {
+		.gallery-hero h1 {
+			font-size: 2.5rem;
+		}
+
+		.gallery-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

@@ -1,0 +1,137 @@
+---
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+
+const labels = {
+  en: {
+    name: "Full Name",
+    email: "Email Address",
+    phone: "Phone Number",
+    service: "Service Interested In",
+    message: "Message/Project Details",
+    submit: "Request Quote"
+  },
+  es: {
+    name: "Nombre Completo",
+    email: "Correo Electrónico",
+    phone: "Número de Teléfono",
+    service: "Servicio de Interés",
+    message: "Mensaje/Detalles del Proyecto",
+    submit: "Solicitar Presupuesto"
+  }
+}
+
+const t = lang === 'es' ? labels.es : labels.en;
+---
+
+<form class="contact-form" id="quote-form">
+  <div class="form-group">
+    <label for="name">{t.name}</label>
+    <input type="text" id="name" name="name" required />
+  </div>
+
+  <div class="form-grid">
+    <div class="form-group">
+      <label for="email">{t.email}</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+    <div class="form-group">
+      <label for="phone">{t.phone}</label>
+      <input type="tel" id="phone" name="phone" required />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="service">{t.service}</label>
+    <select id="service" name="service">
+      <option value="kitchen">{lang === 'es' ? 'Remodelación de Cocina' : 'Kitchen Remodeling'}</option>
+      <option value="bathroom">{lang === 'es' ? 'Remodelación de Baño' : 'Bathroom Remodeling'}</option>
+      <option value="roofing">{lang === 'es' ? 'Techado' : 'Roofing'}</option>
+      <option value="other">{lang === 'es' ? 'Otro' : 'Other'}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="message">{t.message}</label>
+    <textarea id="message" name="message" rows="4"></textarea>
+  </div>
+
+  <button type="submit" class="submit-btn">{t.submit}</button>
+</form>
+
+<script>
+  const form = document.getElementById('quote-form');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // Here we would eventually implement the Odoo integration
+    alert('Thank you! This is a demo form. Integration pending.');
+  });
+</script>
+
+<style>
+  .contact-form {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .form-group {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-sm);
+  }
+  
+  @media (max-width: 600px) {
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--color-primary);
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(0, 45, 98, 0.1);
+  }
+
+  .submit-btn {
+    width: 100%;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: var(--spacing-sm);
+    transition: background-color 0.2s;
+  }
+
+  .submit-btn:hover {
+    background-color: #001a3d;
+  }
+</style>

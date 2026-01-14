@@ -1,0 +1,395 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Preguntas Frecuentes - KBTony" lang="es">
+	<main>
+		<!-- Hero Section -->
+		<section class="advice-hero">
+			<div class="container">
+				<span class="category">Recursos para Propietarios</span>
+				<h1>Preguntas Frecuentes</h1>
+				<p class="tagline">Respuestas a sus preguntas más comunes sobre remodelación</p>
+			</div>
+		</section>
+
+		<!-- FAQ Content -->
+		<section class="section">
+			<div class="container">
+				<div class="faq-layout">
+					<div class="faq-categories">
+						<h3>Categorías</h3>
+						<button class="category-btn active" data-category="all">Todas las Preguntas</button>
+						<button class="category-btn" data-category="general">General</button>
+						<button class="category-btn" data-category="kitchen">Cocina</button>
+						<button class="category-btn" data-category="bathroom">Baño</button>
+						<button class="category-btn" data-category="budget">Presupuesto y Costo</button>
+						<button class="category-btn" data-category="timeline">Cronograma</button>
+					</div>
+
+					<div class="faq-content">
+						<!-- Preguntas Generales -->
+						<div class="faq-item" data-category="general">
+							<button class="faq-question">
+								<span>¿Cómo empiezo con mi proyecto de remodelación?</span>
+								<span class="faq-icon">+</span>
+							</button>
+							<div class="faq-answer">
+								<p>Comience programando una consulta gratuita con nuestro equipo. Discutiremos su visión, presupuesto y cronograma. Luego crearemos un plan de diseño detallado y proporcionaremos una cotización completa. Una vez aprobado, programaremos su proyecto y asignaremos un gerente de proyecto dedicado.</p>
+							</div>
+						</div>
+
+						<div class="faq-item" data-category="general">
+							<button class="faq-question">
+								<span>¿Cuentan con licencia y seguro?</span>
+								<span class="faq-icon">+</span>
+							</button>
+							<div class="faq-answer">
+								<p>Sí, contamos con licencia completa, fianza y seguros. Tenemos cobertura integral de responsabilidad civil y compensación para trabajadores para proteger tanto a nuestro equipo como a su propiedad durante todo el proyecto.</p>
+							</div>
+						</div>
+
+						<!-- Preguntas de Cocina -->
+						<div class="faq-item" data-category="kitchen">
+							<button class="faq-question">
+								<span>¿Cuánto tiempo toma una remodelación de cocina?</span>
+								<span class="faq-icon">+</span>
+							</button>
+							<div class="faq-answer">
+								<p>Una remodelación de cocina típica toma de 6 a 12 semanas de principio a fin. Esto incluye demolición, trabajo de instalación, instalación de gabinetes, encimeras, backsplash y toques finales. El cronograma puede variar según el alcance del trabajo y disponibilidad de materiales.</p>
+							</div>
+						</div>
+
+						<div class="faq-item" data-category="kitchen">
+							<button class="faq-question">
+								<span>¿Puedo usar mi cocina durante la remodelación?</span>
+								<span class="faq-icon">+</span>
+							</button>
+							<div class="faq-answer">
+								<p>Su cocina estará inusable durante la mayoría de la renovación. Recomendamos configurar una cocina temporal en otra habitación con microondas, mini-refrigerador y estufa portátil. Trabajamos eficientemente para minimizar la interrupción de su rutina diaria.</p>
+							</div>
+						</div>
+
+						<div class="faq-item" data-category="kitchen">
+							<button class="faq-question">
+								<span>¿Debo elegir gabinetes personalizados o semi-personalizados?</span>
+								<span class="faq-icon">+</span>
+							</button>
+							<div class="faq-answer">
+								<p>Los gabinetes semi-personalizados ofrecen gran valor con muchas opciones de diseño y típicamente se entregan en 6-8 semanas. Los gabinetes personalizados proporcionan flexibilidad de diseño ilimitada pero cuestan 20-40% más y toman 10-16 semanas. Le ayudaremos a elegir según su presupuesto, cronograma y objetivos de diseño.</p>
+							</div>
+						</div>
+
+						<!-- Preguntas de Baño -->
+						<div class="faq-item" data-category="bathroom">
+							<button class="faq-question">
+								<span>¿Cuánto tiempo toma una renovación de baño?</span>
+								<span class="faq-icon">+</span>
+							</button>
+							<div class="faq-answer">
+								<p>Una remodelación completa de baño típicamente toma de 3 a 6 semanas. Una renovación simple (nuevos accesorios, pintura, azulejos) puede hacerse en 1-2 semanas. Las renovaciones de baño principal con características personalizadas pueden tomar de 6 a 8 semanas.</p>
+							</div>
+						</div>
+
+						<div class="faq-item" data-category="bathroom">
+							<button class="faq-question">
+								<span>¿Vale la pena convertir una bañera en ducha?</span>
+								<span class="faq-icon">+</span>
+							</button>
+							<div class="faq-answer">
+								<p>Sí, especialmente para baños principales. Las duchas walk-in son cada vez más populares y ofrecen mejor accesibilidad. Sin embargo, si es su único baño, mantenga al menos una bañera en su hogar - es importante para el valor de reventa y familias con niños pequeños.</p>
+							</div>
+						</div>
+
+						<!-- Preguntas de Presupuesto -->
+						<div class="faq-item" data-category="budget">
+							<button class="faq-question">
+								<span>¿Cuál es el costo promedio de una remodelación de cocina?</span>
+								<span class="faq-icon">+</span>
+							</button>
+							<div class="faq-answer">
+								<p>Las remodelaciones de cocina van desde $25,000 para una renovación económica hasta $75,000+ para una renovación de alta gama. La remodelación promedio de rango medio cuesta $40,000-$60,000. El costo depende del tamaño, materiales, electrodomésticos y cambios estructurales.</p>
+							</div>
+						</div>
+
+						<div class="faq-item" data-category="budget">
+							<button class="faq-question">
+								<span>¿Ofrecen opciones de financiamiento?</span>
+								<span class="faq-icon">+</span>
+							</button>
+							<div class="faq-answer">
+								<p>Sí, nos asociamos con compañías financieras líderes para ofrecer planes de pago flexibles con tasas competitivas. Podemos ayudarle a encontrar opciones de financiamiento que se ajusten a su presupuesto y alcance del proyecto.</p>
+							</div>
+						</div>
+
+						<div class="faq-item" data-category="budget">
+							<button class="faq-question">
+								<span>¿Qué debo presupuestar para costos inesperados?</span>
+								<span class="faq-icon">+</span>
+							</button>
+							<div class="faq-answer">
+								<p>Recomendamos reservar 15-20% de su presupuesto total para contingencias. Problemas inesperados como daños ocultos por agua, cableado obsoleto o preocupaciones estructurales pueden surgir una vez que se abren las paredes.</p>
+							</div>
+						</div>
+
+						<!-- Preguntas de Cronograma -->
+						<div class="faq-item" data-category="timeline">
+							<button class="faq-question">
+								<span>¿Cuál es la mejor época del año para remodelar?</span>
+								<span class="faq-icon">+</span>
+							</button>
+							<div class="faq-answer">
+								<p>Primavera y otoño son populares debido al clima templado, pero trabajamos todo el año. El invierno a menudo tiene más disponibilidad y potencialmente mejores precios. El verano es conveniente si tiene niños en casa para ayudar con arreglos temporales.</p>
+							</div>
+						</div>
+
+						<div class="faq-item" data-category="timeline">
+							<button class="faq-question">
+								<span>¿Con cuánta anticipación debo reservar?</span>
+								<span class="faq-icon">+</span>
+							</button>
+							<div class="faq-answer">
+								<p>Recomendamos reservar con 2-3 meses de anticipación para mejor disponibilidad. El diseño y selección de materiales puede tomar 4-6 semanas, y las épocas populares (primavera/verano) se reservan rápidamente. Sin embargo, a menudo tenemos disponibilidad para proyectos urgentes.</p>
+							</div>
+						</div>
+
+						<!-- CTA -->
+						<div class="faq-cta">
+							<h3>¿Aún Tiene Preguntas?</h3>
+							<p>¡Nuestro equipo está aquí para ayudar! Contáctenos para respuestas personalizadas a sus preguntas de remodelación.</p>
+							<a href="/es#contact" class="btn btn-primary btn-large">Contáctenos Hoy</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<script>
+	// FAQ Accordion functionality
+	document.querySelectorAll('.faq-question').forEach(button => {
+		button.addEventListener('click', () => {
+			const faqItem = button.parentElement;
+			const isActive = faqItem.classList.contains('active');
+			
+			// Close all other FAQs
+			document.querySelectorAll('.faq-item').forEach(item => {
+				item.classList.remove('active');
+			});
+			
+			// Toggle current FAQ
+			if (!isActive) {
+				faqItem.classList.add('active');
+			}
+		});
+	});
+
+	// Category filtering
+	document.querySelectorAll('.category-btn').forEach(btn => {
+		btn.addEventListener('click', () => {
+			const category = btn.dataset.category;
+			
+			// Update active button
+			document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+			btn.classList.add('active');
+			
+			// Filter FAQs
+			document.querySelectorAll('.faq-item').forEach(item => {
+				if (category === 'all' || item.dataset.category === category) {
+					item.style.display = 'block';
+				} else {
+					item.style.display = 'none';
+				}
+			});
+		});
+	});
+</script>
+
+<style>
+	.advice-hero {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+		padding: 4rem 0 3rem;
+		text-align: center;
+	}
+
+	.category {
+		color: var(--color-accent);
+		text-transform: uppercase;
+		font-size: 0.9rem;
+		font-weight: 600;
+		letter-spacing: 2px;
+	}
+
+	.advice-hero h1 {
+		font-size: 3rem;
+		margin: 1rem 0;
+	}
+
+	.tagline {
+		font-size: 1.2rem;
+		opacity: 0.9;
+	}
+
+	.faq-layout {
+		display: grid;
+		grid-template-columns: 220px 1fr;
+		gap: var(--spacing-xl);
+		margin-top: var(--spacing-lg);
+	}
+
+	.faq-categories {
+		position: sticky;
+		top: 100px;
+		height: fit-content;
+	}
+
+	.faq-categories h3 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.category-btn {
+		display: block;
+		width: 100%;
+		text-align: left;
+		padding: 0.75rem 1rem;
+		background: transparent;
+		border: none;
+		border-left: 3px solid transparent;
+		color: var(--color-text-main);
+		font-weight: 500;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		margin-bottom: 0.25rem;
+	}
+
+	.category-btn:hover, .category-btn.active {
+		border-left-color: var(--color-accent);
+		background-color: var(--color-surface);
+		color: var(--color-accent);
+	}
+
+	.faq-content {
+		max-width: 800px;
+	}
+
+	.faq-item {
+		background: white;
+		border: 1px solid #e0e0e0;
+		border-radius: 8px;
+		margin-bottom: var(--spacing-md);
+		overflow: hidden;
+	}
+
+	.faq-question {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: var(--spacing-md);
+		background: transparent;
+		border: none;
+		cursor: pointer;
+		text-align: left;
+		font-size: 1.1rem;
+		font-weight: 600;
+		color: var(--color-primary);
+		transition: background 0.2s ease;
+	}
+
+	.faq-question:hover {
+		background: var(--color-surface);
+	}
+
+	.faq-icon {
+		font-size: 1.5rem;
+		font-weight: 300;
+		color: var(--color-accent);
+		transition: transform 0.3s ease;
+	}
+
+	.faq-item.active .faq-icon {
+		transform: rotate(45deg);
+	}
+
+	.faq-answer {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease, padding 0.3s ease;
+		padding: 0 var(--spacing-md);
+	}
+
+	.faq-item.active .faq-answer {
+		max-height: 500px;
+		padding: 0 var(--spacing-md) var(--spacing-md);
+	}
+
+	.faq-answer p {
+		line-height: 1.7;
+		color: #555;
+	}
+
+	.faq-cta {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+		padding: var(--spacing-xl);
+		border-radius: 12px;
+		text-align: center;
+		margin-top: var(--spacing-xl);
+	}
+
+	.faq-cta h3 {
+		color: white;
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.faq-cta p {
+		margin-bottom: var(--spacing-md);
+		font-size: 1.1rem;
+	}
+
+	.btn-large {
+		padding: 1.2rem 3rem;
+		font-size: 1.1rem;
+	}
+
+	@media (max-width: 1024px) {
+		.faq-layout {
+			grid-template-columns: 1fr;
+		}
+
+		.faq-categories {
+			position: static;
+			display: flex;
+			gap: 0.5rem;
+			overflow-x: auto;
+		}
+
+		.faq-categories h3 {
+			display: none;
+		}
+
+		.category-btn {
+			white-space: nowrap;
+			border-left: none;
+			border-bottom: 3px solid transparent;
+		}
+
+		.category-btn:hover, .category-btn.active {
+			border-left: none;
+			border-bottom-color: var(--color-accent);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.advice-hero h1 {
+			font-size: 2rem;
+		}
+
+		.faq-question {
+			font-size: 1rem;
+		}
+	}
+</style>

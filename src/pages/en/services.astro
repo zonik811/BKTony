@@ -1,0 +1,297 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+---
+
+<Layout title="Our Services - KBTony" lang="en">
+	<main>
+		<!-- Hero Section -->
+		<section class="services-hero">
+			<div class="container">
+				<h1>Our Premium Remodeling Services</h1>
+				<p class="tagline">Transform your home with our expert kitchen, bathroom, and exterior renovation services</p>
+			</div>
+		</section>
+
+		<!-- Services Grid -->
+		<section class="section">
+			<div class="container">
+				<div class="services-intro">
+					<h2>What We Do Best</h2>
+					<p>With years of experience and countless satisfied clients, we specialize in transforming homes with precision craftsmanship and premium materials.</p>
+				</div>
+
+				<div class="services-grid">
+					<ServiceCard
+						title="Kitchen Remodeling"
+						description="Complete kitchen transformations with custom cabinets, premium countertops, and modern appliances."
+						icon="🍳"
+						detailLink="/en/services/kitchen-remodeling"
+					/>
+					<ServiceCard
+						title="Bathroom Renovation"
+						description="Luxury bathroom upgrades featuring walk-in showers, spa tubs, and elegant fixtures."
+						icon="🚿"
+						detailLink="/en/services/bathroom-renovation"
+					/>
+					<ServiceCard
+						title="Roofing & Exterior"
+						description="Durable roofing solutions and exterior improvements that protect and beautify your home."
+						icon="🏠"
+						detailLink="/en/services/roofing-exterior"
+					/>
+				</div>
+			</div>
+		</section>
+
+		<!-- Why Choose Us -->
+		<section class="section bg-surface">
+			<div class="container">
+				<div class="why-choose">
+					<h2>Why Choose KBTony?</h2>
+					<div class="benefits-grid">
+						<div class="benefit-card">
+							<div class="benefit-icon">✓</div>
+							<h3>Licensed & Insured</h3>
+							<p>Fully licensed contractors with comprehensive insurance for your peace of mind.</p>
+						</div>
+						<div class="benefit-card">
+							<div class="benefit-icon">✓</div>
+							<h3>Premium Materials</h3>
+							<p>We only use high-quality materials from trusted brands for lasting results.</p>
+						</div>
+						<div class="benefit-card">
+							<div class="benefit-icon">✓</div>
+							<h3>Expert Craftsmanship</h3>
+							<p>Our skilled team delivers attention to detail in every project.</p>
+						</div>
+						<div class="benefit-card">
+							<div class="benefit-icon">✓</div>
+							<h3>Transparent Pricing</h3>
+							<p>Clear quotes with no hidden fees. You know exactly what you're paying for.</p>
+						</div>
+						<div class="benefit-card">
+							<div class="benefit-icon">✓</div>
+							<h3>On-Time Completion</h3>
+							<p>We respect your time with realistic schedules and efficient project management.</p>
+						</div>
+						<div class="benefit-card">
+							<div class="benefit-icon">✓</div>
+							<h3>Satisfaction Guaranteed</h3>
+							<p>We stand behind our work with comprehensive warranties and guarantees.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Process Section -->
+		<section class="section">
+			<div class="container">
+				<h2 class="text-center">Our Simple Process</h2>
+				<div class="process-steps">
+					<div class="process-step">
+						<div class="step-number">1</div>
+						<h3>Free Consultation</h3>
+						<p>Schedule a meeting to discuss your vision and get a detailed quote.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">2</div>
+						<h3>Design & Planning</h3>
+						<p>Work with our team to create the perfect design for your space.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">3</div>
+						<h3>Expert Installation</h3>
+						<p>Our skilled craftsmen bring your vision to life with precision.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">4</div>
+						<h3>Final Inspection</h3>
+						<p>We ensure everything meets our high standards before completion.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="section cta-section">
+			<div class="container text-center">
+				<h2>Ready to Transform Your Home?</h2>
+				<p>Get a free consultation and discover how we can bring your vision to life.</p>
+				<a href="/en#contact" class="btn btn-primary btn-large">Get Free Quote</a>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.services-hero {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+		padding: 5rem 0 4rem;
+		text-align: center;
+	}
+
+	.services-hero h1 {
+		font-size: 3.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.tagline {
+		font-size: 1.3rem;
+		max-width: 700px;
+		margin: 0 auto;
+		opacity: 0.95;
+	}
+
+	.services-intro {
+		text-align: center;
+		max-width: 700px;
+		margin: 0 auto var(--spacing-xl);
+	}
+
+	.services-intro h2 {
+		color: var(--color-primary);
+		font-size: 2.5rem;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.services-intro p {
+		font-size: 1.1rem;
+		color: #666;
+		line-height: 1.6;
+	}
+
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: var(--spacing-lg);
+		margin-top: var(--spacing-xl);
+	}
+
+	.why-choose h2 {
+		color: var(--color-primary);
+		font-size: 2.5rem;
+		text-align: center;
+		margin-bottom: var(--spacing-xl);
+	}
+
+	.benefits-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: var(--spacing-lg);
+	}
+
+	.benefit-card {
+		text-align: center;
+		padding: var(--spacing-lg);
+		background: white;
+		border-radius: 8px;
+		box-shadow: var(--shadow-md);
+		transition: transform 0.3s ease;
+	}
+
+	.benefit-card:hover {
+		transform: translateY(-5px);
+		box-shadow: var(--shadow-lg);
+	}
+
+	.benefit-icon {
+		width: 60px;
+		height: 60px;
+		background: var(--color-accent);
+		color: white;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 2rem;
+		font-weight: 700;
+		margin: 0 auto var(--spacing-md);
+	}
+
+	.benefit-card h3 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.benefit-card p {
+		color: #666;
+		line-height: 1.6;
+	}
+
+	.process-steps {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: var(--spacing-lg);
+		margin-top: var(--spacing-xl);
+	}
+
+	.process-step {
+		text-align: center;
+		padding: var(--spacing-md);
+	}
+
+	.step-number {
+		width: 60px;
+		height: 60px;
+		background: var(--color-accent);
+		color: white;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.8rem;
+		font-weight: 700;
+		margin: 0 auto var(--spacing-md);
+	}
+
+	.process-step h3 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.process-step p {
+		color: #666;
+		line-height: 1.6;
+	}
+
+	.cta-section {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+	}
+
+	.cta-section h2 {
+		color: white;
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.cta-section p {
+		font-size: 1.2rem;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.btn-large {
+		padding: 1.2rem 3rem;
+		font-size: 1.1rem;
+	}
+
+	.bg-surface {
+		background-color: var(--color-surface);
+	}
+
+	.text-center {
+		text-align: center;
+	}
+
+	@media (max-width: 768px) {
+		.services-hero h1 {
+			font-size: 2.5rem;
+		}
+
+		.services-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

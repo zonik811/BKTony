@@ -1,0 +1,280 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Sobre Nosotros - KBTony" lang="es">
+	<main>
+		<!-- Hero Section -->
+		<section class="about-hero">
+			<div class="container">
+				<h1>Sobre KBTony</h1>
+				<p class="tagline">Su socio de confianza en excelencia de remodelación del hogar</p>
+			</div>
+		</section>
+
+		<!-- Story Section -->
+		<section class="section">
+			<div class="container">
+				<div class="about-content">
+					<div class="about-text">
+						<h2>Nuestra Historia</h2>
+						<p>Fundada con una pasión por transformar casas en hogares de ensueño, KBTony ha estado sirviendo a propietarios con servicios premium de remodelación de cocinas, baños y exteriores. Nuestro compromiso con la artesanía de calidad y la satisfacción del cliente nos ha convertido en un nombre de confianza en renovación del hogar.</p>
+						<p>Lo que comenzó como un pequeño equipo de artesanos dedicados ha crecido hasta convertirse en una empresa de remodelación de servicio completo, pero nunca hemos perdido de vista lo que más importa: ofrecer resultados excepcionales que superen las expectativas de nuestros clientes.</p>
+					</div>
+					<div class="about-image">
+						<img src="/images/luxury-kitchen-hero.png" alt="Remodelación KBTony" />
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Mission & Vision -->
+		<section class="section bg-surface">
+			<div class="container">
+				<div class="mission-vision">
+					<div class="mission-card">
+						<h2>Nuestra Misión</h2>
+						<p>Transformar hogares con artesanía excepcional, materiales premium y servicio personalizado que da vida a las visiones de nuestros clientes, mientras construimos relaciones duraderas basadas en confianza y calidad.</p>
+					</div>
+					<div class="vision-card">
+						<h2>Nuestra Visión</h2>
+						<p>Ser la empresa de remodelación más confiable y solicitada, conocida por innovación, integridad y superar consistentemente las expectativas en cada proyecto que emprendemos.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Values Section -->
+		<section class="section">
+			<div class="container">
+				<h2 class="text-center">Nuestros Valores Fundamentales</h2>
+				<div class="values-grid">
+					<div class="value-card">
+						<div class="value-icon">🎯</div>
+						<h3>Calidad Primero</h3>
+						<p>Nunca comprometemos la calidad. Cada proyecto recibe nuestra completa atención al detalle y compromiso con la excelencia.</p>
+					</div>
+					<div class="value-card">
+						<div class="value-icon">🤝</div>
+						<h3>Integridad</h3>
+						<p>Comunicación honesta, precios transparentes y hacer lo correcto para nuestros clientes guía todo lo que hacemos.</p>
+					</div>
+					<div class="value-card">
+						<div class="value-icon">💡</div>
+						<h3>Innovación</h3>
+						<p>Nos mantenemos actualizados con las últimas tendencias, materiales y técnicas para ofrecer diseños modernos y funcionales.</p>
+					</div>
+					<div class="value-card">
+						<div class="value-icon">⭐</div>
+						<h3>Enfoque en el Cliente</h3>
+						<p>Su satisfacción es nuestro éxito. Escuchamos, comunicamos y nos adaptamos para asegurar que su visión se convierta en realidad.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Team Section -->
+		<section class="section bg-surface">
+			<div class="container">
+				<h2 class="text-center">¿Por Qué Elegirnos?</h2>
+				<div class="why-us-grid">
+					<div class="why-us-item">
+						<h3>✓ Licenciados y Asegurados</h3>
+						<p>Contratistas totalmente licenciados con cobertura de seguro integral</p>
+					</div>
+					<div class="why-us-item">
+						<h3>✓ Equipo Experimentado</h3>
+						<p>Artesanos calificados con años de experiencia en remodelación del hogar</p>
+					</div>
+					<div class="why-us-item">
+						<h3>✓ Materiales Premium</h3>
+						<p>Solo usamos materiales de alta calidad de marcas confiables</p>
+					</div>
+					<div class="why-us-item">
+						<h3>✓ Precios Transparentes</h3>
+						<p>Cotizaciones claras sin tarifas ocultas o cargos sorpresa</p>
+					</div>
+					<div class="why-us-item">
+						<h3>✓ Entrega a Tiempo</h3>
+						<p>Cronogramas realistas y gestión eficiente de proyectos</p>
+					</div>
+					<div class="why-us-item">
+						<h3>✓ Garantía de Satisfacción</h3>
+						<p>Respaldamos nuestro trabajo con garantías completas</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="section cta-section">
+			<div class="container text-center">
+				<h2>¿Listo para Trabajar con Nosotros?</h2>
+				<p>Discutamos su proyecto y demos vida a su visión.</p>
+				<a href="/es/contacto" class="btn btn-primary btn-large">Contáctenos</a>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.about-hero {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+		padding: 5rem 0 4rem;
+		text-align: center;
+	}
+
+	.about-hero h1 {
+		font-size: 3.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.tagline {
+		font-size: 1.3rem;
+		opacity: 0.95;
+	}
+
+	.about-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--spacing-xl);
+		align-items: center;
+	}
+
+	.about-text h2 {
+		color: var(--color-primary);
+		font-size: 2.5rem;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.about-text p {
+		font-size: 1.1rem;
+		line-height: 1.8;
+		color: #666;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.about-image img {
+		width: 100%;
+		border-radius: 12px;
+		box-shadow: var(--shadow-lg);
+	}
+
+	.mission-vision {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--spacing-xl);
+	}
+
+	.mission-card, .vision-card {
+		background: white;
+		padding: var(--spacing-xl);
+		border-radius: 12px;
+		box-shadow: var(--shadow-md);
+	}
+
+	.mission-card h2, .vision-card h2 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-md);
+		font-size: 2rem;
+	}
+
+	.mission-card p, .vision-card p {
+		font-size: 1.1rem;
+		line-height: 1.8;
+		color: #666;
+	}
+
+	.values-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: var(--spacing-lg);
+		margin-top: var(--spacing-xl);
+	}
+
+	.value-card {
+		text-align: center;
+		padding: var(--spacing-lg);
+	}
+
+	.value-icon {
+		font-size: 3rem;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.value-card h3 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-sm);
+		font-size: 1.3rem;
+	}
+
+	.value-card p {
+		color: #666;
+		line-height: 1.6;
+	}
+
+	.why-us-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: var(--spacing-lg);
+		margin-top: var(--spacing-xl);
+	}
+
+	.why-us-item {
+		background: white;
+		padding: var(--spacing-lg);
+		border-radius: 8px;
+		box-shadow: var(--shadow-sm);
+	}
+
+	.why-us-item h3 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.why-us-item p {
+		color: #666;
+		line-height: 1.6;
+	}
+
+	.cta-section {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+	}
+
+	.cta-section h2 {
+		color: white;
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.cta-section p {
+		font-size: 1.2rem;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.btn-large {
+		padding: 1.2rem 3rem;
+		font-size: 1.1rem;
+	}
+
+	.bg-surface {
+		background-color: var(--color-surface);
+	}
+
+	.text-center {
+		text-align: center;
+	}
+
+	@media (max-width: 968px) {
+		.about-content, .mission-vision {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.about-hero h1 {
+			font-size: 2.5rem;
+		}
+	}
+</style>

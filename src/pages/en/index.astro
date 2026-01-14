@@ -1,0 +1,251 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<Layout title="KBTony - Premium Kitchens & Bathrooms" lang="en">
+	<main>
+		<!-- Hero Section -->
+		<section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/hero-kitchen.png');">
+			<div class="container hero-content">
+				<h1>Transform Your Home with <span class="text-accent">Elegance</span></h1>
+				<p>Premier Kitchen & Bathroom Remodeling Services.</p>
+				<div class="cta-group">
+					<a href="/en/contact" class="btn btn-primary">Get a Quote</a>
+					<a href="/en/services" class="btn btn-outline">Our Services</a>
+				</div>
+			</div>
+		</section>
+
+        <!-- About Section -->
+        <section class="section bg-surface" id="about">
+            <div class="container text-center">
+                <span class="subheading">About Us</span>
+                <h2>Experience the Art of Living</h2>
+                <div class="divider"></div>
+                <p class="lead">At KBTony, we don't just renovate; we revitalize. Specializing in high-end kitchen and bathroom remodeling, we bring your vision to life with precision, quality materials, and timeless style.</p>
+            </div>
+        </section>
+
+		<!-- Services Section -->
+		<section class="section" id="services">
+			<div class="container">
+				<div class="section-header text-center">
+					<span class="subheading">What We Do</span>
+					<h2>Our Premium Services</h2>
+					<div class="divider"></div>
+				</div>
+				<div class="services-grid">
+					<ServiceCard 
+						title="Kitchen Remodeling" 
+						description="Custom cabinetry, stone countertops, and modern appliances designed for the culinary artist."
+						image="/images/hero-kitchen.png"
+						detailLink="/en/services/kitchen-remodeling"
+					/>
+					<ServiceCard 
+						title="Bathroom Renovation" 
+						description="Spa-like retreats with walk-in showers, freestanding tubs, and ambient lighting."
+						image="/images/bathroom-service.png"
+						detailLink="/en/services/bathroom-renovation"
+					/>
+					<ServiceCard 
+						title="Roofing & Exterior" 
+						description="Durable and aesthetic roofing solutions that protect and beautify your home."
+                        image="/images/hero-kitchen.png"
+						detailLink="/en/services/roofing-exterior"
+					/>
+				</div>
+			</div>
+		</section>
+
+        <!-- Gallery Section (Placeholder for now) -->
+        <section class="section bg-surface" id="gallery">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="subheading">Portfolio</span>
+                    <h2>Our Masterpieces</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="gallery-grid">
+                     <div class="gallery-item large"><img src="/images/hero-kitchen.png" alt="Project 1" /></div>
+                     <div class="gallery-item"><img src="/images/bathroom-service.png" alt="Project 2" /></div>
+                     <div class="gallery-item"><img src="/images/hero-kitchen.png" alt="Project 3" /></div>
+                </div>
+            </div>
+        </section>
+
+		<!-- Contact Section -->
+		<section class="section" id="contact">
+			<div class="container">
+				<div class="contact-layout">
+					<div class="contact-info">
+						<span class="subheading">Get in Touch</span>
+						<h2>Start Your Dream Project Today</h2>
+						<p>Ready to transform your space? Use the form to request a free consultation and quote.</p>
+                        <div class="info-list">
+                            <div class="info-item">
+                                <strong>Phone:</strong> (555) 123-4567
+                            </div>
+                            <div class="info-item">
+                                <strong>Email:</strong> info@kbtony.com
+                            </div>
+                        </div>
+					</div>
+					<div class="contact-form-wrapper">
+						<ContactForm lang="en" />
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.hero {
+		background-size: cover;
+		background-position: center;
+        background-attachment: fixed;
+		color: var(--color-text-light);
+		padding: 160px 0;
+		text-align: center;
+        position: relative;
+	}
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: var(--spacing-md);
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    p.lead {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.8;
+        color: #555;
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+        max-width: 700px;
+        margin: 0 auto var(--spacing-md);
+        text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    }
+
+    .text-accent {
+        color: var(--color-accent);
+    }
+
+    .subheading {
+        display: block;
+        color: var(--color-accent);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: var(--spacing-xs);
+        font-size: 0.9rem;
+    }
+
+    .divider {
+        width: 80px;
+        height: 3px;
+        background-color: var(--color-accent);
+        margin: var(--spacing-sm) auto var(--spacing-md);
+    }
+
+    .text-center { text-align: center; }
+
+    .bg-surface {
+        background-color: var(--color-surface);
+    }
+
+    .cta-group {
+        display: flex;
+        gap: var(--spacing-sm);
+        justify-content: center;
+        margin-top: var(--spacing-md);
+    }
+    
+    .btn {
+        padding: 1rem 2rem;
+        border-radius: 4px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+        background: var(--color-accent);
+        color: var(--color-primary);
+    }
+
+    .btn-primary:hover {
+        background: white;
+        color: var(--color-primary);
+        transform: translateY(-2px);
+    }
+
+    .btn-outline {
+        border: 2px solid var(--color-text-light);
+        color: var(--color-text-light);
+    }
+
+    .btn-outline:hover {
+        background: var(--color-text-light);
+        color: var(--color-primary);
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--spacing-md);
+        margin-top: var(--spacing-md);
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--spacing-sm);
+        margin-top: var(--spacing-md);
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 4px;
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.02);
+    }
+
+    .contact-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-lg);
+        align-items: center;
+    }
+
+    @media (max-width: 768px) {
+        .contact-layout {
+            grid-template-columns: 1fr;
+        }
+        h1 { font-size: 2.5rem; }
+    }
+
+    .info-item {
+        margin-top: var(--spacing-md);
+        font-size: 1.1rem;
+    }
+
+</style>

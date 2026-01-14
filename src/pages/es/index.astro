@@ -1,0 +1,250 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<Layout title="KBTony - Cocinas y Baños de Lujo" lang="es">
+	<main>
+		<!-- Hero Section -->
+		<section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/hero-kitchen.png');">
+			<div class="container hero-content">
+				<h1>Transforme Su Hogar con <span class="text-accent">Elegancia</span></h1>
+				<p>Servicios de Remodelación de Cocinas y Baños de Primera Clase.</p>
+				<div class="cta-group">
+					<a href="/es/contacto" class="btn btn-primary">Solicitar Presupuesto</a>
+					<a href="/es/servicios" class="btn btn-outline">Nuestros Servicios</a>
+				</div>
+			</div>
+		</section>
+
+        <!-- About Section -->
+        <section class="section bg-surface" id="about">
+            <div class="container text-center">
+                <span class="subheading">Sobre Nosotros</span>
+                <h2>Experimente el Arte de Vivir</h2>
+                <div class="divider"></div>
+                <p class="lead">En KBTony, no solo renovamos; revitalizamos. Especializados en remodelación de cocinas y baños de alta gama, damos vida a su visión con precisión, materiales de calidad y un estilo atemporal.</p>
+            </div>
+        </section>
+
+		<!-- Services Section -->
+		<section class="section" id="services">
+			<div class="container">
+				<div class="section-header text-center">
+					<span class="subheading">Lo Que Hacemos</span>
+					<h2>Nuestros Servicios Premium</h2>
+					<div class="divider"></div>
+				</div>
+				<div class="services-grid">
+					<ServiceCard 
+						title="Remodelación de Cocinas" 
+						description="Gabinetes personalizados, encimeras de piedra y electrodomésticos modernos diseñados para el artista culinario."
+						image="/images/hero-kitchen.png"
+						detailLink="/es/servicios/remodelacion-cocinas"
+					/>
+					<ServiceCard 
+						title="Renovación de Baños" 
+						description="Retiros estilo spa con duchas a ras de suelo, bañeras independientes e iluminación ambiental."
+						image="/images/bathroom-service.png"
+						detailLink="/es/servicios/renovacion-banos"
+					/>
+					<ServiceCard 
+						title="Techos y Exteriores" 
+						description="Soluciones de techado duraderas y estéticas que protegen y embellecen su hogar."
+                        image="/images/hero-kitchen.png"
+						detailLink="/es/servicios/techos-exteriores"
+					/>
+				</div>
+			</div>
+		</section>
+
+        <!-- Gallery Section (Placeholder for now) -->
+        <section class="section bg-surface" id="gallery">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="subheading">Portafolio</span>
+                    <h2>Nuestras Obras Maestras</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="gallery-grid">
+                     <div class="gallery-item large"><img src="/images/hero-kitchen.png" alt="Proyecto 1" /></div>
+                     <div class="gallery-item"><img src="/images/bathroom-service.png" alt="Proyecto 2" /></div>
+                     <div class="gallery-item"><img src="/images/hero-kitchen.png" alt="Proyecto 3" /></div>
+                </div>
+            </div>
+        </section>
+
+		<!-- Contact Section -->
+		<section class="section" id="contact">
+			<div class="container">
+				<div class="contact-layout">
+					<div class="contact-info">
+						<span class="subheading">Contáctenos</span>
+						<h2>Inicie Su Proyecto Soñado Hoy</h2>
+						<p>¿Listo para transformar su espacio? Utilice el formulario para solicitar una consulta y presupuesto gratuitos.</p>
+                        <div class="info-list">
+                            <div class="info-item">
+                                <strong>Teléfono:</strong> (555) 123-4567
+                            </div>
+                            <div class="info-item">
+                                <strong>Email:</strong> info@kbtony.com
+                            </div>
+                        </div>
+					</div>
+					<div class="contact-form-wrapper">
+						<ContactForm lang="es" />
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.hero {
+		background-size: cover;
+		background-position: center;
+        background-attachment: fixed;
+		color: var(--color-text-light);
+		padding: 160px 0;
+		text-align: center;
+        position: relative;
+	}
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: var(--spacing-md);
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    p.lead {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.8;
+        color: #555;
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+        max-width: 700px;
+        margin: 0 auto var(--spacing-md);
+        text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    }
+
+    .text-accent {
+        color: var(--color-accent);
+    }
+
+    .subheading {
+        display: block;
+        color: var(--color-accent);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: var(--spacing-xs);
+        font-size: 0.9rem;
+    }
+
+    .divider {
+        width: 80px;
+        height: 3px;
+        background-color: var(--color-accent);
+        margin: var(--spacing-sm) auto var(--spacing-md);
+    }
+
+    .text-center { text-align: center; }
+
+    .bg-surface {
+        background-color: var(--color-surface);
+    }
+
+    .cta-group {
+        display: flex;
+        gap: var(--spacing-sm);
+        justify-content: center;
+        margin-top: var(--spacing-md);
+    }
+    
+    .btn {
+        padding: 1rem 2rem;
+        border-radius: 4px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+        background: var(--color-accent);
+        color: var(--color-primary);
+    }
+
+    .btn-primary:hover {
+        background: white;
+        color: var(--color-primary);
+        transform: translateY(-2px);
+    }
+
+    .btn-outline {
+        border: 2px solid var(--color-text-light);
+        color: var(--color-text-light);
+    }
+
+    .btn-outline:hover {
+        background: var(--color-text-light);
+        color: var(--color-primary);
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--spacing-md);
+        margin-top: var(--spacing-md);
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--spacing-sm);
+        margin-top: var(--spacing-md);
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 4px;
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.02);
+    }
+
+    .contact-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-lg);
+        align-items: center;
+    }
+
+    @media (max-width: 768px) {
+        .contact-layout {
+            grid-template-columns: 1fr;
+        }
+        h1 { font-size: 2.5rem; }
+    }
+
+    .info-item {
+        margin-top: var(--spacing-md);
+        font-size: 1.1rem;
+    }
+</style>

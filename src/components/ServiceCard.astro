@@ -1,0 +1,86 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  icon?: string;
+  image?: string;
+  detailLink?: string;
+}
+
+const { title, description, icon, image, detailLink = "#contact" } = Astro.props;
+---
+
+<div class="service-card">
+  {image && (
+    <div class="image-container">
+        <img src={image} alt={title} loading="lazy" />
+    </div>
+  )}
+  <div class="content">
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <a href={detailLink} class="link">Learn More &rarr;</a>
+  </div>
+</div>
+
+<style>
+  .service-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .image-container {
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .service-card:hover .image-container img {
+    transform: scale(1.05);
+  }
+
+  .content {
+    padding: var(--spacing-md);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h3 {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-sm);
+    flex-grow: 1;
+  }
+
+  .link {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    align-self: flex-start;
+  }
+</style>

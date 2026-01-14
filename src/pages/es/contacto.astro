@@ -1,0 +1,248 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<Layout title="Contáctenos - KBTony" lang="es">
+	<main>
+		<!-- Hero Section -->
+		<section class="contact-hero">
+			<div class="container">
+				<h1>Contáctenos</h1>
+				<p class="tagline">¿Listo para transformar su hogar? Comencemos la conversación.</p>
+			</div>
+		</section>
+
+		<!-- Contact Content -->
+		<section class="section">
+			<div class="container">
+				<div class="contact-grid">
+					<!-- Contact Form -->
+					<div class="contact-form-section">
+						<h2>Envíenos un Mensaje</h2>
+						<p>Complete el formulario a continuación y nos comunicaremos con usted dentro de 24 horas.</p>
+						<ContactForm />
+					</div>
+
+					<!-- Contact Info -->
+					<div class="contact-info">
+						<h2>Información de Contacto</h2>
+						
+						<div class="info-card">
+							<h3>📞 Teléfono</h3>
+							<p><a href="tel:5551234567">(555) 123-4567</a></p>
+							<p class="info-note">Lun-Vie: 8am - 6pm<br>Sáb: 9am - 4pm</p>
+						</div>
+
+						<div class="info-card">
+							<h3>📧 Correo Electrónico</h3>
+							<p><a href="mailto:info@kbtony.com">info@kbtony.com</a></p>
+							<p class="info-note">Respondemos dentro de 24 horas</p>
+						</div>
+
+						<div class="info-card">
+							<h3>📍 Ubicación</h3>
+							<p>Servimos el Área Metropolitana</p>
+							<p class="info-note">Licencia en todos los condados</p>
+						</div>
+
+						<div class="info-card">
+							<h3>🕐 Horario de Atención</h3>
+							<p>Lunes - Viernes: 8:00 AM - 6:00 PM</p>
+							<p>Sábado: 9:00 AM - 4:00 PM</p>
+							<p>Domingo: Cerrado</p>
+						</div>
+
+						<!-- Social Links -->
+						<div class="social-links">
+							<h3>Síguenos</h3>
+							<div class="social-icons">
+								<a href="#" aria-label="Facebook">📘</a>
+								<a href="#" aria-label="Instagram">📸</a>
+								<a href="#" aria-label="Twitter">🐦</a>
+								<a href="#" aria-label="LinkedIn">💼</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- FAQ Section -->
+		<section class="section bg-surface">
+			<div class="container">
+				<h2 class="text-center">Preguntas Frecuentes</h2>
+				<div class="quick-faq">
+					<div class="faq-item">
+						<h3>¿Ofrecen consultas gratuitas?</h3>
+						<p>¡Sí! Proporcionamos consultas gratuitas en el hogar para discutir su proyecto y proporcionar una cotización detallada.</p>
+					</div>
+					<div class="faq-item">
+						<h3>¿Cuánto tiempo toma una remodelación típica?</h3>
+						<p>Las remodelaciones de cocina típicamente toman 6-12 semanas, mientras que las renovaciones de baño toman 3-6 semanas dependiendo del alcance.</p>
+					</div>
+					<div class="faq-item">
+						<h3>¿Manejan los permisos?</h3>
+						<p>Absolutamente. Manejamos todos los permisos e inspecciones necesarias como parte de nuestro servicio integral.</p>
+					</div>
+					<div class="faq-item">
+						<h3>¿Qué áreas sirven?</h3>
+						<p>Servimos toda el Área Metropolitana y condados circundantes con licencia completa y seguro.</p>
+					</div>
+				</div>
+				<div class="text-center" style="margin-top: 2rem;">
+					<a href="/es/advice/faq" class="btn btn-primary">Ver Todas las Preguntas</a>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.contact-hero {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+		padding: 5rem 0 4rem;
+		text-align: center;
+	}
+
+	.contact-hero h1 {
+		font-size: 3.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.tagline {
+		font-size: 1.3rem;
+		opacity: 0.95;
+	}
+
+	.contact-grid {
+		display: grid;
+		grid-template-columns: 1.5fr 1fr;
+		gap: var(--spacing-xl);
+		margin-top: var(--spacing-lg);
+	}
+
+	.contact-form-section h2 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.contact-form-section > p {
+		color: #666;
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.contact-info h2 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.info-card {
+		background: var(--color-surface);
+		padding: var(--spacing-md);
+		border-radius: 8px;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.info-card h3 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-sm);
+		font-size: 1.2rem;
+	}
+
+	.info-card p {
+		color: #333;
+		line-height: 1.6;
+	}
+
+	.info-card a {
+		color: var(--color-accent);
+		font-weight: 600;
+	}
+
+	.info-note {
+		font-size: 0.9rem;
+		color: #666;
+		margin-top: var(--spacing-xs);
+	}
+
+	.social-links {
+		margin-top: var(--spacing-lg);
+	}
+
+	.social-links h3 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.social-icons {
+		display: flex;
+		gap: var(--spacing-md);
+	}
+
+	.social-icons a {
+		width: 50px;
+		height: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--color-surface);
+		border-radius: 50%;
+		font-size: 1.5rem;
+		transition: transform 0.2s ease;
+	}
+
+	.social-icons a:hover {
+		transform: scale(1.1);
+	}
+
+	.quick-faq {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: var(--spacing-lg);
+		margin-top: var(--spacing-xl);
+	}
+
+	.faq-item {
+		background: white;
+		padding: var(--spacing-lg);
+		border-radius: 8px;
+		box-shadow: var(--shadow-sm);
+	}
+
+	.faq-item h3 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-sm);
+		font-size: 1.1rem;
+	}
+
+	.faq-item p {
+		color: #666;
+		line-height: 1.6;
+	}
+
+	.bg-surface {
+		background-color: var(--color-surface);
+	}
+
+	.text-center {
+		text-align: center;
+	}
+
+	@media (max-width: 968px) {
+		.contact-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.contact-hero h1 {
+			font-size: 2.5rem;
+		}
+
+		.quick-faq {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

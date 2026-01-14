@@ -1,0 +1,234 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Servicios de Techos y Exteriores - KBTony" lang="es">
+	<main>
+		<!-- Hero Section -->
+		<section class="service-hero">
+			<div class="container">
+				<span class="category">Nuestros Servicios</span>
+				<h1>Techos y Exteriores</h1>
+				<p class="tagline">Proteja y embellezca su hogar con soluciones de techado y exteriores duraderas y de alta calidad.</p>
+			</div>
+		</section>
+
+		<!-- Service Overview -->
+		<section class="section">
+			<div class="container content-grid">
+				<div class="text-content">
+					<h2>Soluciones Exteriores Completas</h2>
+					<p>El exterior de su hogar es su primera línea de defensa contra los elementos. Proporcionamos servicios expertos de techado y exteriores que mejoran tanto la protección como el atractivo exterior.</p>
+					
+					<ul class="benefits-list">
+						<li>Reemplazo y reparación completa de techos</li>
+						<li>Materiales de techado premium (asfalto, metal, tejas)</li>
+						<li>Pintura y acabados exteriores</li>
+						<li>Instalación y reparación de revestimientos</li>
+						<li>Sistemas de canaletas y drenaje</li>
+						<li>Selladores resistentes a la intemperie</li>
+					</ul>
+				</div>
+				<div class="image-content">
+					<img src="/images/hero-kitchen.png" alt="Exterior del Hogar" />
+				</div>
+			</div>
+		</section>
+
+		<!-- Process Section -->
+		<section class="section bg-surface">
+			<div class="container">
+				<div class="section-header text-center">
+					<span class="subheading">Nuestro Proceso</span>
+					<h2>Trabajo Experto en Exteriores</h2>
+					<div class="divider"></div>
+				</div>
+				
+				<div class="process-grid">
+					<div class="process-step">
+						<div class="step-number">01</div>
+						<h3>Inspección y Evaluación</h3>
+						<p>Evaluación exhaustiva de su techo y exterior para identificar problemas y oportunidades.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">02</div>
+						<h3>Selección de Materiales</h3>
+						<p>Elija entre materiales duraderos y estéticamente agradables que se ajusten a su presupuesto.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">03</div>
+						<h3>Ejecución Profesional</h3>
+						<p>Instalación experta con atención a la protección climática y el atractivo visual.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">04</div>
+						<h3>Inspección Final</h3>
+						<p>Control de calidad completo para garantizar durabilidad y satisfacción.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="section cta-section">
+			<div class="container text-center">
+				<h2>Proteja Su Hogar Hoy</h2>
+				<p>Obtenga una inspección y estimación gratuitas para su proyecto de techado o exterior.</p>
+				<a href="/es#contact" class="btn btn-primary btn-large">Solicitar Inspección Gratuita</a>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.service-hero {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+		padding: 6rem 0 4rem;
+		text-align: center;
+	}
+
+	.category {
+		color: var(--color-accent);
+		text-transform: uppercase;
+		font-size: 0.9rem;
+		font-weight: 600;
+		letter-spacing: 2px;
+	}
+
+	.service-hero h1 {
+		font-size: 3.5rem;
+		margin: 1rem 0;
+	}
+
+	.tagline {
+		font-size: 1.3rem;
+		max-width: 700px;
+		margin: 0 auto;
+		opacity: 0.95;
+	}
+
+	.content-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--spacing-lg);
+		align-items: center;
+	}
+
+	.text-content h2 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.benefits-list {
+		list-style: none;
+		padding: 0;
+		margin-top: var(--spacing-md);
+	}
+
+	.benefits-list li {
+		padding: 0.75rem 0;
+		padding-left: 2rem;
+		position: relative;
+		line-height: 1.6;
+	}
+
+	.benefits-list li::before {
+		content: '✓';
+		position: absolute;
+		left: 0;
+		color: var(--color-accent);
+		font-weight: 700;
+		font-size: 1.2rem;
+	}
+
+	.image-content img {
+		width: 100%;
+		border-radius: 8px;
+		box-shadow: var(--shadow-lg);
+	}
+
+	.process-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: var(--spacing-lg);
+		margin-top: var(--spacing-lg);
+	}
+
+	.process-step {
+		text-align: center;
+		padding: var(--spacing-md);
+	}
+
+	.step-number {
+		font-size: 3rem;
+		font-weight: 700;
+		color: var(--color-accent);
+		opacity: 0.3;
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.process-step h3 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.cta-section {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+	}
+
+	.cta-section h2 {
+		color: white;
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.cta-section p {
+		font-size: 1.2rem;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.btn-large {
+		padding: 1.2rem 3rem;
+		font-size: 1.1rem;
+	}
+
+	.bg-surface {
+		background-color: var(--color-surface);
+	}
+
+	.subheading {
+		display: block;
+		color: var(--color-accent);
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		margin-bottom: var(--spacing-xs);
+		font-size: 0.9rem;
+	}
+
+	.divider {
+		width: 80px;
+		height: 3px;
+		background-color: var(--color-accent);
+		margin: var(--spacing-sm) auto var(--spacing-md);
+	}
+
+	.text-center {
+		text-align: center;
+	}
+
+	@media (max-width: 768px) {
+		.service-hero h1 {
+			font-size: 2.5rem;
+		}
+
+		.content-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.process-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

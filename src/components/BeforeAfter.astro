@@ -1,0 +1,176 @@
+---
+interface Props {
+  beforeImage: string;
+  afterImage: string;
+  beforeLabel?: string;
+  afterLabel?: string;
+}
+
+const { beforeImage, afterImage, beforeLabel = "Before", afterLabel = "After" } = Astro.props;
+---
+
+<div class="before-after-container">
+  <div class="comparison-slider">
+    <div class="images-wrapper">
+      <img src={beforeImage} alt={beforeLabel} class="before-image" />
+      <div class="after-image-wrapper">
+        <img src={afterImage} alt={afterLabel} class="after-image" />
+      </div>
+    </div>
+    <div class="slider-handle">
+      <div class="handle-button">⇔</div>
+    </div>
+  </div>
+  <div class="labels">
+    <span class="label before-label">{beforeLabel}</span>
+    <span class="label after-label">{afterLabel}</span>
+  </div>
+</div>
+
+<script>
+  function initializeSliders() {
+    const sliders = document.querySelectorAll('.before-after-container');
+    
+    sliders.forEach(container => {
+      const slider = container.querySelector('.comparison-slider');
+      const afterWrapper = container.querySelector('.after-image-wrapper');
+      const handle = container.querySelector('.slider-handle');
+      let isDragging = false;
+
+      function updateSlider(e: MouseEvent | TouchEvent) {
+        if (!isDragging && e.type === 'mousemove') return;
+        
+        const rect = slider.getBoundingClientRect();
+        const x = 'touches' in e ? e.touches[0].clientX : e.clientX;
+        let position = ((x - rect.left) / rect.width) * 100;
+        position = Math.max(0, Math.min(100, position));
+        
+        afterWrapper.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
+        handle.style.left = `${position}%`;
+      }
+
+      slider.addEventListener('mousedown', () => isDragging = true);
+      slider.addEventListener('mouseup', () => isDragging = false);
+      slider.addEventListener('mouseleave', () => isDragging = false);
+      slider.addEventListener('mousemove', updateSlider);
+      
+      slider.addEventListener('touchstart', () => isDragging = true);
+      slider.addEventListener('touchend', () => isDragging = false);
+      slider.addEventListener('touchmove', updateSlider);
+    });
+  }
+
+  // Initialize on load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeSliders);
+  } else {
+    initializeSliders();
+  }
+</script>
+
+<style>
+  .before-after-container {
+    margin: var(--spacing-lg) 0;
+  }
+
+  .comparison-slider {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: ew-resize;
+    user-select: none;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .images-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 66.67%; /* 3:2 aspect ratio */
+  }
+
+  .before-image,
+  .after-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .after-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: inset(0 50% 0 0);
+    transition: clip-path 0.1s ease;
+  }
+
+  .slider-handle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background-color: var(--color-accent);
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .handle-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    pointer-events: all;
+    cursor: ew-resize;
+  }
+
+  .labels {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: var(--spacing-sm) auto 0;
+    padding: 0 var(--spacing-sm);
+  }
+
+  .label {
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .before-label {
+    color: #999;
+  }
+
+  .after-label {
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 768px) {
+    .handle-button {
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+    }
+  }
+</style>

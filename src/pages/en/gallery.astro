@@ -1,0 +1,292 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Gallery - KBTony" lang="en">
+	<main>
+		<!-- Hero Section -->
+		<section class="gallery-hero">
+			<div class="container">
+				<h1>Our Portfolio</h1>
+				<p class="tagline">Explore our stunning kitchen, bathroom, and exterior transformations</p>
+			</div>
+		</section>
+
+		<!-- Gallery Content -->
+		<section class="section">
+			<div class="container">
+				<div class="gallery-intro">
+					<h2>Transform Your Space</h2>
+					<p>Browse our collection of completed projects and get inspired for your own home renovation. Each project showcases our commitment to quality craftsmanship and attention to detail.</p>
+				</div>
+
+				<!-- Filter Tabs -->
+				<div class="gallery-filters">
+					<button class="filter-btn active" data-category="all">All Projects</button>
+					<button class="filter-btn" data-category="kitchen">Kitchens</button>
+					<button class="filter-btn" data-category="bathroom">Bathrooms</button>
+					<button class="filter-btn" data-category="exterior">Exteriors</button>
+				</div>
+
+				<!-- Gallery Grid -->
+				<div class="gallery-grid">
+					<!-- Kitchen Projects -->
+					<div class="gallery-item" data-category="kitchen">
+						<img src="/images/kitchen-after.png" alt="Modern Kitchen Remodel" />
+						<div class="gallery-overlay">
+							<h3>Modern Kitchen Transformation</h3>
+							<p>Complete remodel with custom cabinets and quartz countertops</p>
+						</div>
+					</div>
+
+					<div class="gallery-item" data-category="kitchen">
+						<img src="/images/kitchen-l-shape.png" alt="L-Shaped Kitchen" />
+						<div class="gallery-overlay">
+							<h3>L-Shaped Kitchen Design</h3>
+							<p>Contemporary layout with premium appliances</p>
+						</div>
+					</div>
+
+					<div class="gallery-item" data-category="kitchen">
+						<img src="/images/kitchen-island.png" alt="Kitchen with Island" />
+						<div class="gallery-overlay">
+							<h3>Kitchen with Custom Island</h3>
+							<p>Spacious island with seating and storage</p>
+						</div>
+					</div>
+
+					<!-- Bathroom Projects -->
+					<div class="gallery-item" data-category="bathroom">
+						<img src="/images/bathroom-after.png" alt="Luxury Bathroom" />
+						<div class="gallery-overlay">
+							<h3>Luxury Master Bathroom</h3>
+							<p>Spa-like retreat with walk-in shower</p>
+						</div>
+					</div>
+
+					<div class="gallery-item" data-category="bathroom">
+						<img src="/images/bath-whole.png" alt="Complete Bathroom Remodel" />
+						<div class="gallery-overlay">
+							<h3>Complete Bathroom Renovation</h3>
+							<p>Modern fixtures and elegant tile work</p>
+						</div>
+					</div>
+
+					<div class="gallery-item" data-category="bathroom">
+						<img src="/images/bath-shower.png" alt="Walk-In Shower" />
+						<div class="gallery-overlay">
+							<h3>Walk-In Shower Installation</h3>
+							<p>Frameless glass with custom tile</p>
+						</div>
+					</div>
+
+					<!-- Exterior Projects -->
+					<div class="gallery-item" data-category="exterior">
+						<img src="/images/roof-new.png" alt="New Roof Installation" />
+						<div class="gallery-overlay">
+							<h3>Roof Replacement</h3>
+							<p>Durable shingles with enhanced protection</p>
+						</div>
+					</div>
+
+					<div class="gallery-item" data-category="exterior">
+						<img src="/images/siding-service.png" alt="Siding Installation" />
+						<div class="gallery-overlay">
+							<h3>Siding Upgrade</h3>
+							<p>Energy-efficient siding with modern appeal</p>
+						</div>
+					</div>
+
+					<div class="gallery-item" data-category="exterior">
+						<img src="/images/painting-service.png" alt="Exterior Painting" />
+						<div class="gallery-overlay">
+							<h3>Exterior Painting</h3>
+							<p>Fresh coat for enhanced curb appeal</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="section cta-section">
+			<div class="container text-center">
+				<h2>Ready to Create Your Dream Space?</h2>
+				<p>Let's bring your vision to life with our expert craftsmanship.</p>
+				<a href="/en/contact" class="btn btn-primary btn-large">Start Your Project</a>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<script>
+	// Gallery filtering
+	document.querySelectorAll('.filter-btn').forEach(btn => {
+		btn.addEventListener('click', () => {
+			const category = btn.dataset.category;
+			
+			// Update active button
+			document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+			btn.classList.add('active');
+			
+			// Filter items
+			document.querySelectorAll('.gallery-item').forEach(item => {
+				if (category === 'all' || item.dataset.category === category) {
+					item.style.display = 'block';
+				} else {
+					item.style.display = 'none';
+				}
+			});
+		});
+	});
+</script>
+
+<style>
+	.gallery-hero {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+		padding: 5rem 0 4rem;
+		text-align: center;
+	}
+
+	.gallery-hero h1 {
+		font-size: 3.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.tagline {
+		font-size: 1.3rem;
+		opacity: 0.95;
+	}
+
+	.gallery-intro {
+		text-align: center;
+		max-width: 700px;
+		margin: 0 auto var(--spacing-xl);
+	}
+
+	.gallery-intro h2 {
+		color: var(--color-primary);
+		font-size: 2.5rem;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.gallery-intro p {
+		font-size: 1.1rem;
+		color: #666;
+		line-height: 1.6;
+	}
+
+	.gallery-filters {
+		display: flex;
+		justify-content: center;
+		gap: var(--spacing-md);
+		margin: var(--spacing-xl) 0;
+		flex-wrap: wrap;
+	}
+
+	.filter-btn {
+		padding: 0.75rem 2rem;
+		background: white;
+		border: 2px solid var(--color-primary);
+		color: var(--color-primary);
+		border-radius: 25px;
+		font-weight: 600;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.filter-btn:hover, .filter-btn.active {
+		background: var(--color-primary);
+		color: white;
+	}
+
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+		gap: var(--spacing-lg);
+		margin-top: var(--spacing-xl);
+	}
+
+	.gallery-item {
+		position: relative;
+		overflow: hidden;
+		border-radius: 12px;
+		box-shadow: var(--shadow-md);
+		transition: transform 0.3s ease;
+		aspect-ratio: 4/3;
+	}
+
+	.gallery-item:hover {
+		transform: translateY(-8px);
+		box-shadow: var(--shadow-lg);
+	}
+
+	.gallery-item img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.gallery-overlay {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: linear-gradient(to top, rgba(0, 45, 98, 0.95), transparent);
+		padding: var(--spacing-lg);
+		color: white;
+		transform: translateY(100%);
+		transition: transform 0.3s ease;
+	}
+
+	.gallery-item:hover .gallery-overlay {
+		transform: translateY(0);
+	}
+
+	.gallery-overlay h3 {
+		color: white;
+		margin-bottom: var(--spacing-xs);
+		font-size: 1.3rem;
+	}
+
+	.gallery-overlay p {
+		color: rgba(255,255,255,0.9);
+		font-size: 0.95rem;
+	}
+
+	.cta-section {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+	}
+
+	.cta-section h2 {
+		color: white;
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.cta-section p {
+		font-size: 1.2rem;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.btn-large {
+		padding: 1.2rem 3rem;
+		font-size: 1.1rem;
+	}
+
+	.text-center {
+		text-align: center;
+	}
+
+	@media (max-width: 768px) {
+		.gallery-hero h1 {
+			font-size: 2.5rem;
+		}
+
+		.gallery-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

@@ -1,0 +1,385 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import BeforeAfter from '../../../components/BeforeAfter.astro';
+---
+
+<Layout title="Kitchen Remodeling Services - KBTony" lang="en">
+	<main>
+		<!-- Hero Section -->
+		<section class="service-hero">
+			<div class="container">
+				<span class="category">Our Services</span>
+				<h1>Kitchen Remodeling</h1>
+				<p class="tagline">Transform your kitchen into the heart of your home with custom design and expert craftsmanship.</p>
+			</div>
+		</section>
+
+		<!-- Service Overview -->
+		<section class="section">
+			<div class="container content-grid">
+				<div class="text-content">
+					<h2>Why Choose KBTony for Your Kitchen?</h2>
+					<p>Your kitchen is more than just a place to cook—it's where memories are made. Our team specializes in creating custom kitchens that blend functionality with stunning aesthetics.</p>
+					
+					<ul class="benefits-list">
+						<li>Custom cabinetry designed to your specifications</li>
+						<li>Premium countertop materials (granite, quartz, marble)</li>
+						<li>Modern appliance integration</li>
+						<li>Optimized layouts for workflow efficiency</li>
+						<li>Energy-efficient lighting solutions</li>
+					</ul>
+				</div>
+				<div class="image-content">
+					<img src="/images/hero-kitchen.png" alt="Luxury Kitchen" />
+				</div>
+			</div>
+		</section>
+
+		<!-- Kitchen Styles Section -->
+		<section class="section bg-surface">
+			<div class="container">
+				<div class="section-header text-center">
+					<span class="subheading">Kitchen Layouts</span>
+					<h2>We Specialize in All Kitchen Styles</h2>
+					<div class="divider"></div>
+					<p class="styles-intro">Whether you have a compact space or an open floor plan, we design kitchens that maximize efficiency and beauty.</p>
+				</div>
+				
+				<div class="styles-grid">
+					<div class="style-card">
+						<img src="/images/kitchen-l-shape.png" alt="L-Shaped Kitchen" />
+						<h3>L-Shaped Kitchen</h3>
+						<p>Perfect for corner spaces, offering an efficient work triangle with ample counter space and storage.</p>
+					</div>
+					<div class="style-card">
+						<img src="/images/kitchen-u-shape.png" alt="U-Shaped Kitchen" />
+						<h3>U-Shaped Kitchen</h3>
+						<p>Maximum efficiency with three walls of cabinetry, ideal for serious cooks who need plenty of workspace.</p>
+					</div>
+					<div class="style-card">
+						<img src="/images/kitchen-galley.png" alt="Galley Kitchen" />
+						<h3>Galley (Corridor) Kitchen</h3>
+						<p>Efficient parallel layout perfect for narrow spaces, maximizing every inch without sacrificing style.</p>
+					</div>
+					<div class="style-card">
+						<img src="/images/kitchen-island.png" alt="Kitchen with Island" />
+						<h3>Island Kitchen</h3>
+						<p>Open concept design with a central island for entertaining, extra seating, and additional storage.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Before & After Gallery -->
+		<section class="section">
+			<div class="container">
+				<div class="section-header text-center">
+					<span class="subheading">Real Transformations</span>
+					<h2>See Our Kitchen Renovations Come to Life</h2>
+					<div class="divider"></div>
+					<p class="section-description">Drag the slider to see the dramatic before and after transformations of our kitchen projects.</p>
+				</div>
+				
+				<BeforeAfter 
+					beforeImage="/images/kitchen-before.png"
+					afterImage="/images/kitchen-after.png"
+					beforeLabel="Before"
+					afterLabel="After"
+				/>
+
+				<div class="cta-inline">
+					<h3>Ready to Transform Your Kitchen?</h3>
+					<a href="/en#contact" class="btn btn-secondary btn-pulse">Get Free Estimate</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Process Section -->
+		<section class="section bg-surface">
+			<div class="container">
+				<div class="section-header text-center">
+					<span class="subheading">Our Process</span>
+					<h2>From Vision to Reality</h2>
+					<div class="divider"></div>
+				</div>
+				
+				<div class="process-grid">
+					<div class="process-step">
+						<div class="step-number">01</div>
+						<h3>Consultation & Design</h3>
+						<p>We listen to your needs, assess your space, and create a custom design that brings your vision to life.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">02</div>
+						<h3>Material Selection</h3>
+						<p>Choose from premium materials, finishes, and fixtures with expert guidance every step of the way.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">03</div>
+						<h3>Expert Installation</h3>
+						<p>Our skilled craftsmen bring your dream kitchen to life with precision and attention to detail.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">04</div>
+						<h3>Final Walkthrough</h3>
+						<p>We ensure every detail meets our high standards and your expectations before completion.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="section cta-section">
+			<div class="container text-center">
+				<h2>Ready to Start Your Kitchen Transformation?</h2>
+				<p>Schedule a free consultation with our design experts today.</p>
+				<a href="/en#contact" class="btn btn-primary btn-large">Get Your Free Quote</a>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.service-hero {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+		padding: 6rem 0 4rem;
+		text-align: center;
+	}
+
+	.category {
+		color: var(--color-accent);
+		text-transform: uppercase;
+		font-size: 0.9rem;
+		font-weight: 600;
+		letter-spacing: 2px;
+	}
+
+	.service-hero h1 {
+		font-size: 3.5rem;
+		margin: 1rem 0;
+	}
+
+	.tagline {
+		font-size: 1.3rem;
+		max-width: 700px;
+		margin: 0 auto;
+		opacity: 0.95;
+	}
+
+	.content-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--spacing-lg);
+		align-items: center;
+	}
+
+	.text-content h2 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.benefits-list {
+		list-style: none;
+		padding: 0;
+		margin-top: var(--spacing-md);
+	}
+
+	.benefits-list li {
+		padding: 0.75rem 0;
+		padding-left: 2rem;
+		position: relative;
+		line-height: 1.6;
+	}
+
+	.benefits-list li::before {
+		content: '✓';
+		position: absolute;
+		left: 0;
+		color: var(--color-accent);
+		font-weight: 700;
+		font-size: 1.2rem;
+	}
+
+	.image-content img {
+		width: 100%;
+		border-radius: 8px;
+		box-shadow: var(--shadow-lg);
+	}
+
+	.process-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: var(--spacing-lg);
+		margin-top: var(--spacing-lg);
+	}
+
+	.process-step {
+		text-align: center;
+		padding: var(--spacing-md);
+	}
+
+	.step-number {
+		font-size: 3rem;
+		font-weight: 700;
+		color: var(--color-accent);
+		opacity: 0.3;
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.process-step h3 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.cta-section {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+	}
+
+	.cta-section h2 {
+		color: white;
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.cta-section p {
+		font-size: 1.2rem;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.btn-large {
+		padding: 1.2rem 3rem;
+		font-size: 1.1rem;
+	}
+
+	.bg-surface {
+		background-color: var(--color-surface);
+	}
+
+	.subheading {
+		display: block;
+		color: var(--color-accent);
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		margin-bottom: var(--spacing-xs);
+		font-size: 0.9rem;
+	}
+
+	.divider {
+		width: 80px;
+		height: 3px;
+		background-color: var(--color-accent);
+		margin: var(--spacing-sm) auto var(--spacing-md);
+	}
+
+	.text-center {
+		text-align: center;
+	}
+
+	.styles-intro {
+		max-width: 700px;
+		margin: 0 auto var(--spacing-lg);
+		font-size: 1.1rem;
+		color: #666;
+	}
+
+	.styles-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: var(--spacing-md);
+		margin-top: var(--spacing-lg);
+	}
+
+	.style-card {
+		background: white;
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: var(--shadow-md);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.style-card:hover {
+		transform: translateY(-5px);
+		box-shadow: var(--shadow-lg);
+	}
+
+	.style-card img {
+		width: 100%;
+		height: 220px;
+		object-fit: cover;
+	}
+
+	.style-card h3 {
+		color: var(--color-primary);
+		padding: var(--spacing-sm) var(--spacing-md) 0;
+		font-size: 1.2rem;
+	}
+
+	.style-card p {
+		padding: 0 var(--spacing-md) var(--spacing-md);
+		color: #666;
+		line-height: 1.6;
+	}
+
+	.section-description {
+		max-width: 650px;
+		margin: 0 auto var(--spacing-md);
+		font-size: 1.05rem;
+		color: #666;
+	}
+
+	.cta-inline {
+		text-align: center;
+		margin-top: var(--spacing-xl);
+		padding: var(--spacing-lg);
+		background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+		border-radius: 12px;
+	}
+
+	.cta-inline h3 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-md);
+		font-size: 1.8rem;
+	}
+
+	.btn-secondary {
+		background-color: white;
+		color: var(--color-primary);
+		border: 2px solid var(--color-primary);
+	}
+
+	.btn-secondary:hover {
+		background-color: var(--color-primary);
+		color: white;
+	}
+
+	.btn-pulse {
+		animation: pulse 2s infinite;
+	}
+
+	@keyframes pulse {
+		0%, 100% {
+			transform: scale(1);
+			box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+		}
+		50% {
+			transform: scale(1.05);
+			box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.service-hero h1 {
+			font-size: 2.5rem;
+		}
+
+		.content-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.process-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
