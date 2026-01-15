@@ -1,6 +1,6 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import ContactForm from '../../components/ContactForm.astro';
+import Layout from "../../layouts/Layout.astro";
+import ContactForm from "../../components/ContactForm.astro";
 ---
 
 <Layout title="Contáctenos - KBTony" lang="es">
@@ -9,7 +9,10 @@ import ContactForm from '../../components/ContactForm.astro';
 		<section class="contact-hero">
 			<div class="container">
 				<h1>Contáctenos</h1>
-				<p class="tagline">¿Listo para transformar su hogar? Comencemos la conversación.</p>
+				<p class="tagline">
+					¿Listo para transformar su hogar? Comencemos la
+					conversación.
+				</p>
 			</div>
 		</section>
 
@@ -20,30 +23,40 @@ import ContactForm from '../../components/ContactForm.astro';
 					<!-- Contact Form -->
 					<div class="contact-form-section">
 						<h2>Envíenos un Mensaje</h2>
-						<p>Complete el formulario a continuación y nos comunicaremos con usted dentro de 24 horas.</p>
+						<p>
+							Complete el formulario a continuación y nos
+							comunicaremos con usted dentro de 24 horas.
+						</p>
 						<ContactForm />
 					</div>
 
 					<!-- Contact Info -->
 					<div class="contact-info">
 						<h2>Información de Contacto</h2>
-						
+
 						<div class="info-card">
 							<h3>📞 Teléfono</h3>
 							<p><a href="tel:5152075106">(515) 207-5106</a></p>
-							<p class="info-note">Lun-Vie: 8am - 6pm<br>Sáb: 9am - 4pm</p>
+							<p class="info-note">
+								Lun-Vie: 8am - 6pm<br />Sáb: 9am - 4pm
+							</p>
 						</div>
 
 						<div class="info-card">
 							<h3>📧 Correo Electrónico</h3>
-							<p><a href="mailto:info@kbtony.com">info@kbtony.com</a></p>
-							<p class="info-note">Respondemos dentro de 24 horas</p>
+							<p>
+								<a href="mailto:tony@kbtony.com"
+									>tony@kbtony.com</a>
+							</p>
+							<p class="info-note">
+								Respondemos dentro de 24 horas
+							</p>
 						</div>
 
 						<div class="info-card">
 							<h3>📍 Ubicación</h3>
-							<p>Servimos el Área Metropolitana</p>
-							<p class="info-note">Licencia en todos los condados</p>
+							<p>50 Millas Alrededor del Código Postal 50322</p>
+							<p class="info-note">Área de Des Moines, IA</p>
 						</div>
 
 						<div class="info-card">
@@ -66,48 +79,73 @@ import ContactForm from '../../components/ContactForm.astro';
 					</div>
 				</div>
 			</div>
-				</div>
-
-				<!-- Map Section -->
-				<div class="map-section">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190255.88566276707!2d-93.771963!3d41.591963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87ee99a4c1611ee7%3A0x710028512691e4b2!2sDes%20Moines%2C%20IA!5e0!3m2!1sen!2sus!4v1652731111111!5m2!1sen!2sus" width="100%" height="450" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-				</div>
-			</div>
 		</section>
 
-		<!-- FAQ Section -->
-		<section class="section bg-surface">
-			<div class="container">
-				<h2 class="text-center">Preguntas Frecuentes</h2>
-				<div class="quick-faq">
-					<div class="faq-item">
-						<h3>¿Ofrecen consultas gratuitas?</h3>
-						<p>¡Sí! Proporcionamos consultas gratuitas en el hogar para discutir su proyecto y proporcionar una cotización detallada.</p>
-					</div>
-					<div class="faq-item">
-						<h3>¿Cuánto tiempo toma una remodelación típica?</h3>
-						<p>Las remodelaciones de cocina típicamente toman 6-12 semanas, mientras que las renovaciones de baño toman 3-6 semanas dependiendo del alcance.</p>
-					</div>
-					<div class="faq-item">
-						<h3>¿Manejan los permisos?</h3>
-						<p>Absolutamente. Manejamos todos los permisos e inspecciones necesarias como parte de nuestro servicio integral.</p>
-					</div>
-					<div class="faq-item">
-						<h3>¿Qué áreas sirven?</h3>
-						<p>Servimos toda el Área Metropolitana y condados circundantes con licencia completa y seguro.</p>
-					</div>
-				</div>
-				<div class="text-center" style="margin-top: 2rem;">
-					<a href="/es/advice/faq" class="btn btn-primary">Ver Todas las Preguntas</a>
-				</div>
-			</div>
-		</section>
+		<!-- Map Section -->
+		<div class="map-section">
+			<iframe
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190255.88566276707!2d-93.771963!3d41.591963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87ee99a4c1611ee7%3A0x710028512691e4b2!2sDes%20Moines%2C%20IA!5e0!3m2!1sen!2sus!4v1652731111111!5m2!1sen!2sus"
+				width="100%"
+				height="450"
+				style="border:0; border-radius: 8px;"
+				allowfullscreen=""
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
 	</main>
 </Layout>
 
+<!-- FAQ Section -->
+<section class="section bg-surface">
+	<div class="container">
+		<h2 class="text-center">Preguntas Frecuentes</h2>
+		<div class="quick-faq">
+			<div class="faq-item">
+				<h3>¿Ofrecen consultas gratuitas?</h3>
+				<p>
+					¡Sí! Proporcionamos consultas gratuitas en el hogar para
+					discutir su proyecto y proporcionar una cotización
+					detallada.
+				</p>
+			</div>
+			<div class="faq-item">
+				<h3>¿Cuánto tiempo toma una remodelación típica?</h3>
+				<p>
+					Las remodelaciones de cocina típicamente toman 6-12 semanas,
+					mientras que las renovaciones de baño toman 3-6 semanas
+					dependiendo del alcance.
+				</p>
+			</div>
+			<div class="faq-item">
+				<h3>¿Manejan los permisos?</h3>
+				<p>
+					Absolutamente. Manejamos todos los permisos e inspecciones
+					necesarias como parte de nuestro servicio integral.
+				</p>
+			</div>
+			<div class="faq-item">
+				<h3>¿Qué áreas sirven?</h3>
+				<p>
+					Servimos un radio de 50 millas alrededor del código postal
+					50322 (Des Moines, IA) con licencia completa y seguro.
+				</p>
+			</div>
+		</div>
+		<div class="text-center" style="margin-top: 2rem;">
+			<a href="/es/advice/faq" class="btn btn-primary"
+				>Ver Todas las Preguntas</a
+			>
+		</div>
+	</div>
+</section>
+
 <style>
 	.contact-hero {
-		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		background: linear-gradient(
+			135deg,
+			var(--color-primary) 0%,
+			#001a3d 100%
+		);
 		color: white;
 		padding: 5rem 0 4rem;
 		text-align: center;

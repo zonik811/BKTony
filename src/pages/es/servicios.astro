@@ -1,12 +1,12 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import ServiceCard from '../../components/ServiceCard.astro';
-import heroKitchen from '../../assets/images/hero-kitchen.png';
-import bathroomService from '../../assets/images/bathroom-service.png';
-import roofAfter from '../../assets/images/roof-after.png';
-import flooringHero from '../../assets/images/flooring_hero.png';
-import deckHero from '../../assets/images/deck_hero.png';
-import paintingService from '../../assets/images/painting-service.png';
+import Layout from "../../layouts/Layout.astro";
+import ServiceCard from "../../components/ServiceCard.astro";
+import heroKitchen from "../../assets/images/hero-kitchen.png";
+import bathroomService from "../../assets/images/bathroom-service.png";
+import roofAfter from "../../assets/images/roof-after.png";
+import flooringHero from "../../assets/images/flooring_hero.png";
+import deckHero from "../../assets/images/deck_hero.png";
+import paintingService from "../../assets/images/painting-service.png";
 ---
 
 <Layout title="Nuestros Servicios - KBTony" lang="es">
@@ -15,7 +15,10 @@ import paintingService from '../../assets/images/painting-service.png';
 		<section class="services-hero">
 			<div class="container">
 				<h1>Nuestros Servicios Premium de Remodelación</h1>
-				<p class="tagline">Transforme su hogar con nuestros servicios expertos de renovación de cocinas, baños y exteriores</p>
+				<p class="tagline">
+					Transforme su hogar con nuestros servicios expertos de
+					renovación de cocinas, baños y exteriores
+				</p>
 			</div>
 		</section>
 
@@ -24,7 +27,11 @@ import paintingService from '../../assets/images/painting-service.png';
 			<div class="container">
 				<div class="services-intro">
 					<h2>Lo Que Hacemos Mejor</h2>
-					<p>Con años de experiencia e innumerables clientes satisfechos, nos especializamos en transformar hogares con artesanía de precisión y materiales premium.</p>
+					<p>
+						Con años de experiencia e innumerables clientes
+						satisfechos, nos especializamos en transformar hogares
+						con artesanía de precisión y materiales premium.
+					</p>
 				</div>
 
 				<div class="services-grid">
@@ -32,42 +39,36 @@ import paintingService from '../../assets/images/painting-service.png';
 						title="Remodelación de Cocinas"
 						description="Transformaciones completas de cocina con gabinetes personalizados, encimeras premium y electrodomésticos modernos."
 						icon="🍳"
-                        image={heroKitchen}
+						image={heroKitchen}
 						detailLink="/es/servicios/remodelacion-cocinas"
 					/>
 					<ServiceCard
 						title="Renovación de Baños"
 						description="Mejoras de baño de lujo con duchas walk-in, bañeras tipo spa y accesorios elegantes."
 						icon="🚿"
-                        image={bathroomService}
+						image={bathroomService}
 						detailLink="/es/servicios/renovacion-banos"
 					/>
-					<ServiceCard
-						title="Techos y Exteriores"
-						description="Soluciones de techado duraderas y mejoras exteriores que protegen y embellecen su hogar."
-						icon="🏠"
-                        image={roofAfter}
-						detailLink="/es/servicios/techos-exteriores"
-					/>
+
 					<ServiceCard
 						title="Pisos"
 						description="Instalación premium de madera, azulejos y vinilo de lujo para calidez y estilo."
 						icon="🪵"
-                        image={flooringHero}
+						image={flooringHero}
 						detailLink="/es/servicios/pisos"
 					/>
 					<ServiceCard
 						title="Decks y Terrazas"
 						description="Espacios de vida al aire libre personalizados, decks y pérgolas diseñados para extender su área de vida."
 						icon="🏗️"
-                        image={deckHero}
+						image={deckHero}
 						detailLink="/es/servicios/decks"
 					/>
 					<ServiceCard
 						title="Pintura Profesional"
-						description="Servicios de pintura interior y exterior impecables para renovar la apariencia de su hogar."
+						description="Servicios de pintura interior impecables para renovar la apariencia de su hogar."
 						icon="🖌️"
-                        image={paintingService}
+						image={paintingService}
 						detailLink="/es/servicios/pintura"
 					/>
 				</div>
@@ -83,32 +84,50 @@ import paintingService from '../../assets/images/painting-service.png';
 						<div class="benefit-card">
 							<div class="benefit-icon">✓</div>
 							<h3>Licenciados y Asegurados</h3>
-							<p>Contratistas totalmente licenciados con seguro integral para su tranquilidad.</p>
+							<p>
+								Contratistas totalmente licenciados con seguro
+								integral para su tranquilidad.
+							</p>
 						</div>
 						<div class="benefit-card">
 							<div class="benefit-icon">✓</div>
 							<h3>Materiales Premium</h3>
-							<p>Solo usamos materiales de alta calidad de marcas confiables para resultados duraderos.</p>
+							<p>
+								Solo usamos materiales de alta calidad de marcas
+								confiables para resultados duraderos.
+							</p>
 						</div>
 						<div class="benefit-card">
 							<div class="benefit-icon">✓</div>
 							<h3>Artesanía Experta</h3>
-							<p>Nuestro equipo calificado entrega atención al detalle en cada proyecto.</p>
+							<p>
+								Nuestro equipo calificado entrega atención al
+								detalle en cada proyecto.
+							</p>
 						</div>
 						<div class="benefit-card">
 							<div class="benefit-icon">✓</div>
 							<h3>Precios Transparentes</h3>
-							<p>Cotizaciones claras sin tarifas ocultas. Sabe exactamente lo que está pagando.</p>
+							<p>
+								Cotizaciones claras sin tarifas ocultas. Sabe
+								exactamente lo que está pagando.
+							</p>
 						</div>
 						<div class="benefit-card">
 							<div class="benefit-icon">✓</div>
 							<h3>Finalización a Tiempo</h3>
-							<p>Respetamos su tiempo con cronogramas realistas y gestión eficiente de proyectos.</p>
+							<p>
+								Respetamos su tiempo con cronogramas realistas y
+								gestión eficiente de proyectos.
+							</p>
 						</div>
 						<div class="benefit-card">
 							<div class="benefit-icon">✓</div>
 							<h3>Satisfacción Garantizada</h3>
-							<p>Respaldamos nuestro trabajo con garantías completas.</p>
+							<p>
+								Respaldamos nuestro trabajo con garantías
+								completas.
+							</p>
 						</div>
 					</div>
 				</div>
@@ -123,22 +142,34 @@ import paintingService from '../../assets/images/painting-service.png';
 					<div class="process-step">
 						<div class="step-number">1</div>
 						<h3>Consulta Gratuita</h3>
-						<p>Programe una reunión para discutir su visión y obtener una cotización detallada.</p>
+						<p>
+							Programe una reunión para discutir su visión y
+							obtener una cotización detallada.
+						</p>
 					</div>
 					<div class="process-step">
 						<div class="step-number">2</div>
 						<h3>Diseño y Planificación</h3>
-						<p>Trabaje con nuestro equipo para crear el diseño perfecto para su espacio.</p>
+						<p>
+							Trabaje con nuestro equipo para crear el diseño
+							perfecto para su espacio.
+						</p>
 					</div>
 					<div class="process-step">
 						<div class="step-number">3</div>
 						<h3>Instalación Experta</h3>
-						<p>Nuestros artesanos expertos dan vida a su visión con precisión.</p>
+						<p>
+							Nuestros artesanos expertos dan vida a su visión con
+							precisión.
+						</p>
 					</div>
 					<div class="process-step">
 						<div class="step-number">4</div>
 						<h3>Inspección Final</h3>
-						<p>Aseguramos que todo cumpla con nuestros altos estándares antes de completar.</p>
+						<p>
+							Aseguramos que todo cumpla con nuestros altos
+							estándares antes de completar.
+						</p>
 					</div>
 				</div>
 			</div>
@@ -148,8 +179,13 @@ import paintingService from '../../assets/images/painting-service.png';
 		<section class="section cta-section">
 			<div class="container text-center">
 				<h2>¿Listo para Transformar su Hogar?</h2>
-				<p>Obtenga una consulta gratuita y descubra cómo podemos dar vida a su visión.</p>
-				<a href="/es#contact" class="btn btn-primary btn-large">Obtenga Cotización Gratis</a>
+				<p>
+					Obtenga una consulta gratuita y descubra cómo podemos dar
+					vida a su visión.
+				</p>
+				<a href="/es#contact" class="btn btn-primary btn-large"
+					>Obtenga Cotización Gratis</a
+				>
 			</div>
 		</section>
 	</main>
@@ -158,7 +194,11 @@ import paintingService from '../../assets/images/painting-service.png';
 <style>
 	/* Same styles as English version */
 	.services-hero {
-		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		background: linear-gradient(
+			135deg,
+			var(--color-primary) 0%,
+			#001a3d 100%
+		);
 		color: white;
 		padding: 5rem 0 4rem;
 		text-align: center;
@@ -289,7 +329,11 @@ import paintingService from '../../assets/images/painting-service.png';
 	}
 
 	.cta-section {
-		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		background: linear-gradient(
+			135deg,
+			var(--color-primary) 0%,
+			#001a3d 100%
+		);
 		color: white;
 	}
 

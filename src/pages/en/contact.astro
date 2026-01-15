@@ -1,6 +1,6 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import ContactForm from '../../components/ContactForm.astro';
+import Layout from "../../layouts/Layout.astro";
+import ContactForm from "../../components/ContactForm.astro";
 ---
 
 <Layout title="Contact Us - KBTony" lang="en">
@@ -9,7 +9,9 @@ import ContactForm from '../../components/ContactForm.astro';
 		<section class="contact-hero">
 			<div class="container">
 				<h1>Get in Touch</h1>
-				<p class="tagline">Ready to transform your home? Let's start the conversation.</p>
+				<p class="tagline">
+					Ready to transform your home? Let's start the conversation.
+				</p>
 			</div>
 		</section>
 
@@ -20,30 +22,38 @@ import ContactForm from '../../components/ContactForm.astro';
 					<!-- Contact Form -->
 					<div class="contact-form-section">
 						<h2>Send Us a Message</h2>
-						<p>Fill out the form below and we'll get back to you within 24 hours.</p>
+						<p>
+							Fill out the form below and we'll get back to you
+							within 24 hours.
+						</p>
 						<ContactForm />
 					</div>
 
 					<!-- Contact Info -->
 					<div class="contact-info">
 						<h2>Contact Information</h2>
-						
+
 						<div class="info-card">
 							<h3>📞 Phone</h3>
 							<p><a href="tel:5152075106">(515) 207-5106</a></p>
-							<p class="info-note">Mon-Fri: 8am - 6pm<br>Sat: 9am - 4pm</p>
+							<p class="info-note">
+								Mon-Fri: 8am - 6pm<br />Sat: 9am - 4pm
+							</p>
 						</div>
 
 						<div class="info-card">
 							<h3>📧 Email</h3>
-							<p><a href="mailto:info@kbtony.com">info@kbtony.com</a></p>
+							<p>
+								<a href="mailto:tony@kbtony.com"
+									>tony@kbtony.com</a>
+							</p>
 							<p class="info-note">We respond within 24 hours</p>
 						</div>
 
 						<div class="info-card">
 							<h3>📍 Location</h3>
-							<p>Serving the Greater Metro Area</p>
-							<p class="info-note">Licensed in all counties</p>
+							<p>50 Miles Around ZIP 50322</p>
+							<p class="info-note">Des Moines, IA Area</p>
 						</div>
 
 						<div class="info-card">
@@ -66,48 +76,69 @@ import ContactForm from '../../components/ContactForm.astro';
 					</div>
 				</div>
 			</div>
-				</div>
-
-				<!-- Map Section -->
-				<div class="map-section">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190255.88566276707!2d-93.771963!3d41.591963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87ee99a4c1611ee7%3A0x710028512691e4b2!2sDes%20Moines%2C%20IA!5e0!3m2!1sen!2sus!4v1652731111111!5m2!1sen!2sus" width="100%" height="450" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-				</div>
-			</div>
 		</section>
 
-		<!-- FAQ Section -->
-		<section class="section bg-surface">
-			<div class="container">
-				<h2 class="text-center">Frequently Asked Questions</h2>
-				<div class="quick-faq">
-					<div class="faq-item">
-						<h3>Do you offer free consultations?</h3>
-						<p>Yes! We provide free in-home consultations to discuss your project and provide a detailed quote.</p>
-					</div>
-					<div class="faq-item">
-						<h3>How long does a typical remodel take?</h3>
-						<p>Kitchen remodels typically take 6-12 weeks, while bathroom renovations take 3-6 weeks depending on scope.</p>
-					</div>
-					<div class="faq-item">
-						<h3>Do you handle permits?</h3>
-						<p>Absolutely. We handle all necessary permits and inspections as part of our comprehensive service.</p>
-					</div>
-					<div class="faq-item">
-						<h3>What areas do you serve?</h3>
-						<p>We serve the entire Greater Metro Area and surrounding counties with full licensing and insurance.</p>
-					</div>
-				</div>
-				<div class="text-center" style="margin-top: 2rem;">
-					<a href="/en/advice/faq" class="btn btn-primary">View All FAQs</a>
-				</div>
-			</div>
-		</section>
+		<!-- Map Section -->
+		<div class="map-section">
+			<iframe
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190255.88566276707!2d-93.771963!3d41.591963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87ee99a4c1611ee7%3A0x710028512691e4b2!2sDes%20Moines%2C%20IA!5e0!3m2!1sen!2sus!4v1652731111111!5m2!1sen!2sus"
+				width="100%"
+				height="450"
+				style="border:0; border-radius: 8px;"
+				allowfullscreen=""
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
 	</main>
 </Layout>
 
+<!-- FAQ Section -->
+<section class="section bg-surface">
+	<div class="container">
+		<h2 class="text-center">Frequently Asked Questions</h2>
+		<div class="quick-faq">
+			<div class="faq-item">
+				<h3>Do you offer free consultations?</h3>
+				<p>
+					Yes! We provide free in-home consultations to discuss your
+					project and provide a detailed quote.
+				</p>
+			</div>
+			<div class="faq-item">
+				<h3>How long does a typical remodel take?</h3>
+				<p>
+					Kitchen remodels typically take 6-12 weeks, while bathroom
+					renovations take 3-6 weeks depending on scope.
+				</p>
+			</div>
+			<div class="faq-item">
+				<h3>Do you handle permits?</h3>
+				<p>
+					Absolutely. We handle all necessary permits and inspections
+					as part of our comprehensive service.
+				</p>
+			</div>
+			<div class="faq-item">
+				<h3>What areas do you serve?</h3>
+				<p>
+					We serve a 50-mile radius around ZIP code 50322 (Des Moines,
+					IA) with full licensing and insurance.
+				</p>
+			</div>
+		</div>
+		<div class="text-center" style="margin-top: 2rem;">
+			<a href="/en/advice/faq" class="btn btn-primary">View All FAQs</a>
+		</div>
+	</div>
+</section>
+
 <style>
 	.contact-hero {
-		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		background: linear-gradient(
+			135deg,
+			var(--color-primary) 0%,
+			#001a3d 100%
+		);
 		color: white;
 		padding: 5rem 0 4rem;
 		text-align: center;

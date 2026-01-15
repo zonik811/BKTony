@@ -1,52 +1,69 @@
 ---
-import '../styles/global.css';
-import '@fontsource/inter';
-import '@fontsource/roboto';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import "../styles/global.css";
+import "@fontsource/inter";
+import "@fontsource/roboto";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
-	title: string;
-	description?: string;
-	lang?: string;
+  title: string;
+  description?: string;
+  lang?: string;
 }
 
-const { title, description = "Expert Kitchen & Bathroom Remodeling in Des Moines, IA - KBTony", lang = "en" } = Astro.props;
+const {
+  title,
+  description = "Expert Kitchen & Bathroom Remodeling in Des Moines, IA - KBTony",
+  lang = "en",
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang={lang}>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
-        <meta name="keywords" content="kitchen remodeling des moines, bathroom renovation des moines, deck builders ankeny, flooring installation iowa, painting services des moines" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-        
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "GeneralContractor",
-          "name": "KBTony",
-          "image": "https://kbtony.com/images/hero-kitchen.png",
-          "telephone": "515-207-5106",
-          "email": "info@kbtony.com",
-          "address": {
-            "@type": "PostalAddress",
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="keywords"
+      content="kitchen remodeling des moines, bathroom renovation des moines, deck builders ankeny, flooring installation iowa, painting services des moines"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "GeneralContractor",
+        "name": "KBTony",
+        "image": "https://kbtony.com/images/hero-kitchen.png",
+        "telephone": "515-207-5106",
+        "email": "tony@kbtony.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Des Moines",
+          "addressRegion": "IA",
+          "postalCode": "50322",
+          "addressCountry": "US"
+        },
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "postalCode": "50322",
             "addressLocality": "Des Moines",
-            "addressRegion": "IA",
-            "addressCountry": "US"
+            "addressRegion": "IA"
           },
-          "areaServed": ["Des Moines", "Ankeny", "Urbandale", "West Des Moines", "Johnston"],
-          "priceRange": "$$"
-        }
-        </script>
-	</head>
-	<body>
+          "geoRadius": "50 miles"
+        },
+        "priceRange": "$$"
+      }
+    </script>
+  </head>
+  <body>
     <Header lang={lang} />
-		<slot />
+    <slot />
     <div class="mobile-sticky-bar">
       <a href="tel:5152075106" class="sticky-btn btn-call">
         <span class="icon">📞</span> Call Now
@@ -55,9 +72,9 @@ const { title, description = "Expert Kitchen & Bathroom Remodeling in Des Moines
         <span class="icon">💬</span> Text Us
       </a>
     </div>
-    
+
     <Footer lang={lang} />
-	</body>
+  </body>
 </html>
 
 <style is:global>
@@ -68,7 +85,7 @@ const { title, description = "Expert Kitchen & Bathroom Remodeling in Des Moines
     width: 100%;
     display: flex;
     z-index: 9999;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
     transform: translateY(100%);
     transition: transform 0.3s ease;
   }
@@ -105,7 +122,7 @@ const { title, description = "Expert Kitchen & Bathroom Remodeling in Des Moines
     .mobile-sticky-bar {
       transform: translateY(0);
     }
-    
+
     /* Add padding to body so content isn't covered */
     body {
       padding-bottom: 60px;
