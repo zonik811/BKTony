@@ -56,24 +56,30 @@ const afterSrc = typeof afterImage === "string" ? afterImage : afterImage.src;
 
       function updateSlider(e: MouseEvent | TouchEvent) {
         if (!isDragging && e.type === "mousemove") return;
+        if (!slider || !afterWrapper || !handle) return;
 
         const rect = slider.getBoundingClientRect();
         const x = "touches" in e ? e.touches[0].clientX : e.clientX;
         let position = ((x - rect.left) / rect.width) * 100;
         position = Math.max(0, Math.min(100, position));
 
-        afterWrapper.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
-        handle.style.left = `${position}%`;
+        (afterWrapper as HTMLElement).style.clipPath =
+          `inset(0 ${100 - position}% 0 0)`;
+        (handle as HTMLElement).style.left = `${position}%`;
       }
 
       slider.addEventListener("mousedown", () => (isDragging = true));
       slider.addEventListener("mouseup", () => (isDragging = false));
       slider.addEventListener("mouseleave", () => (isDragging = false));
-      slider.addEventListener("mousemove", updateSlider);
+      slider.addEventListener("mousemove", updateSlider as EventListener);
 
-      slider.addEventListener("touchstart", () => (isDragging = true));
+      slider.addEventListener("touchstart", () => (isDragging = true), {
+        passive: true,
+      });
       slider.addEventListener("touchend", () => (isDragging = false));
-      slider.addEventListener("touchmove", updateSlider);
+      slider.addEventListener("touchmove", updateSlider as EventListener, {
+        passive: true,
+      });
     });
   }
 
