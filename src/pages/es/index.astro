@@ -2,17 +2,25 @@
 import Layout from '../../layouts/Layout.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
 import ContactForm from '../../components/ContactForm.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import heroKitchen from '../../assets/images/hero-kitchen.png';
+import bathroomService from '../../assets/images/bathroom-service.png';
+import roofAfter from '../../assets/images/roof-after.png';
+import flooringHero from '../../assets/images/flooring_hero.png';
+import deckHero from '../../assets/images/deck_hero.png';
+import paintingService from '../../assets/images/painting-service.png';
+import publicidad1 from '../../assets/images/publicidad1.jpeg';
 ---
 
 <Layout title="KBTony - Cocinas y Baños de Lujo" lang="es">
 	<main>
 		<!-- Hero Section -->
-		<section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/hero-kitchen.png');">
+		<section class="hero" style={`background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${heroKitchen.src});`}>
 			<div class="container hero-content">
 				<h1>Transforme Su Hogar con <span class="text-accent">Elegancia</span></h1>
 				<p>Servicios de Remodelación de Cocinas y Baños de Primera Clase.</p>
 				<div class="cta-group">
-					<a href="/es/contacto" class="btn btn-primary">Solicitar Presupuesto</a>
+					<a href="/es#contact" class="btn btn-primary btn-large btn-pulse">Obtenga Cotización Gratis</a>
 					<a href="/es/servicios" class="btn btn-outline">Nuestros Servicios</a>
 				</div>
 			</div>
@@ -20,11 +28,18 @@ import ContactForm from '../../components/ContactForm.astro';
 
         <!-- About Section -->
         <section class="section bg-surface" id="about">
-            <div class="container text-center">
-                <span class="subheading">Sobre Nosotros</span>
-                <h2>Experimente el Arte de Vivir</h2>
-                <div class="divider"></div>
-                <p class="lead">En KBTony, no solo renovamos; revitalizamos. Especializados en remodelación de cocinas y baños de alta gama, damos vida a su visión con precisión, materiales de calidad y un estilo atemporal.</p>
+            <div class="container">
+                <div class="about-grid">
+                    <div class="text-center">
+                        <span class="subheading">Sobre Nosotros</span>
+                        <h2>Experimente el Arte de Vivir</h2>
+                        <div class="divider"></div>
+                        <p class="lead">En KBTony, no solo renovamos; revitalizamos. Especializados en remodelación de cocinas y baños de alta gama, damos vida a su visión con precisión, materiales de calidad y un estilo atemporal.</p>
+                    </div>
+                    <div class="about-image">
+                         <img src={publicidad1.src} alt="KBTony Vehículo de Servicio" class="rounded-shadow" />
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -40,24 +55,45 @@ import ContactForm from '../../components/ContactForm.astro';
 					<ServiceCard 
 						title="Remodelación de Cocinas" 
 						description="Gabinetes personalizados, encimeras de piedra y electrodomésticos modernos diseñados para el artista culinario."
-						image="/images/hero-kitchen.png"
+						image={heroKitchen}
 						detailLink="/es/servicios/remodelacion-cocinas"
 					/>
 					<ServiceCard 
 						title="Renovación de Baños" 
 						description="Retiros estilo spa con duchas a ras de suelo, bañeras independientes e iluminación ambiental."
-						image="/images/bathroom-service.png"
+						image={bathroomService}
 						detailLink="/es/servicios/renovacion-banos"
 					/>
 					<ServiceCard 
 						title="Techos y Exteriores" 
 						description="Soluciones de techado duraderas y estéticas que protegen y embellecen su hogar."
-                        image="/images/hero-kitchen.png"
+                        image={roofAfter}
 						detailLink="/es/servicios/techos-exteriores"
+					/>
+					<ServiceCard 
+						title="Pisos" 
+						description="Instalación premium de madera, baldosas y vinilo de lujo."
+                        image={flooringHero}
+						detailLink="/es/servicios/pisos"
+					/>
+					<ServiceCard 
+						title="Decks y Terrazas" 
+						description="Espacios de vida al aire libre personalizados, decks y pérgolas."
+                        image={deckHero}
+						detailLink="/es/servicios/decks"
+					/>
+					<ServiceCard 
+						title="Pintura Profesional" 
+						description="Servicios de pintura interior y exterior impecables para renovar su hogar."
+                        image={paintingService}
+						detailLink="/es/servicios/pintura"
 					/>
 				</div>
 			</div>
 		</section>
+
+		<!-- Testimonials Section -->
+		<Testimonials lang="es" />
 
         <!-- Gallery Section (Placeholder for now) -->
         <section class="section bg-surface" id="gallery">
@@ -85,7 +121,7 @@ import ContactForm from '../../components/ContactForm.astro';
 						<p>¿Listo para transformar su espacio? Utilice el formulario para solicitar una consulta y presupuesto gratuitos.</p>
                         <div class="info-list">
                             <div class="info-item">
-                                <strong>Teléfono:</strong> (555) 123-4567
+                                <strong>Teléfono:</strong> (515) 207-5106
                             </div>
                             <div class="info-item">
                                 <strong>Email:</strong> info@kbtony.com
@@ -246,5 +282,33 @@ import ContactForm from '../../components/ContactForm.astro';
     .info-item {
         margin-top: var(--spacing-md);
         font-size: 1.1rem;
+    }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        align-items: center;
+    }
+
+    @media (min-width: 768px) {
+        .about-grid {
+            grid-template-columns: 1fr 1fr;
+            text-align: left;
+        }
+        .about-grid .text-center {
+            text-align: left;
+        }
+        .about-grid .divider {
+             margin-left: 0;
+        }
+    }
+
+    .rounded-shadow {
+        border-radius: 8px;
+        box-shadow: var(--shadow-lg);
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
     }
 </style>

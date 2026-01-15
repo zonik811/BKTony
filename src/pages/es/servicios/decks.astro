@@ -1,0 +1,250 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Construcción de Decks y Terrazas - KBTony" lang="es">
+	<main>
+		<!-- Hero Section -->
+		<section class="service-hero">
+			<div class="container">
+				<span class="category">Nuestros Servicios</span>
+				<h1>Decks y Terrazas Personalizados</h1>
+				<p class="tagline">Expanda su espacio vital al aire libre con un hermoso deck o terraza personalizado.</p>
+			</div>
+		</section>
+
+		<!-- Service Overview -->
+		<section class="section">
+			<div class="container content-grid">
+				<div class="text-content">
+					<h2>Especialistas en Espacios Exteriores</h2>
+					<p>Diseñamos y construimos decks y terrazas personalizados que mejoran el valor de su hogar y su estilo de vida. Desde materiales compuestos hasta madera natural, creamos espacios exteriores duraderos para entretenerse y relajarse.</p>
+					
+					<ul class="benefits-list">
+						<li>Diseño y construcción de decks personalizados</li>
+						<li>Opciones de compuesto (Trex) y madera natural</li>
+						<li>Patios de adoquines y concreto estampado</li>
+						<li>Pérgolas y estructuras de sombra</li>
+						<li>Barandillas, escaleras e iluminación</li>
+					</ul>
+				</div>
+				<div class="image-content">
+					<img src="/images/deck_hero.png" alt="Deck y Terraza Personalizados" />
+				</div>
+			</div>
+		</section>
+
+		<!-- Materials Section -->
+		<section class="section bg-surface">
+			<div class="container">
+				<div class="section-header text-center">
+					<span class="subheading">Opciones</span>
+					<h2>Materiales para Decks</h2>
+					<div class="divider"></div>
+					<p class="styles-intro">Le ayudamos a elegir el mejor material por durabilidad, estética y mantenimiento.</p>
+				</div>
+				
+				<div class="styles-grid">
+					<div class="style-card">
+						<div class="card-icon">🏗️</div>
+						<h3>Compuesto (Trex)</h3>
+						<p>Bajo mantenimiento, alta durabilidad y resistente a la decoloración, manchas y moho. Opción ecológica.</p>
+					</div>
+					<div class="style-card">
+						<div class="card-icon">🪵</div>
+						<h3>Madera Tratada</h3>
+						<p>Aspecto clásico y asequible. Duradera y fuerte, perfecta para una estética de deck tradicional.</p>
+					</div>
+					<div class="style-card">
+						<div class="card-icon">🌲</div>
+						<h3>Cedro y Secoya</h3>
+						<p>Belleza natural con resistencia incorporada a la podredumbre y los insectos. Aspecto y sensación premium.</p>
+					</div>
+					<div class="style-card">
+						<div class="card-icon">🧱</div>
+						<h3>Piedra y Adoquines</h3>
+						<p>Para patios y espacios a nivel del suelo. Duraderos, elegantes y prácticamente libres de mantenimiento.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="section cta-section">
+			<div class="container text-center">
+				<h2>¿Soñando con un Nuevo Deck?</h2>
+				<p>Programe una consulta de diseño gratuita y un presupuesto hoy.</p>
+				<a href="/es/contacto" class="btn btn-primary btn-large">Obtener Presupuesto Gratis</a>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	/* Same styles as other service pages */
+	.service-hero {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+		padding: 6rem 0 4rem;
+		text-align: center;
+	}
+
+	.category {
+		color: var(--color-accent);
+		text-transform: uppercase;
+		font-size: 0.9rem;
+		font-weight: 600;
+		letter-spacing: 2px;
+	}
+
+	.service-hero h1 {
+		font-size: 3.5rem;
+		margin: 1rem 0;
+	}
+
+	.tagline {
+		font-size: 1.3rem;
+		max-width: 700px;
+		margin: 0 auto;
+		opacity: 0.95;
+	}
+
+	.content-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--spacing-lg);
+		align-items: center;
+	}
+
+	.text-content h2 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.benefits-list {
+		list-style: none;
+		padding: 0;
+		margin-top: var(--spacing-md);
+	}
+
+	.benefits-list li {
+		padding: 0.75rem 0;
+		padding-left: 2rem;
+		position: relative;
+		line-height: 1.6;
+	}
+
+	.benefits-list li::before {
+		content: '✓';
+		position: absolute;
+		left: 0;
+		color: var(--color-accent);
+		font-weight: 700;
+		font-size: 1.2rem;
+	}
+
+	.image-content img {
+		width: 100%;
+		border-radius: 8px;
+		box-shadow: var(--shadow-lg);
+	}
+
+	.cta-section {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+	}
+
+	.cta-section h2 {
+		color: white;
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.cta-section p {
+		font-size: 1.2rem;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.btn-large {
+		padding: 1.2rem 3rem;
+		font-size: 1.1rem;
+	}
+
+	.bg-surface {
+		background-color: var(--color-surface);
+	}
+
+	.subheading {
+		display: block;
+		color: var(--color-accent);
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		margin-bottom: var(--spacing-xs);
+		font-size: 0.9rem;
+	}
+
+	.divider {
+		width: 80px;
+		height: 3px;
+		background-color: var(--color-accent);
+		margin: var(--spacing-sm) auto var(--spacing-md);
+	}
+
+	.text-center {
+		text-align: center;
+	}
+
+	.styles-intro {
+		max-width: 700px;
+		margin: 0 auto var(--spacing-lg);
+		font-size: 1.1rem;
+		color: #666;
+	}
+
+	.styles-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: var(--spacing-md);
+		margin-top: var(--spacing-lg);
+	}
+
+	.style-card {
+		background: white;
+		border-radius: 8px;
+		padding: var(--spacing-lg);
+		box-shadow: var(--shadow-md);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		text-align: center;
+	}
+
+	.style-card:hover {
+		transform: translateY(-5px);
+		box-shadow: var(--shadow-lg);
+	}
+
+	.card-icon {
+		font-size: 3rem;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.style-card h3 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-sm);
+		font-size: 1.2rem;
+	}
+
+	.style-card p {
+		color: #666;
+		line-height: 1.6;
+	}
+
+	@media (max-width: 768px) {
+		.service-hero h1 {
+			font-size: 2.5rem;
+		}
+
+		.content-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

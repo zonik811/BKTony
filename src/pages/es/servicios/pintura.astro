@@ -1,0 +1,285 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Servicios Profesionales de Pintura - KBTony" lang="es">
+	<main>
+		<!-- Hero Section -->
+		<section class="service-hero">
+			<div class="container">
+				<span class="category">Nuestros Servicios</span>
+				<h1>Pintura Profesional</h1>
+				<p class="tagline">Transforme su hogar con servicios de pintura interior y exterior impecables.</p>
+			</div>
+		</section>
+
+		<!-- Service Overview -->
+		<section class="section">
+			<div class="container content-grid">
+				<div class="text-content">
+					<h2>Expertos en Interior y Exterior</h2>
+					<p>Una capa fresca de pintura es la forma más rentable de revitalizar su hogar. Nuestros pintores profesionales entregan líneas nítidas, acabados lisos y resultados duraderos tanto para proyectos interiores como exteriores.</p>
+					
+					<ul class="benefits-list">
+						<li>Pintura interior (paredes, techos, molduras)</li>
+						<li>Pintura exterior de casas</li>
+						<li>Restauración y pintura de gabinetes</li>
+						<li>Barnizado de decks y cercas</li>
+						<li>Reparación de paneles de yeso y texturizado</li>
+						<li>Consulta de color disponible</li>
+					</ul>
+				</div>
+				<div class="image-content">
+					<img src="/images/painting-service.png" alt="Pintura Profesional" />
+				</div>
+			</div>
+		</section>
+
+		<!-- Painting Services Section -->
+		<section class="section bg-surface">
+			<div class="container">
+				<div class="section-header text-center">
+					<span class="subheading">Servicios</span>
+					<h2>Soluciones Completas de Pintura</h2>
+					<div class="divider"></div>
+					<p class="styles-intro">Manejamos todo, desde habitaciones individuales hasta transformaciones de toda la casa.</p>
+				</div>
+				
+				<div class="styles-grid">
+					<div class="style-card">
+						<div class="card-icon">🏠</div>
+						<h3>Pintura Interior</h3>
+						<p>Paredes, techos, puertas y molduras. Protegemos sus muebles y pisos para un proceso limpio.</p>
+					</div>
+					<div class="style-card">
+						<div class="card-icon">🌦️</div>
+						<h3>Pintura Exterior</h3>
+						<p>Proteja su hogar de los elementos con pinturas de alta calidad resistentes a la intemperie y una preparación adecuada.</p>
+					</div>
+					<div class="style-card">
+						<div class="card-icon">🖌️</div>
+						<h3>Restauración de Gabinetes</h3>
+						<p>Actualice sus gabinetes de cocina o baño con un acabado de fábrica por una fracción del costo de reemplazo.</p>
+					</div>
+					<div class="style-card">
+						<div class="card-icon">🪵</div>
+						<h3>Barnizado y Sellado</h3>
+						<p>Mejore y proteja decks de madera natural, cercas y pérgolas del sol y el daño del agua.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Process Section -->
+		<section class="section">
+			<div class="container">
+				<div class="section-header text-center">
+					<span class="subheading">Nuestro Proceso</span>
+					<h2>El Acabado Perfecto Siempre</h2>
+					<div class="divider"></div>
+				</div>
+				
+				<div class="process-grid">
+					<div class="process-step">
+						<div class="step-number">01</div>
+						<h3>Preparar y Proteger</h3>
+						<p>Cubrimos muebles, encintamos bordes y reparamos imperfecciones de la superficie antes de abrir una lata.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">02</div>
+						<h3>Imprimar y Pintar</h3>
+						<p>Aplicamos imprimación de alta calidad y pintura premium para una cobertura uniforme y durabilidad.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">03</div>
+						<h3>Acabado Detallado</h3>
+						<p>Líneas limpias y superficies lisas. Inspeccionamos cada pulgada para asegurar la perfección.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">04</div>
+						<h3>Limpieza</h3>
+						<p>Dejamos su espacio más limpio de lo que lo encontramos, listo para que lo disfrute.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="section cta-section">
+			<div class="container text-center">
+				<h2>¿Listo para Refrescar Su Hogar?</h2>
+				<p>Obtenga un presupuesto gratuito para su proyecto de pintura interior o exterior.</p>
+				<a href="/es/contacto" class="btn btn-primary btn-large">Solicitar Presupuesto Gratis</a>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	/* Same styles as other service pages */
+	.service-hero {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+		padding: 6rem 0 4rem;
+		text-align: center;
+	}
+
+	.category {
+		color: var(--color-accent);
+		text-transform: uppercase;
+		font-size: 0.9rem;
+		font-weight: 600;
+		letter-spacing: 2px;
+	}
+
+	.service-hero h1 {
+		font-size: 3.5rem;
+		margin: 1rem 0;
+	}
+
+	.tagline {
+		font-size: 1.3rem;
+		max-width: 700px;
+		margin: 0 auto;
+		opacity: 0.95;
+	}
+
+	.content-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--spacing-lg);
+		align-items: center;
+	}
+
+	.text-content h2 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.benefits-list {
+		list-style: none;
+		padding: 0;
+		margin-top: var(--spacing-md);
+	}
+
+	.benefits-list li {
+		padding: 0.75rem 0;
+		padding-left: 2rem;
+		position: relative;
+		line-height: 1.6;
+	}
+
+	.benefits-list li::before {
+		content: '✓';
+		position: absolute;
+		left: 0;
+		color: var(--color-accent);
+		font-weight: 700;
+		font-size: 1.2rem;
+	}
+
+	.image-content img {
+		width: 100%;
+		border-radius: 8px;
+		box-shadow: var(--shadow-lg);
+	}
+
+	.cta-section {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+	}
+
+	.cta-section h2 {
+		color: white;
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.cta-section p {
+		font-size: 1.2rem;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.btn-large {
+		padding: 1.2rem 3rem;
+		font-size: 1.1rem;
+	}
+
+	.bg-surface {
+		background-color: var(--color-surface);
+	}
+
+	.subheading {
+		display: block;
+		color: var(--color-accent);
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		margin-bottom: var(--spacing-xs);
+		font-size: 0.9rem;
+	}
+
+	.divider {
+		width: 80px;
+		height: 3px;
+		background-color: var(--color-accent);
+		margin: var(--spacing-sm) auto var(--spacing-md);
+	}
+
+	.text-center {
+		text-align: center;
+	}
+
+	.styles-intro {
+		max-width: 700px;
+		margin: 0 auto var(--spacing-lg);
+		font-size: 1.1rem;
+		color: #666;
+	}
+
+	.styles-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: var(--spacing-md);
+		margin-top: var(--spacing-lg);
+	}
+
+	.style-card {
+		background: white;
+		border-radius: 8px;
+		padding: var(--spacing-lg);
+		box-shadow: var(--shadow-md);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		text-align: center;
+	}
+
+	.style-card:hover {
+		transform: translateY(-5px);
+		box-shadow: var(--shadow-lg);
+	}
+
+	.card-icon {
+		font-size: 3rem;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.style-card h3 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-sm);
+		font-size: 1.2rem;
+	}
+
+	.style-card p {
+		color: #666;
+		line-height: 1.6;
+	}
+
+	@media (max-width: 768px) {
+		.service-hero h1 {
+			font-size: 2.5rem;
+		}
+
+		.content-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

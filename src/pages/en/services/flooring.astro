@@ -1,0 +1,309 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Flooring Services - KBTony" lang="en">
+	<main>
+		<!-- Hero Section -->
+		<section class="service-hero">
+			<div class="container">
+				<span class="category">Our Services</span>
+				<h1>Premium Flooring Solutions</h1>
+				<p class="tagline">Elevate your home with durable, stylish, and expertly installed flooring.</p>
+			</div>
+		</section>
+
+		<!-- Service Overview -->
+		<section class="section">
+			<div class="container content-grid">
+				<div class="text-content">
+					<h2>Expert Flooring Installation</h2>
+					<p>The right flooring transforms the look and feel of your entire home. Whether you love the warmth of hardwood, the durability of tile, or the value of luxury vinyl, we provide flawless installation.</p>
+					
+					<ul class="benefits-list">
+						<li>Professional installation of all flooring types</li>
+						<li>Old flooring removal and disposal</li>
+						<li>Subfloor preparation and repair</li>
+						<li>Trim and molding installation</li>
+						<li>Wide selection of materials and finishes</li>
+					</ul>
+				</div>
+				<div class="image-content">
+					<img src="/images/flooring_hero.png" alt="Luxury Flooring Installation" />
+				</div>
+			</div>
+		</section>
+
+		<!-- Flooring Types Section -->
+		<section class="section bg-surface">
+			<div class="container">
+				<div class="section-header text-center">
+					<span class="subheading">Materials</span>
+					<h2>We Install All Flooring Types</h2>
+					<div class="divider"></div>
+					<p class="styles-intro">Choose the perfect material for your lifestyle and budget.</p>
+				</div>
+				
+				<div class="styles-grid">
+					<div class="style-card">
+						<div class="card-icon">🪵</div>
+						<h3>Hardwood</h3>
+						<p>Timeless beauty and durability. We install solid and engineered hardwood in various wood species.</p>
+					</div>
+					<div class="style-card">
+						<div class="card-icon">🏺</div>
+						<h3>Tile & Stone</h3>
+						<p>Perfect for bathrooms and kitchens. Ceramic, porcelain, marble, and natural stone options.</p>
+					</div>
+					<div class="style-card">
+						<div class="card-icon">🛡️</div>
+						<h3>Luxury Vinyl Plank (LVP)</h3>
+						<p>Waterproof, scratch-resistant, and realistic wood look. Ideal for pets and high-traffic areas.</p>
+					</div>
+					<div class="style-card">
+						<div class="card-icon">🧶</div>
+						<h3>Carpet</h3>
+						<p>Soft and comfortable. Professional installation for bedrooms, living rooms, and basements.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Process Section -->
+		<section class="section">
+			<div class="container">
+				<div class="section-header text-center">
+					<span class="subheading">Our Process</span>
+					<h2>Simple & Stress-Free Installation</h2>
+					<div class="divider"></div>
+				</div>
+				
+				<div class="process-grid">
+					<div class="process-step">
+						<div class="step-number">01</div>
+						<h3>Consultation</h3>
+						<p>We measure your space and help you select the perfect materials.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">02</div>
+						<h3>Preparation</h3>
+						<p>We remove old flooring and prepare the subfloor for a perfect foundation.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">03</div>
+						<h3>Installation</h3>
+						<p>Our experts install your new floors with precision and care.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">04</div>
+						<h3>Clean Up</h3>
+						<p>We leave your home spotless so you can enjoy your new floors immediately.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="section cta-section">
+			<div class="container text-center">
+				<h2>Ready for New Floors?</h2>
+				<p>Get a free estimate for your flooring project today.</p>
+				<a href="/en/contact" class="btn btn-primary btn-large">Request Free Quote</a>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	/* Content styles reused from other service pages */
+	.service-hero {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+		padding: 6rem 0 4rem;
+		text-align: center;
+	}
+
+	.category {
+		color: var(--color-accent);
+		text-transform: uppercase;
+		font-size: 0.9rem;
+		font-weight: 600;
+		letter-spacing: 2px;
+	}
+
+	.service-hero h1 {
+		font-size: 3.5rem;
+		margin: 1rem 0;
+	}
+
+	.tagline {
+		font-size: 1.3rem;
+		max-width: 700px;
+		margin: 0 auto;
+		opacity: 0.95;
+	}
+
+	.content-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--spacing-lg);
+		align-items: center;
+	}
+
+	.text-content h2 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.benefits-list {
+		list-style: none;
+		padding: 0;
+		margin-top: var(--spacing-md);
+	}
+
+	.benefits-list li {
+		padding: 0.75rem 0;
+		padding-left: 2rem;
+		position: relative;
+		line-height: 1.6;
+	}
+
+	.benefits-list li::before {
+		content: '✓';
+		position: absolute;
+		left: 0;
+		color: var(--color-accent);
+		font-weight: 700;
+		font-size: 1.2rem;
+	}
+
+	.image-content img {
+		width: 100%;
+		border-radius: 8px;
+		box-shadow: var(--shadow-lg);
+	}
+
+	.process-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: var(--spacing-lg);
+		margin-top: var(--spacing-lg);
+	}
+
+	.process-step {
+		text-align: center;
+		padding: var(--spacing-md);
+	}
+
+	.step-number {
+		font-size: 3rem;
+		font-weight: 700;
+		color: var(--color-accent);
+		opacity: 0.3;
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.process-step h3 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.cta-section {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+	}
+
+	.cta-section h2 {
+		color: white;
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.cta-section p {
+		font-size: 1.2rem;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.btn-large {
+		padding: 1.2rem 3rem;
+		font-size: 1.1rem;
+	}
+
+	.bg-surface {
+		background-color: var(--color-surface);
+	}
+
+	.subheading {
+		display: block;
+		color: var(--color-accent);
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		margin-bottom: var(--spacing-xs);
+		font-size: 0.9rem;
+	}
+
+	.divider {
+		width: 80px;
+		height: 3px;
+		background-color: var(--color-accent);
+		margin: var(--spacing-sm) auto var(--spacing-md);
+	}
+
+	.text-center {
+		text-align: center;
+	}
+
+	.styles-intro {
+		max-width: 700px;
+		margin: 0 auto var(--spacing-lg);
+		font-size: 1.1rem;
+		color: #666;
+	}
+
+	.styles-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: var(--spacing-md);
+		margin-top: var(--spacing-lg);
+	}
+
+	.style-card {
+		background: white;
+		border-radius: 8px;
+		padding: var(--spacing-lg);
+		box-shadow: var(--shadow-md);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		text-align: center;
+	}
+
+	.style-card:hover {
+		transform: translateY(-5px);
+		box-shadow: var(--shadow-lg);
+	}
+
+	.card-icon {
+		font-size: 3rem;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.style-card h3 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-sm);
+		font-size: 1.2rem;
+	}
+
+	.style-card p {
+		color: #666;
+		line-height: 1.6;
+	}
+
+	@media (max-width: 768px) {
+		.service-hero h1 {
+			font-size: 2.5rem;
+		}
+
+		.content-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

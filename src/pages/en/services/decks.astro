@@ -1,0 +1,250 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Deck & Patio Builders - KBTony" lang="en">
+	<main>
+		<!-- Hero Section -->
+		<section class="service-hero">
+			<div class="container">
+				<span class="category">Our Services</span>
+				<h1>Custom Decks & Patios</h1>
+				<p class="tagline">Expand your living space outdoors with a beautiful custom deck or patio.</p>
+			</div>
+		</section>
+
+		<!-- Service Overview -->
+		<section class="section">
+			<div class="container content-grid">
+				<div class="text-content">
+					<h2>Outdoor Living Specialists</h2>
+					<p>We design and build custom decks and patios that enhance your home's value and your lifestyle. From composite materials to natural wood, we create durable outdoor spaces for entertaining and relaxing.</p>
+					
+					<ul class="benefits-list">
+						<li>Custom deck design and construction</li>
+						<li>Composite (Trex) and natural wood options</li>
+						<li>Patio pavers and stamped concrete</li>
+						<li>Pergolas and shade structures</li>
+						<li>Railings, stairs, and lighting</li>
+					</ul>
+				</div>
+				<div class="image-content">
+					<img src="/images/deck_hero.png" alt="Custom Deck and Patio" />
+				</div>
+			</div>
+		</section>
+
+		<!-- Materials Section -->
+		<section class="section bg-surface">
+			<div class="container">
+				<div class="section-header text-center">
+					<span class="subheading">Options</span>
+					<h2>Decking Materials</h2>
+					<div class="divider"></div>
+					<p class="styles-intro">We help you choose the best material for durability, aesthetics, and maintenance.</p>
+				</div>
+				
+				<div class="styles-grid">
+					<div class="style-card">
+						<div class="card-icon">🏗️</div>
+						<h3>Composite (Trex)</h3>
+						<p>Low maintenance, high durability, and resistant to fading, staining, and mold. Eco-friendly option.</p>
+					</div>
+					<div class="style-card">
+						<div class="card-icon">🪵</div>
+						<h3>Pressure Treated Wood</h3>
+						<p>Classic look and affordable. Durable and strong, perfect for a traditional deck aesthetic.</p>
+					</div>
+					<div class="style-card">
+						<div class="card-icon">🌲</div>
+						<h3>Cedar & Redwood</h3>
+						<p>Natural beauty with built-in resistance to rot and insects. Premium look and feel.</p>
+					</div>
+					<div class="style-card">
+						<div class="card-icon">🧱</div>
+						<h3>Stone & Pavers</h3>
+						<p>For patios and ground-level spaces. Long-lasting, elegant, and virtually maintenance-free.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="section cta-section">
+			<div class="container text-center">
+				<h2>Dreaming of a New Deck?</h2>
+				<p>Schedule a free design consultation and estimate today.</p>
+				<a href="/en/contact" class="btn btn-primary btn-large">Get Free Estimate</a>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	/* Same styles as other service pages */
+	.service-hero {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+		padding: 6rem 0 4rem;
+		text-align: center;
+	}
+
+	.category {
+		color: var(--color-accent);
+		text-transform: uppercase;
+		font-size: 0.9rem;
+		font-weight: 600;
+		letter-spacing: 2px;
+	}
+
+	.service-hero h1 {
+		font-size: 3.5rem;
+		margin: 1rem 0;
+	}
+
+	.tagline {
+		font-size: 1.3rem;
+		max-width: 700px;
+		margin: 0 auto;
+		opacity: 0.95;
+	}
+
+	.content-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--spacing-lg);
+		align-items: center;
+	}
+
+	.text-content h2 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.benefits-list {
+		list-style: none;
+		padding: 0;
+		margin-top: var(--spacing-md);
+	}
+
+	.benefits-list li {
+		padding: 0.75rem 0;
+		padding-left: 2rem;
+		position: relative;
+		line-height: 1.6;
+	}
+
+	.benefits-list li::before {
+		content: '✓';
+		position: absolute;
+		left: 0;
+		color: var(--color-accent);
+		font-weight: 700;
+		font-size: 1.2rem;
+	}
+
+	.image-content img {
+		width: 100%;
+		border-radius: 8px;
+		box-shadow: var(--shadow-lg);
+	}
+
+	.cta-section {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+	}
+
+	.cta-section h2 {
+		color: white;
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.cta-section p {
+		font-size: 1.2rem;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.btn-large {
+		padding: 1.2rem 3rem;
+		font-size: 1.1rem;
+	}
+
+	.bg-surface {
+		background-color: var(--color-surface);
+	}
+
+	.subheading {
+		display: block;
+		color: var(--color-accent);
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		margin-bottom: var(--spacing-xs);
+		font-size: 0.9rem;
+	}
+
+	.divider {
+		width: 80px;
+		height: 3px;
+		background-color: var(--color-accent);
+		margin: var(--spacing-sm) auto var(--spacing-md);
+	}
+
+	.text-center {
+		text-align: center;
+	}
+
+	.styles-intro {
+		max-width: 700px;
+		margin: 0 auto var(--spacing-lg);
+		font-size: 1.1rem;
+		color: #666;
+	}
+
+	.styles-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: var(--spacing-md);
+		margin-top: var(--spacing-lg);
+	}
+
+	.style-card {
+		background: white;
+		border-radius: 8px;
+		padding: var(--spacing-lg);
+		box-shadow: var(--shadow-md);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		text-align: center;
+	}
+
+	.style-card:hover {
+		transform: translateY(-5px);
+		box-shadow: var(--shadow-lg);
+	}
+
+	.card-icon {
+		font-size: 3rem;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.style-card h3 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-sm);
+		font-size: 1.2rem;
+	}
+
+	.style-card p {
+		color: #666;
+		line-height: 1.6;
+	}
+
+	@media (max-width: 768px) {
+		.service-hero h1 {
+			font-size: 2.5rem;
+		}
+
+		.content-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

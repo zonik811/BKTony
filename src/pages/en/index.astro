@@ -2,17 +2,25 @@
 import Layout from '../../layouts/Layout.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
 import ContactForm from '../../components/ContactForm.astro';
+import Testimonials from '../../components/Testimonials.astro';
+import heroKitchen from '../../assets/images/hero-kitchen.png';
+import bathroomService from '../../assets/images/bathroom-service.png';
+import roofAfter from '../../assets/images/roof-after.png';
+import flooringHero from '../../assets/images/flooring_hero.png';
+import deckHero from '../../assets/images/deck_hero.png';
+import paintingService from '../../assets/images/painting-service.png';
+import publicidad1 from '../../assets/images/publicidad1.jpeg';
 ---
 
 <Layout title="KBTony - Premium Kitchens & Bathrooms" lang="en">
 	<main>
 		<!-- Hero Section -->
-		<section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/hero-kitchen.png');">
+		<section class="hero" style={`background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${heroKitchen.src});`}>
 			<div class="container hero-content">
 				<h1>Transform Your Home with <span class="text-accent">Elegance</span></h1>
 				<p>Premier Kitchen & Bathroom Remodeling Services.</p>
 				<div class="cta-group">
-					<a href="/en/contact" class="btn btn-primary">Get a Quote</a>
+					<a href="/en#contact" class="btn btn-primary btn-large btn-pulse">Get Free Quote</a>
 					<a href="/en/services" class="btn btn-outline">Our Services</a>
 				</div>
 			</div>
@@ -20,11 +28,18 @@ import ContactForm from '../../components/ContactForm.astro';
 
         <!-- About Section -->
         <section class="section bg-surface" id="about">
-            <div class="container text-center">
-                <span class="subheading">About Us</span>
-                <h2>Experience the Art of Living</h2>
-                <div class="divider"></div>
-                <p class="lead">At KBTony, we don't just renovate; we revitalize. Specializing in high-end kitchen and bathroom remodeling, we bring your vision to life with precision, quality materials, and timeless style.</p>
+            <div class="container">
+                <div class="about-grid">
+                    <div class="text-center">
+                        <span class="subheading">About Us</span>
+                        <h2>Experience the Art of Living</h2>
+                        <div class="divider"></div>
+                        <p class="lead">At KBTony, we don't just renovate; we revitalize. Specializing in high-end kitchen and bathroom remodeling, we bring your vision to life with precision, quality materials, and timeless style.</p>
+                    </div>
+                    <div class="about-image">
+                         <img src={publicidad1.src} alt="KBTony Service Van" class="rounded-shadow" />
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -40,24 +55,45 @@ import ContactForm from '../../components/ContactForm.astro';
 					<ServiceCard 
 						title="Kitchen Remodeling" 
 						description="Custom cabinetry, stone countertops, and modern appliances designed for the culinary artist."
-						image="/images/hero-kitchen.png"
+						image={heroKitchen}
 						detailLink="/en/services/kitchen-remodeling"
 					/>
 					<ServiceCard 
 						title="Bathroom Renovation" 
 						description="Spa-like retreats with walk-in showers, freestanding tubs, and ambient lighting."
-						image="/images/bathroom-service.png"
+						image={bathroomService}
 						detailLink="/en/services/bathroom-renovation"
 					/>
 					<ServiceCard 
 						title="Roofing & Exterior" 
 						description="Durable and aesthetic roofing solutions that protect and beautify your home."
-                        image="/images/hero-kitchen.png"
+                        image={roofAfter}
 						detailLink="/en/services/roofing-exterior"
+					/>
+					<ServiceCard 
+						title="Flooring" 
+						description="Premium hardwood, tile, and luxury vinyl plank installation."
+                        image={flooringHero}
+						detailLink="/en/services/flooring"
+					/>
+					<ServiceCard 
+						title="Decks & Patios" 
+						description="Custom outdoor living spaces, decks, and pergolas designed for entertainment."
+                        image={deckHero}
+						detailLink="/en/services/decks"
+					/>
+					<ServiceCard 
+						title="Professional Painting" 
+						description="Flawless interior and exterior painting services to refresh your home."
+                        image={paintingService}
+						detailLink="/en/services/painting"
 					/>
 				</div>
 			</div>
 		</section>
+
+		<!-- Testimonials Section -->
+		<Testimonials lang="en" />
 
         <!-- Gallery Section (Placeholder for now) -->
         <section class="section bg-surface" id="gallery">
@@ -85,7 +121,7 @@ import ContactForm from '../../components/ContactForm.astro';
 						<p>Ready to transform your space? Use the form to request a free consultation and quote.</p>
                         <div class="info-list">
                             <div class="info-item">
-                                <strong>Phone:</strong> (555) 123-4567
+                                <strong>Phone:</strong> (515) 207-5106
                             </div>
                             <div class="info-item">
                                 <strong>Email:</strong> info@kbtony.com
@@ -248,4 +284,31 @@ import ContactForm from '../../components/ContactForm.astro';
         font-size: 1.1rem;
     }
 
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        align-items: center;
+    }
+
+    @media (min-width: 768px) {
+        .about-grid {
+            grid-template-columns: 1fr 1fr;
+            text-align: left;
+        }
+        .about-grid .text-center {
+            text-align: left;
+        }
+        .about-grid .divider {
+             margin-left: 0;
+        }
+    }
+
+    .rounded-shadow {
+        border-radius: 8px;
+        box-shadow: var(--shadow-lg);
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
 </style>

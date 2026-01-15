@@ -30,7 +30,7 @@ import ContactForm from '../../components/ContactForm.astro';
 						
 						<div class="info-card">
 							<h3>📞 Phone</h3>
-							<p><a href="tel:5551234567">(555) 123-4567</a></p>
+							<p><a href="tel:5152075106">(515) 207-5106</a></p>
 							<p class="info-note">Mon-Fri: 8am - 6pm<br>Sat: 9am - 4pm</p>
 						</div>
 
@@ -64,6 +64,13 @@ import ContactForm from '../../components/ContactForm.astro';
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+				</div>
+
+				<!-- Map Section -->
+				<div class="map-section">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190255.88566276707!2d-93.771963!3d41.591963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87ee99a4c1611ee7%3A0x710028512691e4b2!2sDes%20Moines%2C%20IA!5e0!3m2!1sen!2sus!4v1652731111111!5m2!1sen!2sus" width="100%" height="450" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 				</div>
 			</div>
 		</section>
@@ -234,6 +241,13 @@ import ContactForm from '../../components/ContactForm.astro';
 		.contact-grid {
 			grid-template-columns: 1fr;
 		}
+	}
+
+	.map-section {
+		margin-top: var(--spacing-xl);
+		box-shadow: var(--shadow-md);
+		border-radius: 8px;
+		overflow: hidden;
 	}
 
 	@media (max-width: 768px) {

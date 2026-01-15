@@ -32,7 +32,7 @@ const t = lang === 'es' ? content.es : content.en;
     
     <div class="footer-contact">
       <h3>{t.contact}</h3>
-      <p>Phone: (555) 123-4567</p>
+      <p>Phone: (515) 207-5106</p>
       <p>Email: info@kbtony.com</p>
       <p>USA</p>
     </div>
@@ -67,6 +67,24 @@ const t = lang === 'es' ? content.es : content.en;
           loading="lazy" 
           referrerpolicy="no-referrer-when-downgrade">
         </iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust Badges -->
+  <div class="footer-badges">
+    <div class="container badges-grid">
+      <div class="badge">
+        <span class="badge-icon">🛡️</span>
+        <span>Licensed & Insured</span>
+      </div>
+      <div class="badge">
+        <span class="badge-icon">📍</span>
+        <span>Serving Des Moines Metro</span>
+      </div>
+      <div class="badge">
+        <span class="badge-icon">⭐</span>
+        <span>Satisfaction Guaranteed</span>
       </div>
     </div>
   </div>
@@ -202,5 +220,33 @@ const t = lang === 'es' ? content.es : content.en;
     text-align: center;
     font-size: 0.9rem;
     opacity: 0.7;
+  }
+
+  .footer-badges {
+    background: #111;
+    padding: var(--spacing-md) 0;
+    border-top: 1px solid #333;
+  }
+
+  .badges-grid {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ccc;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .badge-icon {
+    font-size: 1.2rem;
   }
 </style>

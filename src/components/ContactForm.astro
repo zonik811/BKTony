@@ -30,33 +30,36 @@ const t = lang === 'es' ? labels.es : labels.en;
 <form class="contact-form" id="quote-form">
   <div class="form-group">
     <label for="name">{t.name}</label>
-    <input type="text" id="name" name="name" required />
+    <input type="text" id="name" name="name" required placeholder={lang === 'es' ? 'Su nombre' : 'Your name'} />
   </div>
 
   <div class="form-grid">
     <div class="form-group">
-      <label for="email">{t.email}</label>
-      <input type="email" id="email" name="email" required />
+      <label for="phone">{t.phone}</label>
+      <input type="tel" id="phone" name="phone" required placeholder="(515) 207-5106" />
     </div>
     <div class="form-group">
-      <label for="phone">{t.phone}</label>
-      <input type="tel" id="phone" name="phone" required />
+      <label for="zip">{lang === 'es' ? 'Código Postal' : 'ZIP Code'}</label>
+      <input type="text" id="zip" name="zip" required placeholder="50309" />
     </div>
   </div>
 
   <div class="form-group">
-    <label for="service">{t.service}</label>
-    <select id="service" name="service">
-      <option value="kitchen">{lang === 'es' ? 'Remodelación de Cocina' : 'Kitchen Remodeling'}</option>
-      <option value="bathroom">{lang === 'es' ? 'Remodelación de Baño' : 'Bathroom Remodeling'}</option>
-      <option value="roofing">{lang === 'es' ? 'Techado' : 'Roofing'}</option>
+    <label for="projectType">{t.service}</label>
+    <select id="projectType" name="projectType" required>
+      <option value="" disabled selected>{lang === 'es' ? 'Seleccione tipo de proyecto' : 'Select project type'}</option>
+      <option value="kitchen">{lang === 'es' ? 'Cocina' : 'Kitchen'}</option>
+      <option value="bathroom">{lang === 'es' ? 'Baño' : 'Bathroom'}</option>
+      <option value="flooring">{lang === 'es' ? 'Pisos' : 'Flooring'}</option>
+      <option value="deck">{lang === 'es' ? 'Deck / Terraza' : 'Deck'}</option>
+      <option value="painting">{lang === 'es' ? 'Pintura' : 'Painting'}</option>
       <option value="other">{lang === 'es' ? 'Otro' : 'Other'}</option>
     </select>
   </div>
 
   <div class="form-group">
-    <label for="message">{t.message}</label>
-    <textarea id="message" name="message" rows="4"></textarea>
+    <label for="description">{lang === 'es' ? 'Descripción Breve (Opcional)' : 'Brief Description (Optional)'}</label>
+    <input type="text" id="description" name="description" placeholder={lang === 'es' ? 'Ej: Gabinetes nuevos' : 'Ex: New cabinets'} />
   </div>
 
   <button type="submit" class="submit-btn">{t.submit}</button>

@@ -1,6 +1,12 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import BeforeAfter from '../../../components/BeforeAfter.astro';
+import { Image } from 'astro:assets';
+import heroKitchen from '../../../assets/images/hero-kitchen.png';
+import kitchenLShape from '../../../assets/images/kitchen-l-shape.png';
+import kitchenUShape from '../../../assets/images/kitchen-u-shape.png';
+import kitchenGalley from '../../../assets/images/kitchen-galley.png';
+import kitchenIsland from '../../../assets/images/kitchen-island.png';
 ---
 
 <Layout title="Kitchen Remodeling Services - KBTony" lang="en">
@@ -30,7 +36,7 @@ import BeforeAfter from '../../../components/BeforeAfter.astro';
 					</ul>
 				</div>
 				<div class="image-content">
-					<img src="/images/hero-kitchen.png" alt="Luxury Kitchen" />
+					<Image src={heroKitchen} alt="Luxury Kitchen" />
 				</div>
 			</div>
 		</section>
@@ -47,22 +53,22 @@ import BeforeAfter from '../../../components/BeforeAfter.astro';
 				
 				<div class="styles-grid">
 					<div class="style-card">
-						<img src="/images/kitchen-l-shape.png" alt="L-Shaped Kitchen" />
+						<Image src={kitchenLShape} alt="L-Shaped Kitchen" />
 						<h3>L-Shaped Kitchen</h3>
 						<p>Perfect for corner spaces, offering an efficient work triangle with ample counter space and storage.</p>
 					</div>
 					<div class="style-card">
-						<img src="/images/kitchen-u-shape.png" alt="U-Shaped Kitchen" />
+						<Image src={kitchenUShape} alt="U-Shaped Kitchen" />
 						<h3>U-Shaped Kitchen</h3>
 						<p>Maximum efficiency with three walls of cabinetry, ideal for serious cooks who need plenty of workspace.</p>
 					</div>
 					<div class="style-card">
-						<img src="/images/kitchen-galley.png" alt="Galley Kitchen" />
+						<Image src={kitchenGalley} alt="Galley Kitchen" />
 						<h3>Galley (Corridor) Kitchen</h3>
 						<p>Efficient parallel layout perfect for narrow spaces, maximizing every inch without sacrificing style.</p>
 					</div>
 					<div class="style-card">
-						<img src="/images/kitchen-island.png" alt="Kitchen with Island" />
+						<Image src={kitchenIsland} alt="Kitchen with Island" />
 						<h3>Island Kitchen</h3>
 						<p>Open concept design with a central island for entertaining, extra seating, and additional storage.</p>
 					</div>

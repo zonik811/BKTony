@@ -1,6 +1,12 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
+import heroKitchen from '../../assets/images/hero-kitchen.png';
+import bathroomService from '../../assets/images/bathroom-service.png';
+import roofAfter from '../../assets/images/roof-after.png';
+import flooringHero from '../../assets/images/flooring_hero.png';
+import deckHero from '../../assets/images/deck_hero.png';
+import paintingService from '../../assets/images/painting-service.png';
 ---
 
 <Layout title="Our Services - KBTony" lang="en">
@@ -26,19 +32,43 @@ import ServiceCard from '../../components/ServiceCard.astro';
 						title="Kitchen Remodeling"
 						description="Complete kitchen transformations with custom cabinets, premium countertops, and modern appliances."
 						icon="🍳"
+                        image={heroKitchen}
 						detailLink="/en/services/kitchen-remodeling"
 					/>
 					<ServiceCard
 						title="Bathroom Renovation"
 						description="Luxury bathroom upgrades featuring walk-in showers, spa tubs, and elegant fixtures."
 						icon="🚿"
+                        image={bathroomService}
 						detailLink="/en/services/bathroom-renovation"
 					/>
 					<ServiceCard
 						title="Roofing & Exterior"
 						description="Durable roofing solutions and exterior improvements that protect and beautify your home."
 						icon="🏠"
+                        image={roofAfter}
 						detailLink="/en/services/roofing-exterior"
+					/>
+					<ServiceCard
+						title="Flooring"
+						description="Premium hardwood, tile, and luxury vinyl plank installation for warmth and style."
+						icon="🪵"
+                        image={flooringHero}
+						detailLink="/en/services/flooring"
+					/>
+					<ServiceCard
+						title="Decks & Patios"
+						description="Custom outdoor living spaces, decks, and pergolas designed to extend your living area."
+						icon="🏗️"
+                        image={deckHero}
+						detailLink="/en/services/decks"
+					/>
+					<ServiceCard
+						title="Professional Painting"
+						description="Flawless interior and exterior painting services to refresh your home's appearance."
+						icon="🖌️"
+                        image={paintingService}
+						detailLink="/en/services/painting"
 					/>
 				</div>
 			</div>

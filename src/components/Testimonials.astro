@@ -1,0 +1,180 @@
+---
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+
+const testimonials = {
+  en: [
+    {
+      name: "Sarah J.",
+      location: "West Des Moines",
+      quote: "Transformed our 90s kitchen into a modern masterpiece. The team was professional, clean, and finished on time. Highly recommend!",
+      rating: 5,
+      type: "Kitchen Remodel"
+    },
+    {
+      name: "Mike T.",
+      location: "Ankeny",
+      quote: "We hired KBTony for a master bathroom renovation. The attention to detail in the tile work is incredible. exceeded our expectations.",
+      rating: 5,
+      type: "Bathroom Renovation"
+    },
+    {
+      name: "Emily R.",
+      location: "Urbandale",
+      quote: "Great communication throughout the deck project. We love our new outdoor living space. It's exactly what we wanted for summer.",
+      rating: 5,
+      type: "Custom Deck"
+    }
+  ],
+  es: [
+    {
+      name: "Sarah J.",
+      location: "West Des Moines",
+      quote: "Transformaron nuestra cocina de los 90 en una obra maestra moderna. El equipo fue profesional, limpio y terminó a tiempo. ¡Altamente recomendado!",
+      rating: 5,
+      type: "Remodelación de Cocina"
+    },
+    {
+      name: "Mike T.",
+      location: "Ankeny",
+      quote: "Contratamos a KBTony para una renovación del baño principal. La atención al detalle en el trabajo de los azulejos es increíble. Superó nuestras expectativas.",
+      rating: 5,
+      type: "Renovación de Baño"
+    },
+    {
+      name: "Emily R.",
+      location: "Urbandale",
+      quote: "Gran comunicación durante todo el proyecto del deck. Nos encanta nuestro nuevo espacio al aire libre. Es exactamente lo que queríamos para el verano.",
+      rating: 5,
+      type: "Deck Personalizado"
+    }
+  ]
+};
+
+const items = lang === 'es' ? testimonials.es : testimonials.en;
+const title = lang === 'es' ? 'Lo Que Dicen Nuestros Clientes' : 'What Our Clients Say';
+const subtitle = lang === 'es' ? 'Testimonios' : 'Testimonials';
+---
+
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="subheading">{subtitle}</span>
+      <h2>{title}</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="testimonials-grid">
+      {items.map((item) => (
+        <div class="testimonial-card">
+          <div class="stars">{'★'.repeat(item.rating)}</div>
+          <p class="quote">"{item.quote}"</p>
+          <div class="author">
+            <span class="name">{item.name}</span>
+            <span class="location">{item.location}</span>
+          </div>
+          <span class="project-tag">{item.type}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-surface);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .subheading {
+    display: block;
+    color: var(--color-accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: var(--spacing-xs);
+    font-size: 0.9rem;
+  }
+
+  .section-header h2 {
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .divider {
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-accent);
+    margin: 0 auto;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .stars {
+    color: #ffd700;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
+
+  .quote {
+    font-style: italic;
+    color: var(--color-text-main);
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+
+  .author {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .name {
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .location {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .project-tag {
+    display: inline-block;
+    background-color: #f0f4f8;
+    color: var(--color-primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    align-self: flex-start;
+  }
+</style>

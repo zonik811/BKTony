@@ -1,6 +1,12 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
+import heroKitchen from '../../assets/images/hero-kitchen.png';
+import bathroomService from '../../assets/images/bathroom-service.png';
+import roofAfter from '../../assets/images/roof-after.png';
+import flooringHero from '../../assets/images/flooring_hero.png';
+import deckHero from '../../assets/images/deck_hero.png';
+import paintingService from '../../assets/images/painting-service.png';
 ---
 
 <Layout title="Nuestros Servicios - KBTony" lang="es">
@@ -26,19 +32,43 @@ import ServiceCard from '../../components/ServiceCard.astro';
 						title="Remodelación de Cocinas"
 						description="Transformaciones completas de cocina con gabinetes personalizados, encimeras premium y electrodomésticos modernos."
 						icon="🍳"
+                        image={heroKitchen}
 						detailLink="/es/servicios/remodelacion-cocinas"
 					/>
 					<ServiceCard
 						title="Renovación de Baños"
 						description="Mejoras de baño de lujo con duchas walk-in, bañeras tipo spa y accesorios elegantes."
 						icon="🚿"
+                        image={bathroomService}
 						detailLink="/es/servicios/renovacion-banos"
 					/>
 					<ServiceCard
 						title="Techos y Exteriores"
 						description="Soluciones de techado duraderas y mejoras exteriores que protegen y embellecen su hogar."
 						icon="🏠"
+                        image={roofAfter}
 						detailLink="/es/servicios/techos-exteriores"
+					/>
+					<ServiceCard
+						title="Pisos"
+						description="Instalación premium de madera, azulejos y vinilo de lujo para calidez y estilo."
+						icon="🪵"
+                        image={flooringHero}
+						detailLink="/es/servicios/pisos"
+					/>
+					<ServiceCard
+						title="Decks y Terrazas"
+						description="Espacios de vida al aire libre personalizados, decks y pérgolas diseñados para extender su área de vida."
+						icon="🏗️"
+                        image={deckHero}
+						detailLink="/es/servicios/decks"
+					/>
+					<ServiceCard
+						title="Pintura Profesional"
+						description="Servicios de pintura interior y exterior impecables para renovar la apariencia de su hogar."
+						icon="🖌️"
+                        image={paintingService}
+						detailLink="/es/servicios/pintura"
 					/>
 				</div>
 			</div>

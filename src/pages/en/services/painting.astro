@@ -1,0 +1,285 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Professional Painting Services - KBTony" lang="en">
+	<main>
+		<!-- Hero Section -->
+		<section class="service-hero">
+			<div class="container">
+				<span class="category">Our Services</span>
+				<h1>Professional Painting</h1>
+				<p class="tagline">Transform your home with flawless interior and exterior painting services.</p>
+			</div>
+		</section>
+
+		<!-- Service Overview -->
+		<section class="section">
+			<div class="container content-grid">
+				<div class="text-content">
+					<h2>Interior & Exterior Experts</h2>
+					<p>A fresh coat of paint is the most cost-effective way to revitalize your home. Our professional painters deliver crisp lines, smooth finishes, and long-lasting results for both interior and exterior projects.</p>
+					
+					<ul class="benefits-list">
+						<li>Interior painting (walls, ceilings, trim)</li>
+						<li>Exterior house painting</li>
+						<li>Cabinet refinishing and painting</li>
+						<li>Deck and fence staining</li>
+						<li>Drywall repair and texture matching</li>
+						<li>Color consultation available</li>
+					</ul>
+				</div>
+				<div class="image-content">
+					<img src="/images/painting-service.png" alt="Professional Painting" />
+				</div>
+			</div>
+		</section>
+
+		<!-- Painting Services Section -->
+		<section class="section bg-surface">
+			<div class="container">
+				<div class="section-header text-center">
+					<span class="subheading">Services</span>
+					<h2>Complete Painting Solutions</h2>
+					<div class="divider"></div>
+					<p class="styles-intro">We handle everything from single rooms to whole-house transformations.</p>
+				</div>
+				
+				<div class="styles-grid">
+					<div class="style-card">
+						<div class="card-icon">🏠</div>
+						<h3>Interior Painting</h3>
+						<p>Walls, ceilings, doors, and trim. We protect your furniture and floors for a clean process.</p>
+					</div>
+					<div class="style-card">
+						<div class="card-icon">🌦️</div>
+						<h3>Exterior Painting</h3>
+						<p>Protect your home from the elements with high-quality weather-resistant paints and proper prep.</p>
+					</div>
+					<div class="style-card">
+						<div class="card-icon">🖌️</div>
+						<h3>Cabinet Refinishing</h3>
+						<p>Update your kitchen or bathroom cabinets with a factory-like finish for a fraction of replacement cost.</p>
+					</div>
+					<div class="style-card">
+						<div class="card-icon">🪵</div>
+						<h3>Staining & Sealing</h3>
+						<p>Enhance and protect natural wood decks, fences, and pergolas from sun and water damage.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Process Section -->
+		<section class="section">
+			<div class="container">
+				<div class="section-header text-center">
+					<span class="subheading">Our Process</span>
+					<h2>The Perfect Finish Every Time</h2>
+					<div class="divider"></div>
+				</div>
+				
+				<div class="process-grid">
+					<div class="process-step">
+						<div class="step-number">01</div>
+						<h3>Prep & Protect</h3>
+						<p>We cover furniture, mask edges, and repair surface imperfections before opening a can.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">02</div>
+						<h3>Prime & Paint</h3>
+						<p>We apply high-quality primer and premium paint for uniform coverage and durability.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">03</div>
+						<h3>Detailed Finish</h3>
+						<p>Clean lines and smooth surfaces. We inspect every inch to ensure perfection.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">04</div>
+						<h3>Clean Up</h3>
+						<p>We leave your space cleaner than we found it, ready for you to enjoy.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="section cta-section">
+			<div class="container text-center">
+				<h2>Ready to Refresh Your Home?</h2>
+				<p>Get a free estimate for your interior or exterior painting project.</p>
+				<a href="/en/contact" class="btn btn-primary btn-large">Request Free Quote</a>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	/* Same styles as other service pages */
+	.service-hero {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+		padding: 6rem 0 4rem;
+		text-align: center;
+	}
+
+	.category {
+		color: var(--color-accent);
+		text-transform: uppercase;
+		font-size: 0.9rem;
+		font-weight: 600;
+		letter-spacing: 2px;
+	}
+
+	.service-hero h1 {
+		font-size: 3.5rem;
+		margin: 1rem 0;
+	}
+
+	.tagline {
+		font-size: 1.3rem;
+		max-width: 700px;
+		margin: 0 auto;
+		opacity: 0.95;
+	}
+
+	.content-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--spacing-lg);
+		align-items: center;
+	}
+
+	.text-content h2 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.benefits-list {
+		list-style: none;
+		padding: 0;
+		margin-top: var(--spacing-md);
+	}
+
+	.benefits-list li {
+		padding: 0.75rem 0;
+		padding-left: 2rem;
+		position: relative;
+		line-height: 1.6;
+	}
+
+	.benefits-list li::before {
+		content: '✓';
+		position: absolute;
+		left: 0;
+		color: var(--color-accent);
+		font-weight: 700;
+		font-size: 1.2rem;
+	}
+
+	.image-content img {
+		width: 100%;
+		border-radius: 8px;
+		box-shadow: var(--shadow-lg);
+	}
+
+	.cta-section {
+		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		color: white;
+	}
+
+	.cta-section h2 {
+		color: white;
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.cta-section p {
+		font-size: 1.2rem;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.btn-large {
+		padding: 1.2rem 3rem;
+		font-size: 1.1rem;
+	}
+
+	.bg-surface {
+		background-color: var(--color-surface);
+	}
+
+	.subheading {
+		display: block;
+		color: var(--color-accent);
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		margin-bottom: var(--spacing-xs);
+		font-size: 0.9rem;
+	}
+
+	.divider {
+		width: 80px;
+		height: 3px;
+		background-color: var(--color-accent);
+		margin: var(--spacing-sm) auto var(--spacing-md);
+	}
+
+	.text-center {
+		text-align: center;
+	}
+
+	.styles-intro {
+		max-width: 700px;
+		margin: 0 auto var(--spacing-lg);
+		font-size: 1.1rem;
+		color: #666;
+	}
+
+	.styles-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: var(--spacing-md);
+		margin-top: var(--spacing-lg);
+	}
+
+	.style-card {
+		background: white;
+		border-radius: 8px;
+		padding: var(--spacing-lg);
+		box-shadow: var(--shadow-md);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		text-align: center;
+	}
+
+	.style-card:hover {
+		transform: translateY(-5px);
+		box-shadow: var(--shadow-lg);
+	}
+
+	.card-icon {
+		font-size: 3rem;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.style-card h3 {
+		color: var(--color-primary);
+		margin-bottom: var(--spacing-sm);
+		font-size: 1.2rem;
+	}
+
+	.style-card p {
+		color: #666;
+		line-height: 1.6;
+	}
+
+	@media (max-width: 768px) {
+		.service-hero h1 {
+			font-size: 2.5rem;
+		}
+
+		.content-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

@@ -3,17 +3,19 @@ interface Props {
   title: string;
   description: string;
   icon?: string;
-  image?: string;
+  image?: ImageMetadata | string;
   detailLink?: string;
 }
 
 const { title, description, icon, image, detailLink = "#contact" } = Astro.props;
+
+const imageSrc = image && typeof image !== 'string' ? image.src : image;
 ---
 
 <div class="service-card">
-  {image && (
+  {imageSrc && (
     <div class="image-container">
-        <img src={image} alt={title} loading="lazy" />
+       <img src={imageSrc} alt={title} loading="lazy" />
     </div>
   )}
   <div class="content">
