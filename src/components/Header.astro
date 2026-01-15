@@ -4,8 +4,10 @@ interface Props {
 }
 
 const { lang } = Astro.props;
+import { Image } from "astro:assets";
+import logo1 from "../assets/images/logo1.jpeg";
 
-const callNowText = lang === 'es' ? '¡Llama Ahora!' : 'Call Now!';
+const callNowText = lang === "es" ? "¡Llama Ahora!" : "Call Now!";
 
 const navItems = {
   en: [
@@ -19,21 +21,21 @@ const navItems = {
     { name: "Galería", href: "/es/galeria" },
     { name: "Nosotros", href: "/es/nosotros" },
     { name: "Contacto", href: "/es/contacto" },
-  ]
+  ],
 };
 
-const items = lang === 'es' ? navItems.es : navItems.en;
-const homeLink = lang === 'es' ? '/es' : '/en';
-const otherLang = lang === 'es' ? 'en' : 'es';
-const otherLangLabel = lang === 'es' ? 'English' : 'Español';
-const otherLangLink = lang === 'es' ? '/en' : '/es';
-const flagIcon = lang === 'es' ? '/images/flag-en.png' : '/images/flag-es.png';
+const items = lang === "es" ? navItems.es : navItems.en;
+const homeLink = lang === "es" ? "/es" : "/en";
+const otherLang = lang === "es" ? "en" : "es";
+const otherLangLabel = lang === "es" ? "English" : "Español";
+const otherLangLink = lang === "es" ? "/en" : "/es";
+const flagIcon = lang === "es" ? "/images/flag-en.png" : "/images/flag-es.png";
 ---
 
 <header class="header">
   <div class="container header-content">
-    <a href={homeLink} class="logo">
-      KB<span class="text-accent">Tony</span>
+    <a href={homeLink} class="logo-image">
+      <Image src={logo1} alt="KBTony Premium Remodeling" width={180} />
     </a>
 
     <!-- Hamburger Button -->
@@ -45,10 +47,15 @@ const flagIcon = lang === 'es' ? '/images/flag-en.png' : '/images/flag-es.png';
 
     <nav class="nav">
       <ul class="nav-list">
-        {items.map(item => (
-          <li><a href={item.href} class="nav-link">{item.name}</a></li>
-        ))}
-
+        {
+          items.map((item) => (
+            <li>
+              <a href={item.href} class="nav-link">
+                {item.name}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </nav>
 
@@ -56,11 +63,11 @@ const flagIcon = lang === 'es' ? '/images/flag-en.png' : '/images/flag-es.png';
       <a href="tel:5152075106" class="header-phone pulse-phone">
         <span class="phone-icon-bg">📞</span>
         <div class="phone-info">
-            <span class="call-now-text">{callNowText}</span>
-            <span class="phone-number">(515) 207-5106</span>
+          <span class="call-now-text">{callNowText}</span>
+          <span class="phone-number">(515) 207-5106</span>
         </div>
       </a>
-      
+
       <div class="lang-switch">
         <a href={otherLangLink} class="lang-link" title={otherLangLabel}>
           <img src={flagIcon} alt={otherLangLabel} class="flag-icon" />
@@ -73,32 +80,35 @@ const flagIcon = lang === 'es' ? '/images/flag-en.png' : '/images/flag-es.png';
 
 <script>
   // Mobile menu toggle
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.querySelector('.mobile-menu-toggle');
-    const nav = document.querySelector('.nav');
-    
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.querySelector(".mobile-menu-toggle");
+    const nav = document.querySelector(".nav");
+
     if (toggle && nav) {
-      toggle.addEventListener('click', () => {
-        toggle.classList.toggle('active');
-        nav.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
+      toggle.addEventListener("click", () => {
+        toggle.classList.toggle("active");
+        nav.classList.toggle("active");
+        document.body.classList.toggle("menu-open");
       });
 
       // Close menu when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!toggle.contains(e.target) && !nav.contains(e.target)) {
-          toggle.classList.remove('active');
-          nav.classList.remove('active');
-          document.body.classList.remove('menu-open');
+      document.addEventListener("click", (e) => {
+        if (
+          !toggle.contains(e.target as Node) &&
+          !nav.contains(e.target as Node)
+        ) {
+          toggle.classList.remove("active");
+          nav.classList.remove("active");
+          document.body.classList.remove("menu-open");
         }
       });
 
       // Close menu when clicking a link
-      nav.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-          toggle.classList.remove('active');
-          nav.classList.remove('active');
-          document.body.classList.remove('menu-open');
+      nav.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          toggle.classList.remove("active");
+          nav.classList.remove("active");
+          document.body.classList.remove("menu-open");
         });
       });
     }
@@ -108,7 +118,7 @@ const flagIcon = lang === 'es' ? '/images/flag-en.png' : '/images/flag-es.png';
 <style>
   .header {
     background-color: var(--color-background);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -121,18 +131,20 @@ const flagIcon = lang === 'es' ? '/images/flag-en.png' : '/images/flag-es.png';
     align-items: center;
   }
 
-  .logo {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+  .logo-image {
+    display: block;
+    max-width: 180px; /* Adjust as needed */
     transition: transform 0.2s ease;
     z-index: 1001;
   }
 
-  .logo:hover {
+  .logo-image img {
+    height: auto;
+    width: 100%;
+    max-height: 60px; /* Limit height */
+  }
+
+  .logo-image:hover {
     transform: scale(1.05);
   }
 
@@ -187,7 +199,7 @@ const flagIcon = lang === 'es' ? '/images/flag-en.png' : '/images/flag-es.png';
   }
 
   .nav-link::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -230,14 +242,14 @@ const flagIcon = lang === 'es' ? '/images/flag-en.png' : '/images/flag-es.png';
     height: 28px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   }
 
   .lang-link:hover {
     background-color: var(--color-primary);
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
   .lang-text {
@@ -258,7 +270,9 @@ const flagIcon = lang === 'es' ? '/images/flag-en.png' : '/images/flag-es.png';
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 50px;
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      background-color 0.2s ease;
     background-color: rgba(255, 102, 0, 0.08); /* Very light orange tint */
     border: 1px solid rgba(255, 102, 0, 0.2);
   }
@@ -302,9 +316,9 @@ const flagIcon = lang === 'es' ? '/images/flag-en.png' : '/images/flag-es.png';
   }
 
   .phone-number {
-     color: var(--color-accent);
-     font-weight: 800;
-     font-size: 1.25rem;
+    color: var(--color-accent);
+    font-weight: 800;
+    font-size: 1.25rem;
   }
 
   @media (max-width: 968px) {
@@ -326,7 +340,7 @@ const flagIcon = lang === 'es' ? '/images/flag-en.png' : '/images/flag-es.png';
     top: 100%;
     left: 0;
     background: white;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
     padding: 0.75rem 0;
     min-width: 240px;
@@ -375,7 +389,7 @@ const flagIcon = lang === 'es' ? '/images/flag-en.png' : '/images/flag-es.png';
       width: 280px;
       height: 100vh;
       background: white;
-      box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
       transition: right 0.3s ease;
       padding-top: 80px;
       overflow-y: auto;
@@ -422,7 +436,7 @@ const flagIcon = lang === 'es' ? '/images/flag-en.png' : '/images/flag-es.png';
     }
 
     .dropdown-toggle::after {
-      content: ' ▾';
+      content: " ▾";
     }
 
     body.menu-open {
@@ -430,13 +444,13 @@ const flagIcon = lang === 'es' ? '/images/flag-en.png' : '/images/flag-es.png';
     }
 
     body.menu-open::before {
-      content: '';
+      content: "";
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 0.5);
       z-index: 999;
     }
 
@@ -453,7 +467,7 @@ const flagIcon = lang === 'es' ? '/images/flag-en.png' : '/images/flag-es.png';
     .nav-list {
       gap: 0;
     }
-    
+
     .logo {
       font-size: 1.5rem;
     }

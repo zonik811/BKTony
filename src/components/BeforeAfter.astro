@@ -1,20 +1,30 @@
 ---
 interface Props {
-  beforeImage: string;
-  afterImage: string;
+  beforeImage: string | ImageMetadata;
+  afterImage: string | ImageMetadata;
   beforeLabel?: string;
   afterLabel?: string;
 }
 
-const { beforeImage, afterImage, beforeLabel = "Before", afterLabel = "After" } = Astro.props;
+const {
+  beforeImage,
+  afterImage,
+  beforeLabel = "Before",
+  afterLabel = "After",
+} = Astro.props;
+
+// Extract .src if ImageMetadata object, otherwise use string directly
+const beforeSrc =
+  typeof beforeImage === "string" ? beforeImage : beforeImage.src;
+const afterSrc = typeof afterImage === "string" ? afterImage : afterImage.src;
 ---
 
 <div class="before-after-container">
   <div class="comparison-slider">
     <div class="images-wrapper">
-      <img src={beforeImage} alt={beforeLabel} class="before-image" />
+      <img src={beforeSrc} alt={beforeLabel} class="before-image" />
       <div class="after-image-wrapper">
-        <img src={afterImage} alt={afterLabel} class="after-image" />
+        <img src={afterSrc} alt={afterLabel} class="after-image" />
       </div>
     </div>
     <div class="slider-handle">
@@ -29,40 +39,47 @@ const { beforeImage, afterImage, beforeLabel = "Before", afterLabel = "After" } 
 
 <script>
   function initializeSliders() {
-    const sliders = document.querySelectorAll('.before-after-container');
-    
-    sliders.forEach(container => {
-      const slider = container.querySelector('.comparison-slider');
-      const afterWrapper = container.querySelector('.after-image-wrapper');
-      const handle = container.querySelector('.slider-handle');
+    const sliders = document.querySelectorAll(".before-after-container");
+
+    sliders.forEach((container) => {
+      const slider = container.querySelector(".comparison-slider");
+      const afterWrapper = container.querySelector(".after-image-wrapper");
+      const handle = container.querySelector(".slider-handle");
+
+      // Verificar que todos los elementos necesarios existan
+      if (!slider || !afterWrapper || !handle) {
+        console.warn("BeforeAfter: Missing required elements");
+        return;
+      }
+
       let isDragging = false;
 
       function updateSlider(e: MouseEvent | TouchEvent) {
-        if (!isDragging && e.type === 'mousemove') return;
-        
+        if (!isDragging && e.type === "mousemove") return;
+
         const rect = slider.getBoundingClientRect();
-        const x = 'touches' in e ? e.touches[0].clientX : e.clientX;
+        const x = "touches" in e ? e.touches[0].clientX : e.clientX;
         let position = ((x - rect.left) / rect.width) * 100;
         position = Math.max(0, Math.min(100, position));
-        
+
         afterWrapper.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
         handle.style.left = `${position}%`;
       }
 
-      slider.addEventListener('mousedown', () => isDragging = true);
-      slider.addEventListener('mouseup', () => isDragging = false);
-      slider.addEventListener('mouseleave', () => isDragging = false);
-      slider.addEventListener('mousemove', updateSlider);
-      
-      slider.addEventListener('touchstart', () => isDragging = true);
-      slider.addEventListener('touchend', () => isDragging = false);
-      slider.addEventListener('touchmove', updateSlider);
+      slider.addEventListener("mousedown", () => (isDragging = true));
+      slider.addEventListener("mouseup", () => (isDragging = false));
+      slider.addEventListener("mouseleave", () => (isDragging = false));
+      slider.addEventListener("mousemove", updateSlider);
+
+      slider.addEventListener("touchstart", () => (isDragging = true));
+      slider.addEventListener("touchend", () => (isDragging = false));
+      slider.addEventListener("touchmove", updateSlider);
     });
   }
 
   // Initialize on load
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeSliders);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializeSliders);
   } else {
     initializeSliders();
   }
@@ -138,7 +155,7 @@ const { beforeImage, afterImage, beforeLabel = "Before", afterLabel = "After" } 
     color: white;
     font-size: 1.5rem;
     font-weight: bold;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     pointer-events: all;
     cursor: ew-resize;
   }

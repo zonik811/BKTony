@@ -1,30 +1,50 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import ServiceCard from '../../components/ServiceCard.astro';
-import ContactForm from '../../components/ContactForm.astro';
-import Testimonials from '../../components/Testimonials.astro';
-import heroKitchen from '../../assets/images/hero-kitchen.png';
-import bathroomService from '../../assets/images/bathroom-service.png';
-import roofAfter from '../../assets/images/roof-after.png';
-import flooringHero from '../../assets/images/flooring_hero.png';
-import deckHero from '../../assets/images/deck_hero.png';
-import paintingService from '../../assets/images/painting-service.png';
-import publicidad1 from '../../assets/images/publicidad1.jpeg';
+import { Image, getImage } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+import ServiceCard from "../../components/ServiceCard.astro";
+import ContactForm from "../../components/ContactForm.astro";
+import Testimonials from "../../components/Testimonials.astro";
+import heroKitchen from "../../assets/images/hero-kitchen.png";
+import bathroomService from "../../assets/images/bathroom-service.png";
+import roofAfter from "../../assets/images/roof-after.png";
+import flooringHero from "../../assets/images/flooring_hero.png";
+import deckHero from "../../assets/images/deck_hero.png";
+import paintingService from "../../assets/images/painting-service.png";
+import publicidad1 from "../../assets/images/publicidad1.jpeg";
+
+const optimizedHero = await getImage({
+    src: heroKitchen,
+    format: "webp",
+    quality: 90,
+});
 ---
 
 <Layout title="KBTony - Premium Kitchens & Bathrooms" lang="en">
-	<main>
-		<!-- Hero Section -->
-		<section class="hero" style={`background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${heroKitchen.src});`}>
-			<div class="container hero-content">
-				<h1>Transform Your Home with <span class="text-accent">Elegance</span></h1>
-				<p>Premier Kitchen & Bathroom Remodeling Services.</p>
-				<div class="cta-group">
-					<a href="/en#contact" class="btn btn-primary btn-large btn-pulse">Get Free Quote</a>
-					<a href="/en/services" class="btn btn-outline">Our Services</a>
-				</div>
-			</div>
-		</section>
+    <main>
+        <!-- Hero Section -->
+        <section
+            class="hero"
+            style={`background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${optimizedHero.src});`}
+        >
+            <div class="container hero-content">
+                <h1>
+                    Transform Your Home with <span class="text-accent"
+                        >Elegance</span
+                    >
+                </h1>
+                <p>Premier Kitchen & Bathroom Remodeling Services.</p>
+                <div class="cta-group">
+                    <a
+                        href="/en#contact"
+                        class="btn btn-primary btn-large btn-pulse"
+                        >Get Free Quote</a
+                    >
+                    <a href="/en/services" class="btn btn-outline"
+                        >Our Services</a
+                    >
+                </div>
+            </div>
+        </section>
 
         <!-- About Section -->
         <section class="section bg-surface" id="about">
@@ -34,66 +54,76 @@ import publicidad1 from '../../assets/images/publicidad1.jpeg';
                         <span class="subheading">About Us</span>
                         <h2>Experience the Art of Living</h2>
                         <div class="divider"></div>
-                        <p class="lead">At KBTony, we don't just renovate; we revitalize. Specializing in high-end kitchen and bathroom remodeling, we bring your vision to life with precision, quality materials, and timeless style.</p>
+                        <p class="lead">
+                            At KBTony, we don't just renovate; we revitalize.
+                            Specializing in high-end kitchen and bathroom
+                            remodeling, we bring your vision to life with
+                            precision, quality materials, and timeless style.
+                        </p>
                     </div>
                     <div class="about-image">
-                         <img src={publicidad1.src} alt="KBTony Service Van" class="rounded-shadow" />
+                        <Image
+                            src={publicidad1}
+                            alt="KBTony Service Van"
+                            class="rounded-shadow"
+                            width={600}
+                        />
                     </div>
                 </div>
             </div>
         </section>
 
-		<!-- Services Section -->
-		<section class="section" id="services">
-			<div class="container">
-				<div class="section-header text-center">
-					<span class="subheading">What We Do</span>
-					<h2>Our Premium Services</h2>
-					<div class="divider"></div>
-				</div>
-				<div class="services-grid">
-					<ServiceCard 
-						title="Kitchen Remodeling" 
-						description="Custom cabinetry, stone countertops, and modern appliances designed for the culinary artist."
-						image={heroKitchen}
-						detailLink="/en/services/kitchen-remodeling"
-					/>
-					<ServiceCard 
-						title="Bathroom Renovation" 
-						description="Spa-like retreats with walk-in showers, freestanding tubs, and ambient lighting."
-						image={bathroomService}
-						detailLink="/en/services/bathroom-renovation"
-					/>
-					<ServiceCard 
-						title="Roofing & Exterior" 
-						description="Durable and aesthetic roofing solutions that protect and beautify your home."
+        <!-- Services Section -->
+        <section class="section" id="services">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="subheading">What We Do</span>
+                    <h2>Our Premium Services</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="services-grid">
+                    <ServiceCard
+                        title="Kitchen Remodeling"
+                        description="Custom cabinetry, stone countertops, and modern appliances designed for the culinary artist."
+                        image={heroKitchen}
+                        detailLink="/en/services/kitchen-remodeling"
+                    />
+                    <ServiceCard
+                        title="Bathroom Renovation"
+                        description="Spa-like retreats with walk-in showers, freestanding tubs, and ambient lighting."
+                        image={bathroomService}
+                        detailLink="/en/services/bathroom-renovation"
+                    />
+                    <ServiceCard
+                        title="Roofing & Exterior"
+                        description="Durable and aesthetic roofing solutions that protect and beautify your home."
                         image={roofAfter}
-						detailLink="/en/services/roofing-exterior"
-					/>
-					<ServiceCard 
-						title="Flooring" 
-						description="Premium hardwood, tile, and luxury vinyl plank installation."
+                        detailLink="/en/services/roofing-exterior"
+                    />
+                    <ServiceCard
+                        title="Flooring"
+                        description="Premium hardwood, tile, and luxury vinyl plank installation."
                         image={flooringHero}
-						detailLink="/en/services/flooring"
-					/>
-					<ServiceCard 
-						title="Decks & Patios" 
-						description="Custom outdoor living spaces, decks, and pergolas designed for entertainment."
+                        detailLink="/en/services/flooring"
+                    />
+                    <ServiceCard
+                        title="Decks & Patios"
+                        description="Custom outdoor living spaces, decks, and pergolas designed for entertainment."
                         image={deckHero}
-						detailLink="/en/services/decks"
-					/>
-					<ServiceCard 
-						title="Professional Painting" 
-						description="Flawless interior and exterior painting services to refresh your home."
+                        detailLink="/en/services/decks"
+                    />
+                    <ServiceCard
+                        title="Professional Painting"
+                        description="Flawless interior and exterior painting services to refresh your home."
                         image={paintingService}
-						detailLink="/en/services/painting"
-					/>
-				</div>
-			</div>
-		</section>
+                        detailLink="/en/services/painting"
+                    />
+                </div>
+            </div>
+        </section>
 
-		<!-- Testimonials Section -->
-		<Testimonials lang="en" />
+        <!-- Testimonials Section -->
+        <Testimonials lang="en" />
 
         <!-- Gallery Section (Placeholder for now) -->
         <section class="section bg-surface" id="gallery">
@@ -104,21 +134,34 @@ import publicidad1 from '../../assets/images/publicidad1.jpeg';
                     <div class="divider"></div>
                 </div>
                 <div class="gallery-grid">
-                     <div class="gallery-item large"><img src="/images/hero-kitchen.png" alt="Project 1" /></div>
-                     <div class="gallery-item"><img src="/images/bathroom-service.png" alt="Project 2" /></div>
-                     <div class="gallery-item"><img src="/images/hero-kitchen.png" alt="Project 3" /></div>
+                    <div class="gallery-item large">
+                        <Image src={heroKitchen} alt="Project 1" width={600} />
+                    </div>
+                    <div class="gallery-item">
+                        <Image
+                            src={bathroomService}
+                            alt="Project 2"
+                            width={400}
+                        />
+                    </div>
+                    <div class="gallery-item">
+                        <Image src={heroKitchen} alt="Project 3" width={400} />
+                    </div>
                 </div>
             </div>
         </section>
 
-		<!-- Contact Section -->
-		<section class="section" id="contact">
-			<div class="container">
-				<div class="contact-layout">
-					<div class="contact-info">
-						<span class="subheading">Get in Touch</span>
-						<h2>Start Your Dream Project Today</h2>
-						<p>Ready to transform your space? Use the form to request a free consultation and quote.</p>
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="contact-layout">
+                    <div class="contact-info">
+                        <span class="subheading">Get in Touch</span>
+                        <h2>Start Your Dream Project Today</h2>
+                        <p>
+                            Ready to transform your space? Use the form to
+                            request a free consultation and quote.
+                        </p>
                         <div class="info-list">
                             <div class="info-item">
                                 <strong>Phone:</strong> (515) 207-5106
@@ -127,26 +170,26 @@ import publicidad1 from '../../assets/images/publicidad1.jpeg';
                                 <strong>Email:</strong> info@kbtony.com
                             </div>
                         </div>
-					</div>
-					<div class="contact-form-wrapper">
-						<ContactForm lang="en" />
-					</div>
-				</div>
-			</div>
-		</section>
-	</main>
+                    </div>
+                    <div class="contact-form-wrapper">
+                        <ContactForm lang="en" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 </Layout>
 
 <style>
-	.hero {
-		background-size: cover;
-		background-position: center;
+    .hero {
+        background-size: cover;
+        background-position: center;
         background-attachment: fixed;
-		color: var(--color-text-light);
-		padding: 160px 0;
-		text-align: center;
+        color: var(--color-text-light);
+        padding: 160px 0;
+        text-align: center;
         position: relative;
-	}
+    }
 
     .hero-content {
         position: relative;
@@ -157,9 +200,9 @@ import publicidad1 from '../../assets/images/publicidad1.jpeg';
         font-size: 3.5rem;
         font-weight: 700;
         margin-bottom: var(--spacing-md);
-        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     }
-    
+
     p.lead {
         font-size: 1.2rem;
         max-width: 800px;
@@ -172,7 +215,7 @@ import publicidad1 from '../../assets/images/publicidad1.jpeg';
         font-size: 1.5rem;
         max-width: 700px;
         margin: 0 auto var(--spacing-md);
-        text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     }
 
     .text-accent {
@@ -196,7 +239,9 @@ import publicidad1 from '../../assets/images/publicidad1.jpeg';
         margin: var(--spacing-sm) auto var(--spacing-md);
     }
 
-    .text-center { text-align: center; }
+    .text-center {
+        text-align: center;
+    }
 
     .bg-surface {
         background-color: var(--color-surface);
@@ -208,7 +253,7 @@ import publicidad1 from '../../assets/images/publicidad1.jpeg';
         justify-content: center;
         margin-top: var(--spacing-md);
     }
-    
+
     .btn {
         padding: 1rem 2rem;
         border-radius: 4px;
@@ -276,7 +321,9 @@ import publicidad1 from '../../assets/images/publicidad1.jpeg';
         .contact-layout {
             grid-template-columns: 1fr;
         }
-        h1 { font-size: 2.5rem; }
+        h1 {
+            font-size: 2.5rem;
+        }
     }
 
     .info-item {
@@ -300,7 +347,7 @@ import publicidad1 from '../../assets/images/publicidad1.jpeg';
             text-align: left;
         }
         .about-grid .divider {
-             margin-left: 0;
+            margin-left: 0;
         }
     }
 

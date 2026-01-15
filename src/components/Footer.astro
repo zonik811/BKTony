@@ -4,32 +4,37 @@ interface Props {
 }
 
 const { lang } = Astro.props;
+import { Image } from "astro:assets";
+import logo2 from "../assets/images/logo2.png";
 
 const content = {
   en: {
     tagline: "Building your dreams, one room at a time.",
     contact: "Contact Us",
     follow: "Follow Us",
-    rights: "All rights reserved."
+    rights: "All rights reserved.",
   },
   es: {
     tagline: "Construyendo sus sueños, habitación por habitación.",
     contact: "Contáctenos",
     follow: "Síguenos",
-    rights: "Todos los derechos reservados."
-  }
+    rights: "Todos los derechos reservados.",
+  },
 };
 
-const t = lang === 'es' ? content.es : content.en;
+const t = lang === "es" ? content.es : content.en;
+const homeLink = lang === "es" ? "/es" : "/en";
 ---
 
 <footer class="footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <div class="logo">KB<span class="text-accent">Tony</span></div>
+      <a href={homeLink} class="footer-logo-image">
+        <Image src={logo2} alt="KBTony" width={150} />
+      </a>
       <p>{t.tagline}</p>
     </div>
-    
+
     <div class="footer-contact">
       <h3>{t.contact}</h3>
       <p>Phone: (515) 207-5106</p>
@@ -46,26 +51,33 @@ const t = lang === 'es' ? content.es : content.en;
       </div>
     </div>
   </div>
-  
+
   <!-- Location Map Section -->
   <div class="footer-location">
     <div class="container location-grid">
       <div class="location-info">
         <h3>📍 Our Service Area</h3>
-        <p>Proudly serving homeowners across the United States with premium kitchen and bathroom renovations.</p>
+        <p>
+          Proudly serving homeowners across the United States with premium
+          kitchen and bathroom renovations.
+        </p>
         <div class="location-cta">
-          <a href={lang === 'es' ? '/es#contact' : '/en#contact'} class="btn btn-accent">Schedule Free Consultation</a>
+          <a
+            href={lang === "es" ? "/es#contact" : "/en#contact"}
+            class="btn btn-accent">Schedule Free Consultation</a
+          >
         </div>
       </div>
       <div class="map-container">
-        <iframe 
+        <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24176.251469841126!2d-73.98823!3d40.748817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1234567890"
-          width="100%" 
-          height="300" 
-          style="border:0; border-radius: 8px;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
+          width="100%"
+          height="300"
+          style="border:0; border-radius: 8px;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
         </iframe>
       </div>
     </div>
@@ -88,7 +100,7 @@ const t = lang === 'es' ? content.es : content.en;
       </div>
     </div>
   </div>
-  
+
   <div class="footer-bottom">
     <div class="container">
       <p>&copy; {new Date().getFullYear()} KBTony. {t.rights}</p>
@@ -110,10 +122,16 @@ const t = lang === 'es' ? content.es : content.en;
     margin-bottom: var(--spacing-lg);
   }
 
-  .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
+  .footer-logo-image {
+    display: block;
+    max-width: 150px;
     margin-bottom: var(--spacing-sm);
+  }
+
+  .footer-logo-image img {
+    height: auto;
+    width: 100%;
+    border-radius: 4px; /* Optional: slight corner smooth */
   }
 
   .text-accent {
@@ -193,7 +211,8 @@ const t = lang === 'es' ? content.es : content.en;
   }
 
   @keyframes pulse-glow {
-    0%, 100% {
+    0%,
+    100% {
       box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
     }
     50% {
@@ -204,7 +223,7 @@ const t = lang === 'es' ? content.es : content.en;
   .map-container {
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   }
 
   @media (max-width: 768px) {
