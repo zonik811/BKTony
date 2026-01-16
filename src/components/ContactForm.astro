@@ -10,67 +10,162 @@ const labels = {
     name: "Full Name",
     email: "Email Address",
     phone: "Phone Number",
+    zip: "ZIP Code",
     service: "Service Interested In",
+    timeline: "When to Start",
+    budget: "Budget Range",
+    contactMethod: "Preferred Contact Method",
     message: "Message/Project Details",
-    submit: "Request Quote"
+    submit: "Request Quote",
   },
   es: {
     name: "Nombre Completo",
     email: "Correo Electrónico",
     phone: "Número de Teléfono",
+    zip: "Código Postal",
     service: "Servicio de Interés",
+    timeline: "Cuándo Desea Iniciar",
+    budget: "Rango de Presupuesto",
+    contactMethod: "Método de Contacto Preferido",
     message: "Mensaje/Detalles del Proyecto",
-    submit: "Solicitar Presupuesto"
-  }
-}
+    submit: "Solicitar Presupuesto",
+  },
+};
 
-const t = lang === 'es' ? labels.es : labels.en;
+const t = lang === "es" ? labels.es : labels.en;
 ---
 
 <form class="contact-form" id="quote-form">
   <div class="form-group">
     <label for="name">{t.name}</label>
-    <input type="text" id="name" name="name" required placeholder={lang === 'es' ? 'Su nombre' : 'Your name'} />
+    <input
+      type="text"
+      id="name"
+      name="name"
+      required
+      placeholder={lang === "es" ? "Su nombre" : "Your name"}
+    />
   </div>
 
   <div class="form-grid">
     <div class="form-group">
-      <label for="phone">{t.phone}</label>
-      <input type="tel" id="phone" name="phone" required placeholder="(515) 207-5106" />
+      <label for="email">{t.email}</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        placeholder={lang === "es" ? "su@email.com" : "your@email.com"}
+      />
     </div>
     <div class="form-group">
-      <label for="zip">{lang === 'es' ? 'Código Postal' : 'ZIP Code'}</label>
-      <input type="text" id="zip" name="zip" required placeholder="50309" />
+      <label for="phone">{t.phone}</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        required
+        placeholder="(515) 207-5106"
+      />
+    </div>
+  </div>
+
+  <div class="form-grid">
+    <div class="form-group">
+      <label for="zip">{t.zip}</label>
+      <input type="text" id="zip" name="zip" required placeholder="50322" />
+    </div>
+    <div class="form-group">
+      <label for="contactMethod">{t.contactMethod}</label>
+      <select id="contactMethod" name="contactMethod" required>
+        <option value="phone">{lang === "es" ? "Teléfono" : "Phone"}</option>
+        <option value="email">{lang === "es" ? "Email" : "Email"}</option>
+        <option value="text"
+          >{lang === "es" ? "Mensaje de texto" : "Text"}</option
+        >
+        <option value="any">{lang === "es" ? "Cualquiera" : "Any"}</option>
+      </select>
     </div>
   </div>
 
   <div class="form-group">
     <label for="projectType">{t.service}</label>
     <select id="projectType" name="projectType" required>
-      <option value="" disabled selected>{lang === 'es' ? 'Seleccione tipo de proyecto' : 'Select project type'}</option>
-      <option value="kitchen">{lang === 'es' ? 'Cocina' : 'Kitchen'}</option>
-      <option value="bathroom">{lang === 'es' ? 'Baño' : 'Bathroom'}</option>
-      <option value="flooring">{lang === 'es' ? 'Pisos' : 'Flooring'}</option>
-      <option value="deck">{lang === 'es' ? 'Deck / Terraza' : 'Deck'}</option>
-      <option value="painting">{lang === 'es' ? 'Pintura' : 'Painting'}</option>
-      <option value="other">{lang === 'es' ? 'Otro' : 'Other'}</option>
+      <option value="" disabled selected
+        >{
+          lang === "es" ? "Seleccione tipo de proyecto" : "Select project type"
+        }</option
+      >
+      <option value="kitchen">{lang === "es" ? "Cocina" : "Kitchen"}</option>
+      <option value="bathroom">{lang === "es" ? "Baño" : "Bathroom"}</option>
+      <option value="flooring">{lang === "es" ? "Pisos" : "Flooring"}</option>
+      <option value="deck">{lang === "es" ? "Deck / Terraza" : "Deck"}</option>
+      <option value="painting">{lang === "es" ? "Pintura" : "Painting"}</option>
+      <option value="other">{lang === "es" ? "Otro" : "Other"}</option>
     </select>
   </div>
 
+  <div class="form-grid">
+    <div class="form-group">
+      <label for="timeline">{t.timeline}</label>
+      <select id="timeline" name="timeline" required>
+        <option value="" disabled selected
+          >{lang === "es" ? "Seleccionar" : "Select"}</option
+        >
+        <option value="asap"
+          >{lang === "es" ? "Lo antes posible" : "ASAP"}</option
+        >
+        <option value="1-3months"
+          >{lang === "es" ? "1-3 meses" : "1-3 months"}</option
+        >
+        <option value="3-6months"
+          >{lang === "es" ? "3-6 meses" : "3-6 months"}</option
+        >
+        <option value="6plus"
+          >{lang === "es" ? "Más de 6 meses" : "6+ months"}</option
+        >
+        <option value="planning"
+          >{lang === "es" ? "Solo planeando" : "Just planning"}</option
+        >
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="budget"
+        >{t.budget} ({lang === "es" ? "opcional" : "optional"})</label
+      >
+      <select id="budget" name="budget">
+        <option value=""
+          >{lang === "es" ? "Prefiero no decir" : "Prefer not to say"}</option
+        >
+        <option value="under15k">&lt; $15,000</option>
+        <option value="15-30k">$15,000 - $30,000</option>
+        <option value="30-50k">$30,000 - $50,000</option>
+        <option value="50-75k">$50,000 - $75,000</option>
+        <option value="75plus">$75,000+</option>
+      </select>
+    </div>
+  </div>
+
   <div class="form-group">
-    <label for="description">{lang === 'es' ? 'Descripción Breve (Opcional)' : 'Brief Description (Optional)'}</label>
-    <input type="text" id="description" name="description" placeholder={lang === 'es' ? 'Ej: Gabinetes nuevos' : 'Ex: New cabinets'} />
+    <label for="description">{t.message}</label>
+    <textarea
+      id="description"
+      name="description"
+      rows="4"
+      placeholder={lang === "es"
+        ? "Cuéntenos sobre su proyecto..."
+        : "Tell us about your project..."}></textarea>
   </div>
 
   <button type="submit" class="submit-btn">{t.submit}</button>
 </form>
 
 <script>
-  const form = document.getElementById('quote-form');
-  form?.addEventListener('submit', (e) => {
+  const form = document.getElementById("quote-form");
+  form?.addEventListener("submit", (e) => {
     e.preventDefault();
     // Here we would eventually implement the Odoo integration
-    alert('Thank you! This is a demo form. Integration pending.');
+    alert("Thank you! This is a demo form. Integration pending.");
   });
 </script>
 
@@ -91,7 +186,7 @@ const t = lang === 'es' ? labels.es : labels.en;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-sm);
   }
-  
+
   @media (max-width: 600px) {
     .form-grid {
       grid-template-columns: 1fr;
@@ -105,7 +200,9 @@ const t = lang === 'es' ? labels.es : labels.en;
     color: var(--color-primary);
   }
 
-  input, select, textarea {
+  input,
+  select,
+  textarea {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid #ddd;
@@ -115,7 +212,9 @@ const t = lang === 'es' ? labels.es : labels.en;
     transition: border-color 0.2s;
   }
 
-  input:focus, select:focus, textarea:focus {
+  input:focus,
+  select:focus,
+  textarea:focus {
     outline: none;
     border-color: var(--color-primary);
     box-shadow: 0 0 0 2px rgba(0, 45, 98, 0.1);

@@ -7,6 +7,7 @@ interface Props {
   icon?: string;
   image?: ImageMetadata | string;
   detailLink?: string;
+  lang?: string;
 }
 
 const {
@@ -15,7 +16,10 @@ const {
   icon,
   image,
   detailLink = "#contact",
+  lang = "en",
 } = Astro.props;
+
+const learnMoreText = lang === "es" ? "Ver Más" : "Learn More";
 ---
 
 <div class="service-card">
@@ -33,7 +37,7 @@ const {
   <div class="content">
     <h3>{title}</h3>
     <p>{description}</p>
-    <a href={detailLink} class="link">Learn More &rarr;</a>
+    <a href={detailLink} class="link">{learnMoreText} &rarr;</a>
   </div>
 </div>
 
