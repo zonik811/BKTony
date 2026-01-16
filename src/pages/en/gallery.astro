@@ -1,5 +1,5 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Gallery - KBTony" lang="en">
@@ -8,7 +8,9 @@ import Layout from '../../layouts/Layout.astro';
 		<section class="gallery-hero">
 			<div class="container">
 				<h1>Our Portfolio</h1>
-				<p class="tagline">Explore our stunning kitchen, bathroom, and exterior transformations</p>
+				<p class="tagline">
+					Explore our stunning kitchen and bathroom transformations
+				</p>
 			</div>
 		</section>
 
@@ -17,124 +19,135 @@ import Layout from '../../layouts/Layout.astro';
 			<div class="container">
 				<div class="gallery-intro">
 					<h2>Transform Your Space</h2>
-					<p>Browse our collection of completed projects and get inspired for your own home renovation. Each project showcases our commitment to quality craftsmanship and attention to detail.</p>
+					<p>
+						Browse our collection of completed projects and get
+						inspired for your own home renovation. Each project
+						showcases our commitment to quality craftsmanship and
+						attention to detail.
+					</p>
 				</div>
 
 				<!-- Filter Tabs -->
-				<div class="gallery-filters">
-					<button class="filter-btn active" data-category="all">All Projects</button>
-					<button class="filter-btn" data-category="kitchen">Kitchens</button>
-					<button class="filter-btn" data-category="bathroom">Bathrooms</button>
-					<button class="filter-btn" data-category="exterior">Exteriors</button>
-				</div>
-
-				<!-- Gallery Grid -->
-				<div class="gallery-grid">
-					<!-- Kitchen Projects -->
-					<div class="gallery-item" data-category="kitchen">
-						<img src="/images/kitchen-after.png" alt="Modern Kitchen Remodel" />
-						<div class="gallery-overlay">
-							<h3>Modern Kitchen Transformation</h3>
-							<p>Complete remodel with custom cabinets and quartz countertops</p>
-						</div>
-					</div>
-
-					<div class="gallery-item" data-category="kitchen">
-						<img src="/images/kitchen-l-shape.png" alt="L-Shaped Kitchen" />
-						<div class="gallery-overlay">
-							<h3>L-Shaped Kitchen Design</h3>
-							<p>Contemporary layout with premium appliances</p>
-						</div>
-					</div>
-
-					<div class="gallery-item" data-category="kitchen">
-						<img src="/images/kitchen-island.png" alt="Kitchen with Island" />
-						<div class="gallery-overlay">
-							<h3>Kitchen with Custom Island</h3>
-							<p>Spacious island with seating and storage</p>
-						</div>
-					</div>
-
-					<!-- Bathroom Projects -->
-					<div class="gallery-item" data-category="bathroom">
-						<img src="/images/bathroom-after.png" alt="Luxury Bathroom" />
-						<div class="gallery-overlay">
-							<h3>Luxury Master Bathroom</h3>
-							<p>Spa-like retreat with walk-in shower</p>
-						</div>
-					</div>
-
-					<div class="gallery-item" data-category="bathroom">
-						<img src="/images/bath-whole.png" alt="Complete Bathroom Remodel" />
-						<div class="gallery-overlay">
-							<h3>Complete Bathroom Renovation</h3>
-							<p>Modern fixtures and elegant tile work</p>
-						</div>
-					</div>
-
-					<div class="gallery-item" data-category="bathroom">
-						<img src="/images/bath-shower.png" alt="Walk-In Shower" />
-						<div class="gallery-overlay">
-							<h3>Walk-In Shower Installation</h3>
-							<p>Frameless glass with custom tile</p>
-						</div>
-					</div>
-
-					<!-- Exterior Projects -->
-					<div class="gallery-item" data-category="exterior">
-						<img src="/images/roof-new.png" alt="New Roof Installation" />
-						<div class="gallery-overlay">
-							<h3>Roof Replacement</h3>
-							<p>Durable shingles with enhanced protection</p>
-						</div>
-					</div>
-
-					<div class="gallery-item" data-category="exterior">
-						<img src="/images/siding-service.png" alt="Siding Installation" />
-						<div class="gallery-overlay">
-							<h3>Siding Upgrade</h3>
-							<p>Energy-efficient siding with modern appeal</p>
-						</div>
-					</div>
-
-					<div class="gallery-item" data-category="exterior">
-						<img src="/images/painting-service.png" alt="Exterior Painting" />
-						<div class="gallery-overlay">
-							<h3>Exterior Painting</h3>
-							<p>Fresh coat for enhanced curb appeal</p>
-						</div>
-					</div>
-				</div>
+				<button class="filter-btn active" data-category="all"
+					>All Projects</button
+				>
+				<button class="filter-btn" data-category="kitchen"
+					>Kitchens</button
+				>
+				<button class="filter-btn" data-category="bathroom"
+					>Bathrooms</button
+				>
 			</div>
-		</section>
 
-		<!-- CTA Section -->
-		<section class="section cta-section">
-			<div class="container text-center">
-				<h2>Ready to Create Your Dream Space?</h2>
-				<p>Let's bring your vision to life with our expert craftsmanship.</p>
-				<a href="/en/contact" class="btn btn-primary btn-large">Start Your Project</a>
+			<!-- Gallery Grid -->
+			<div class="gallery-grid">
+				<!-- Kitchen Projects -->
+				<div class="gallery-item" data-category="kitchen">
+					<img
+						src="/images/kitchen-after.png"
+						alt="Modern Kitchen Remodel"
+					/>
+					<div class="gallery-overlay">
+						<h3>Modern Kitchen Transformation</h3>
+						<p>
+							Complete remodel with custom cabinets and quartz
+							countertops
+						</p>
+					</div>
+				</div>
+
+				<div class="gallery-item" data-category="kitchen">
+					<img
+						src="/images/kitchen-l-shape.png"
+						alt="L-Shaped Kitchen"
+					/>
+					<div class="gallery-overlay">
+						<h3>L-Shaped Kitchen Design</h3>
+						<p>Contemporary layout with premium appliances</p>
+					</div>
+				</div>
+
+				<div class="gallery-item" data-category="kitchen">
+					<img
+						src="/images/kitchen-island.png"
+						alt="Kitchen with Island"
+					/>
+					<div class="gallery-overlay">
+						<h3>Kitchen with Custom Island</h3>
+						<p>Spacious island with seating and storage</p>
+					</div>
+				</div>
+
+				<!-- Bathroom Projects -->
+				<div class="gallery-item" data-category="bathroom">
+					<img
+						src="/images/bathroom-after.png"
+						alt="Luxury Bathroom"
+					/>
+					<div class="gallery-overlay">
+						<h3>Luxury Master Bathroom</h3>
+						<p>Spa-like retreat with walk-in shower</p>
+					</div>
+				</div>
+
+				<div class="gallery-item" data-category="bathroom">
+					<img
+						src="/images/bath-whole.png"
+						alt="Complete Bathroom Remodel"
+					/>
+					<div class="gallery-overlay">
+						<h3>Complete Bathroom Renovation</h3>
+						<p>Modern fixtures and elegant tile work</p>
+					</div>
+				</div>
+
+				<div class="gallery-item" data-category="bathroom">
+					<img src="/images/bath-shower.png" alt="Walk-In Shower" />
+					<div class="gallery-overlay">
+						<h3>Walk-In Shower Installation</h3>
+						<p>Frameless glass with custom tile</p>
+					</div>
+				</div>
 			</div>
 		</section>
 	</main>
+
+	<!-- CTA Section -->
+	<section class="section cta-section">
+		<div class="container text-center">
+			<h2>Ready to Create Your Dream Space?</h2>
+			<p>
+				Let's bring your vision to life with our expert craftsmanship.
+			</p>
+			<a href="/en/contact" class="btn btn-primary btn-large"
+				>Start Your Project</a
+			>
+		</div>
+	</section>
 </Layout>
 
 <script>
 	// Gallery filtering
-	document.querySelectorAll('.filter-btn').forEach(btn => {
-		btn.addEventListener('click', () => {
-			const category = btn.dataset.category;
-			
+	document.querySelectorAll(".filter-btn").forEach((btn) => {
+		btn.addEventListener("click", () => {
+			const category = (btn as HTMLButtonElement).dataset.category;
+
 			// Update active button
-			document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-			btn.classList.add('active');
-			
+			document
+				.querySelectorAll(".filter-btn")
+				.forEach((b) => b.classList.remove("active"));
+			btn.classList.add("active");
+
 			// Filter items
-			document.querySelectorAll('.gallery-item').forEach(item => {
-				if (category === 'all' || item.dataset.category === category) {
-					item.style.display = 'block';
+			document.querySelectorAll(".gallery-item").forEach((item) => {
+				const htmlItem = item as HTMLElement;
+				if (
+					category === "all" ||
+					htmlItem.dataset.category === category
+				) {
+					htmlItem.style.display = "block";
 				} else {
-					item.style.display = 'none';
+					htmlItem.style.display = "none";
 				}
 			});
 		});
@@ -143,7 +156,11 @@ import Layout from '../../layouts/Layout.astro';
 
 <style>
 	.gallery-hero {
-		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		background: linear-gradient(
+			135deg,
+			var(--color-primary) 0%,
+			#001a3d 100%
+		);
 		color: white;
 		padding: 5rem 0 4rem;
 		text-align: center;
@@ -196,7 +213,8 @@ import Layout from '../../layouts/Layout.astro';
 		transition: all 0.3s ease;
 	}
 
-	.filter-btn:hover, .filter-btn.active {
+	.filter-btn:hover,
+	.filter-btn.active {
 		background: var(--color-primary);
 		color: white;
 	}
@@ -252,12 +270,16 @@ import Layout from '../../layouts/Layout.astro';
 	}
 
 	.gallery-overlay p {
-		color: rgba(255,255,255,0.9);
+		color: rgba(255, 255, 255, 0.9);
 		font-size: 0.95rem;
 	}
 
 	.cta-section {
-		background: linear-gradient(135deg, var(--color-primary) 0%, #001a3d 100%);
+		background: linear-gradient(
+			135deg,
+			var(--color-primary) 0%,
+			#001a3d 100%
+		);
 		color: white;
 	}
 
