@@ -161,9 +161,25 @@ const t = lang === "es" ? labels.es : labels.en;
     <input type="checkbox" id="dataConsent" name="dataConsent" required />
     <label for="dataConsent" class="checkbox-label">
       {
-        lang === "es"
-          ? "Autorizo el tratamiento de mis datos personales para ser contactado según la política de privacidad."
-          : "I authorize the processing of my personal data to be contacted in accordance with the privacy policy."
+        lang === "es" ? (
+          <>
+            Autorizo el tratamiento de mis datos personales para ser contactado
+            según la{" "}
+            <a href="/es/politica-privacidad" target="_blank">
+              política de privacidad
+            </a>
+            .
+          </>
+        ) : (
+          <>
+            I authorize the processing of my personal data to be contacted in
+            accordance with the{" "}
+            <a href="/en/privacy-policy" target="_blank">
+              privacy policy
+            </a>
+            .
+          </>
+        )
       }
     </label>
   </div>
@@ -251,6 +267,16 @@ const t = lang === "es" ? labels.es : labels.en;
     cursor: pointer;
     line-height: 1.4;
     margin-bottom: 0;
+  }
+
+  .checkbox-label a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    font-weight: 500;
+  }
+
+  .checkbox-label a:hover {
+    color: var(--color-accent);
   }
 
   .submit-btn {
