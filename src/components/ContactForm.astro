@@ -157,6 +157,17 @@ const t = lang === "es" ? labels.es : labels.en;
         : "Tell us about your project..."}></textarea>
   </div>
 
+  <div class="form-group checkbox-group">
+    <input type="checkbox" id="dataConsent" name="dataConsent" required />
+    <label for="dataConsent" class="checkbox-label">
+      {
+        lang === "es"
+          ? "Autorizo el tratamiento de mis datos personales para ser contactado según la política de privacidad."
+          : "I authorize the processing of my personal data to be contacted in accordance with the privacy policy."
+      }
+    </label>
+  </div>
+
   <button type="submit" class="submit-btn">{t.submit}</button>
 </form>
 
@@ -218,6 +229,28 @@ const t = lang === "es" ? labels.es : labels.en;
     outline: none;
     border-color: var(--color-primary);
     box-shadow: 0 0 0 2px rgba(0, 45, 98, 0.1);
+  }
+
+  .checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .checkbox-group input[type="checkbox"] {
+    margin-top: 0.3rem;
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  .checkbox-label {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: normal;
+    cursor: pointer;
+    line-height: 1.4;
+    margin-bottom: 0;
   }
 
   .submit-btn {
