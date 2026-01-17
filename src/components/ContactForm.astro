@@ -35,7 +35,29 @@ const labels = {
 const t = lang === "es" ? labels.es : labels.en;
 ---
 
-<form class="contact-form" id="quote-form">
+<form
+  class="contact-form"
+  id="quote-form"
+  action="https://formsubmit.co/tony@kbtony.com"
+  method="POST"
+>
+  <!-- Honeypot -->
+  <input type="text" name="_honey" style="display:none" />
+  <!-- Disable Captcha -->
+  <input type="hidden" name="_captcha" value="false" />
+  <!-- Success Page (optional, defaults to FormSubmit page) -->
+  <!-- <input type="hidden" name="_next" value="https://kbtony.com/thanks"> -->
+  <!-- Template -->
+  <input type="hidden" name="_template" value="table" />
+  <!-- Subject -->
+  <input
+    type="hidden"
+    name="_subject"
+    value={lang === "es"
+      ? "Nueva Cotización Sitio Web (Español)"
+      : "New Website Quote Request (English)"}
+  />
+
   <div class="form-group">
     <label for="name">{t.name}</label>
     <input
@@ -186,15 +208,6 @@ const t = lang === "es" ? labels.es : labels.en;
 
   <button type="submit" class="submit-btn">{t.submit}</button>
 </form>
-
-<script>
-  const form = document.getElementById("quote-form");
-  form?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    // Here we would eventually implement the Odoo integration
-    alert("Thank you! This is a demo form. Integration pending.");
-  });
-</script>
 
 <style>
   .contact-form {

@@ -43,7 +43,27 @@ const t = lang === "es" ? labels.es : labels.en;
         <p>{t.subtitle}</p>
     </div>
 
-    <form class="handyman-form" id="handyman-form">
+    <form
+        class="handyman-form"
+        id="handyman-form"
+        action="https://formsubmit.co/tony@kbtony.com"
+        method="POST"
+    >
+        <!-- Honeypot -->
+        <input type="text" name="_honey" style="display:none" />
+        <!-- Disable Captcha -->
+        <input type="hidden" name="_captcha" value="false" />
+        <!-- Template -->
+        <input type="hidden" name="_template" value="table" />
+        <!-- Subject -->
+        <input
+            type="hidden"
+            name="_subject"
+            value={lang === "es"
+                ? "SOLICITUD URGENTE: Handyman KBTony (Español)"
+                : "URGENT REQUEST: KBTony Handyman Service (English)"}
+        />
+
         <div class="form-group">
             <label for="name">{t.name}</label>
             <input
