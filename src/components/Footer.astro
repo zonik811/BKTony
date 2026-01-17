@@ -13,12 +13,26 @@ const content = {
     contact: "Contact Us",
     follow: "Follow Us",
     rights: "All rights reserved.",
+    serviceAreaTitle: "📍 Our Service Area",
+    serviceAreaDesc:
+      "Serving a 50-mile radius around Des Moines, IA (ZIP 50322) with premium kitchen and bathroom renovations.",
+    scheduleBtn: "Schedule Free Consultation",
+    licensed: "Licensed & Insured",
+    radius: "50 Miles Around 50322",
+    satisfaction: "Satisfaction Guaranteed",
   },
   es: {
     tagline: "Construyendo sus sueños, habitación por habitación.",
     contact: "Contáctenos",
     follow: "Síguenos",
     rights: "Todos los derechos reservados.",
+    serviceAreaTitle: "📍 Nuestra Área de Servicio",
+    serviceAreaDesc:
+      "Sirviendo un radio de 50 millas alrededor de Des Moines, IA (código postal 50322) con renovaciones de cocina y baño de primera calidad.",
+    scheduleBtn: "Programar Consulta Gratis",
+    licensed: "Con Licencia y Seguro",
+    radius: "50 Millas Alrededor de 50322",
+    satisfaction: "Satisfacción Garantizada",
   },
 };
 
@@ -56,15 +70,14 @@ const homeLink = lang === "es" ? "/es" : "/en";
   <div class="footer-location">
     <div class="container location-grid">
       <div class="location-info">
-        <h3>📍 Our Service Area</h3>
+        <h3>{t.serviceAreaTitle}</h3>
         <p>
-          Serving a 50-mile radius around Des Moines, IA (ZIP 50322) with
-          premium kitchen and bathroom renovations.
+          {t.serviceAreaDesc}
         </p>
         <div class="location-cta">
           <a
             href={lang === "es" ? "/es#contact" : "/en#contact"}
-            class="btn btn-accent">Schedule Free Consultation</a
+            class="btn btn-accent">{t.scheduleBtn}</a
           >
         </div>
       </div>
@@ -88,15 +101,15 @@ const homeLink = lang === "es" ? "/es" : "/en";
     <div class="container badges-grid">
       <div class="badge">
         <span class="badge-icon">🛡️</span>
-        <span>Licensed & Insured</span>
+        <span>{t.licensed}</span>
       </div>
       <div class="badge">
         <span class="badge-icon">📍</span>
-        <span>50 Miles Around 50322</span>
+        <span>{t.radius}</span>
       </div>
       <div class="badge">
         <span class="badge-icon">⭐</span>
-        <span>Satisfaction Guaranteed</span>
+        <span>{t.satisfaction}</span>
       </div>
     </div>
   </div>
