@@ -1,0 +1,325 @@
+---
+interface Props {
+    lang: string;
+}
+
+const { lang } = Astro.props;
+
+const labels = {
+    en: {
+        title: "Request Handyman Service",
+        subtitle: "Tell us what needs fixing and we'll get it sorted!",
+        name: "Full Name",
+        phone: "Phone Number",
+        zip: "ZIP Code",
+        repairType: "What needs fixing?",
+        urgency: "How urgent is it?",
+        description: "Describe the issue (optional)",
+        submit: "Get It Fixed",
+        privacy:
+            "I authorize the processing of my personal data according to the privacy policy.",
+    },
+    es: {
+        title: "Solicitar Servicio de Mantenimiento",
+        subtitle: "¡Cuéntenos qué necesita reparación y lo solucionaremos!",
+        name: "Nombre Completo",
+        phone: "Número de Teléfono",
+        zip: "Código Postal",
+        repairType: "¿Qué necesita reparación?",
+        urgency: "¿Qué tan urgente es?",
+        description: "Describa el problema (opcional)",
+        submit: "Solucionarlo Ahora",
+        privacy:
+            "Autorizo el tratamiento de mis datos personales según la política de privacidad.",
+    },
+};
+
+const t = lang === "es" ? labels.es : labels.en;
+---
+
+<div class="handyman-form-container">
+    <div class="form-header">
+        <h3>{t.title}</h3>
+        <p>{t.subtitle}</p>
+    </div>
+
+    <form class="handyman-form" id="handyman-form">
+        <div class="form-group">
+            <label for="name">{t.name}</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder={lang === "es" ? "Su nombre" : "Your name"}
+            />
+        </div>
+
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="phone">{t.phone}</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    placeholder="(515) 207-5106"
+                />
+            </div>
+            <div class="form-group">
+                <label for="zip">{t.zip}</label>
+                <input
+                    type="text"
+                    id="zip"
+                    name="zip"
+                    required
+                    placeholder="50322"
+                />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="repairType">{t.repairType}</label>
+            <select id="repairType" name="repairType" required>
+                <option value="" disabled selected
+                    >{
+                        lang === "es"
+                            ? "Seleccione tipo de reparación"
+                            : "Select repair type"
+                    }</option
+                >
+                <option value="plumbing"
+                    >{
+                        lang === "es"
+                            ? "Plomería (Grifos, Fugas)"
+                            : "Plumbing (Faucets, Leaks)"
+                    }</option
+                >
+                <option value="electrical"
+                    >{
+                        lang === "es"
+                            ? "Eléctrico (Luces, Tomas)"
+                            : "Electrical (Lights, Outlets)"
+                    }</option
+                >
+                <option value="carpentry"
+                    >{
+                        lang === "es"
+                            ? "Carpintería / Puertas"
+                            : "Carpentry / Doors"
+                    }</option
+                >
+                <option value="drywall"
+                    >{
+                        lang === "es" ? "Drywall / Paredes" : "Drywall / Walls"
+                    }</option
+                >
+                <option value="painting_touchup"
+                    >{
+                        lang === "es"
+                            ? "Retoque de Pintura"
+                            : "Painting Touch-up"
+                    }</option
+                >
+                <option value="assembly"
+                    >{
+                        lang === "es"
+                            ? "Montaje de Muebles"
+                            : "Furniture Assembly"
+                    }</option
+                >
+                <option value="other">{lang === "es" ? "Otro" : "Other"}</option
+                >
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="urgency">{t.urgency}</label>
+            <select id="urgency" name="urgency" required>
+                <option value="low"
+                    >{
+                        lang === "es"
+                            ? "Baja (Cuando puedan)"
+                            : "Low (Whenever possible)"
+                    }</option
+                >
+                <option value="medium" selected
+                    >{
+                        lang === "es"
+                            ? "Media (Esta semana)"
+                            : "Medium (This week)"
+                    }</option
+                >
+                <option value="high"
+                    >{
+                        lang === "es"
+                            ? "Alta (Lo antes posible)"
+                            : "High (ASAP)"
+                    }</option
+                >
+                <option value="emergency"
+                    >{
+                        lang === "es"
+                            ? "EMERGENCIA (¡Hoy!)"
+                            : "EMERGENCY (Today!)"
+                    }</option
+                >
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="description">{t.description}</label>
+            <textarea id="description" name="description" rows="3"></textarea>
+        </div>
+
+        <div class="form-group checkbox-group">
+            <input
+                type="checkbox"
+                id="dataConsentHandyman"
+                name="dataConsent"
+                required
+            />
+            <label for="dataConsentHandyman" class="checkbox-label">
+                {
+                    lang === "es" ? (
+                        <>
+                            Autorizo el tratamiento de mis datos personales
+                            según la{" "}
+                            <a href="/es/politica-privacidad" target="_blank">
+                                política de privacidad
+                            </a>
+                            .
+                        </>
+                    ) : (
+                        <>
+                            I authorize the processing of my personal data
+                            according to the{" "}
+                            <a href="/en/privacy-policy" target="_blank">
+                                privacy policy
+                            </a>
+                            .
+                        </>
+                    )
+                }
+            </label>
+        </div>
+
+        <button type="submit" class="submit-btn">{t.submit}</button>
+    </form>
+</div>
+
+<style>
+    .handyman-form-container {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border: 2px solid var(--color-primary);
+    }
+
+    .form-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .form-header h3 {
+        color: var(--color-primary);
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-header p {
+        color: #666;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    @media (max-width: 600px) {
+        .form-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: var(--color-primary);
+        font-size: 0.95rem;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 1rem;
+        background-color: #f9f9f9;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+        outline: none;
+        border-color: var(--color-accent);
+        background-color: white;
+        box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1); /* Assuming accent color is roughly orange/red */
+    }
+
+    .checkbox-group {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.8rem;
+        margin-top: 1rem;
+    }
+
+    .checkbox-group input {
+        width: auto;
+        margin-top: 0.3rem;
+    }
+
+    .checkbox-label {
+        font-size: 0.85rem;
+        color: #777;
+        font-weight: normal;
+        line-height: 1.4;
+        margin: 0;
+    }
+
+    .checkbox-label a {
+        color: var(--color-primary);
+        text-decoration: underline;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 1rem;
+        background: var(--color-accent);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-weight: bold;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition:
+            transform 0.2s,
+            box-shadow 0.2s;
+        margin-top: 1rem;
+    }
+
+    .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        filter: brightness(1.1);
+    }
+</style>

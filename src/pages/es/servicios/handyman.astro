@@ -1,0 +1,190 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import HandymanForm from "../../../components/HandymanForm.astro";
+import { Image } from "astro:assets";
+import publicidad1 from "../../../assets/images/publicidad1.jpeg";
+---
+
+<Layout title="Servicios de Mantenimiento y Reparaciones - KBTony" lang="es">
+    <main>
+        <!-- Hero Section -->
+        <section class="service-hero">
+            <div class="container">
+                <span class="category">Rápido y Confiable</span>
+                <h1>Servicio de Handyman Experto</h1>
+                <p class="tagline">
+                    Ningún trabajo es muy pequeño. Desde grifos que gotean hasta
+                    armado de muebles, lo arreglamos rápido.
+                </p>
+            </div>
+        </section>
+
+        <section class="section form-section">
+            <div class="container content-grid">
+                <div class="text-content">
+                    <h2>¿Necesita una Reparación Rápida?</h2>
+                    <p class="lead">
+                        No deje que las pequeñas reparaciones se acumulen.
+                        Nuestro servicio profesional de mantenimiento está aquí
+                        para ayudar con todas las necesidades de su hogar.
+                    </p>
+
+                    <div class="services-list-container">
+                        <h3>Podemos Ayudarle Con:</h3>
+                        <ul class="benefits-list">
+                            <li>
+                                <strong>Plomería:</strong> Grifos, inodoros, fugas,
+                                destapes
+                            </li>
+                            <li>
+                                <strong>Electricidad:</strong> Lámparas, interruptores,
+                                ventiladores
+                            </li>
+                            <li>
+                                <strong>Carpintería:</strong> Reparación de puertas,
+                                molduras, repisas
+                            </li>
+                            <li>
+                                <strong>Paredes:</strong> Reparación de drywall, retoques
+                                de pintura, colgar cuadros
+                            </li>
+                            <li>
+                                <strong>Montaje:</strong> Muebles, juegos infantiles,
+                                equipos de gimnasio
+                            </li>
+                            <li>
+                                <strong>Mantenimiento:</strong> Cambio de filtros,
+                                limpieza de canaletas, lavado a presión
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="why-us">
+                        <h3>¿Por Qué Elegirnos?</h3>
+                        <ul>
+                            <li>✅ Con Licencia y Seguro</li>
+                            <li>✅ Tiempos de Respuesta Rápidos</li>
+                            <li>✅ Profesional y Limpio</li>
+                            <li>✅ Precios Claros y Honestos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="form-wrapper">
+                    <HandymanForm lang="es" />
+                </div>
+            </div>
+        </section>
+    </main>
+</Layout>
+
+<style>
+    .service-hero {
+        background: linear-gradient(
+            135deg,
+            var(--color-primary) 0%,
+            #001a3d 100%
+        );
+        color: white;
+        padding: 5rem 0 3rem;
+        text-align: center;
+    }
+
+    .category {
+        color: var(--color-accent);
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+    }
+
+    .service-hero h1 {
+        font-size: 3rem;
+        margin: 0.5rem 0;
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+    }
+
+    .text-content h2 {
+        color: var(--color-primary);
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .lead {
+        font-size: 1.1rem;
+        color: #555;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+    }
+
+    .benefits-list {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+
+    .benefits-list li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #eee;
+        color: #555;
+    }
+
+    .benefits-list strong {
+        color: var(--color-primary);
+    }
+
+    .why-us {
+        background-color: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border-left: 4px solid var(--color-accent);
+    }
+
+    .why-us h3 {
+        margin-bottom: 1rem;
+        color: var(--color-primary);
+    }
+
+    .why-us ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .why-us li {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+    }
+
+    .form-wrapper {
+        margin-top: -100px; /* Pull form up to overlap header slightly */
+        position: relative;
+        z-index: 10;
+    }
+
+    @media (max-width: 900px) {
+        .content-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .form-wrapper {
+            margin-top: 0;
+        }
+
+        .service-hero {
+            padding-bottom: 2rem;
+        }
+    }
+</style>

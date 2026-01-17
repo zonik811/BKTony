@@ -1,0 +1,190 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import HandymanForm from "../../../components/HandymanForm.astro";
+import { Image } from "astro:assets";
+import publicidad1 from "../../../assets/images/publicidad1.jpeg";
+---
+
+<Layout title="Expert Handyman Services - KBTony" lang="en">
+    <main>
+        <!-- Hero Section -->
+        <section class="service-hero">
+            <div class="container">
+                <span class="category">Quick & Reliable</span>
+                <h1>Expert Handyman Services</h1>
+                <p class="tagline">
+                    No job is too small. From leaky faucets to furniture
+                    assembly, we get it fixed fast.
+                </p>
+            </div>
+        </section>
+
+        <section class="section form-section">
+            <div class="container content-grid">
+                <div class="text-content">
+                    <h2>Need a Quick Fix?</h2>
+                    <p class="lead">
+                        Don't let small repairs pile up. Our professional
+                        handyman service is here to help with all your home
+                        maintenance needs.
+                    </p>
+
+                    <div class="services-list-container">
+                        <h3>We Can Help With:</h3>
+                        <ul class="benefits-list">
+                            <li>
+                                <strong>Plumbing:</strong> Faucets, toilets, leaks,
+                                unclogging
+                            </li>
+                            <li>
+                                <strong>Electrical:</strong> Light fixtures, outlets,
+                                switches, fans
+                            </li>
+                            <li>
+                                <strong>Carpentry:</strong> Door repairs, trim, shelving,
+                                cabinets
+                            </li>
+                            <li>
+                                <strong>Walls:</strong> Drywall repair, painting touch-ups,
+                                hanging art
+                            </li>
+                            <li>
+                                <strong>Assembly:</strong> Furniture, playsets, gym
+                                equipment
+                            </li>
+                            <li>
+                                <strong>Maintenance:</strong> Filter changes, gutter
+                                cleaning, pressure washing
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="why-us">
+                        <h3>Why Choose Us?</h3>
+                        <ul>
+                            <li>✅ Licensed & Insured</li>
+                            <li>✅ Quick Response Time</li>
+                            <li>✅ Professional & Clean</li>
+                            <li>✅ Upfront Pricing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="form-wrapper">
+                    <HandymanForm lang="en" />
+                </div>
+            </div>
+        </section>
+    </main>
+</Layout>
+
+<style>
+    .service-hero {
+        background: linear-gradient(
+            135deg,
+            var(--color-primary) 0%,
+            #001a3d 100%
+        );
+        color: white;
+        padding: 5rem 0 3rem;
+        text-align: center;
+    }
+
+    .category {
+        color: var(--color-accent);
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+    }
+
+    .service-hero h1 {
+        font-size: 3rem;
+        margin: 0.5rem 0;
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+    }
+
+    .text-content h2 {
+        color: var(--color-primary);
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .lead {
+        font-size: 1.1rem;
+        color: #555;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+    }
+
+    .benefits-list {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+
+    .benefits-list li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #eee;
+        color: #555;
+    }
+
+    .benefits-list strong {
+        color: var(--color-primary);
+    }
+
+    .why-us {
+        background-color: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border-left: 4px solid var(--color-accent);
+    }
+
+    .why-us h3 {
+        margin-bottom: 1rem;
+        color: var(--color-primary);
+    }
+
+    .why-us ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .why-us li {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+    }
+
+    .form-wrapper {
+        margin-top: -100px; /* Pull form up to overlap header slightly */
+        position: relative;
+        z-index: 10;
+    }
+
+    @media (max-width: 900px) {
+        .content-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .form-wrapper {
+            margin-top: 0;
+        }
+
+        .service-hero {
+            padding-bottom: 2rem;
+        }
+    }
+</style>

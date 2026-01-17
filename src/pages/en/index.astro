@@ -46,6 +46,27 @@ const optimizedHero = await getImage({
             </div>
         </section>
 
+        <!-- Handyman Hook Section -->
+        <section class="handyman-hook">
+            <div class="container hook-content">
+                <div class="hook-text">
+                    <span class="hook-label">New Service</span>
+                    <h2>Need a Quick Repair?</h2>
+                    <p>
+                        From leaky faucets to furniture assembly, our Expert
+                        Handyman Service has you covered.
+                    </p>
+                </div>
+                <div class="hook-action">
+                    <a
+                        href="/en/services/handyman"
+                        class="btn btn-accent btn-large"
+                        >Get It Fixed Now &rarr;</a
+                    >
+                </div>
+            </div>
+        </section>
+
         <!-- About Section -->
         <section class="section bg-surface" id="about">
             <div class="container">
@@ -352,5 +373,84 @@ const optimizedHero = await getImage({
         width: 100%;
         max-width: 500px;
         margin: 0 auto;
+    }
+
+    /* Handyman Hook Styles */
+    .handyman-hook {
+        background: white;
+        padding: var(--spacing-md) 0;
+        border-bottom: 4px solid var(--color-accent);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        position: relative;
+        z-index: 10;
+    }
+
+    .hook-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--spacing-lg);
+    }
+
+    .hook-text {
+        text-align: left;
+    }
+
+    .hook-text h2 {
+        color: var(--color-primary);
+        margin: 0;
+        font-size: 1.8rem;
+    }
+
+    .hook-text p {
+        margin: 0.5rem 0 0;
+        color: #555;
+        font-size: 1.1rem;
+    }
+
+    .hook-label {
+        background: var(--color-accent);
+        color: white;
+        padding: 0.2rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+        display: inline-block;
+    }
+
+    .btn-accent {
+        background-color: var(--color-accent);
+        color: white;
+        border: none;
+        white-space: nowrap;
+    }
+
+    .btn-accent:hover {
+        background-color: #e55a00;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+    }
+
+    @media (max-width: 768px) {
+        .handyman-hook {
+            text-align: center;
+            padding: var(--spacing-lg) 0;
+        }
+
+        .hook-content {
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+
+        .hook-text {
+            text-align: center;
+        }
+
+        .hook-action,
+        .hook-action .btn {
+            width: 100%;
+        }
     }
 </style>
