@@ -1,0 +1,126 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// Detect language from URL search params or path
+const { pathname } = Astro.url;
+const lang = pathname.startsWith("/es") ? "es" : "en";
+
+const t = {
+    en: {
+        title: "Thank You - KBTony",
+        heading: "Thank You!",
+        message: "We have received your message and will be in touch shortly.",
+        submessage: "If it's urgent, please call or text us at (515) 207-5106.",
+        button: "Return to Home",
+        homeLink: "/en",
+    },
+    es: {
+        title: "Gracias - KBTony",
+        heading: "¡Gracias!",
+        message:
+            "Hemos recibido su mensaje y nos pondremos en contacto pronto.",
+        submessage:
+            "Si es urgente, por favor llame o envíe un mensaje al (515) 207-5106.",
+        button: "Volver al Inicio",
+        homeLink: "/es",
+    },
+};
+
+const content = lang === "es" ? t.es : t.en;
+---
+
+<Layout title={content.title} lang={lang}>
+    <main class="thanks-page">
+        <div class="container fade-in">
+            <div class="icon-circle">
+                <span class="checkmark">✓</span>
+            </div>
+            <h1>{content.heading}</h1>
+            <p class="lead">{content.message}</p>
+            <p class="sub">{content.submessage}</p>
+            <a href={content.homeLink} class="btn-primary">{content.button}</a>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    .thanks-page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 70vh;
+        text-align: center;
+        padding: var(--spacing-lg) 0;
+        background: linear-gradient(135deg, white 0%, #f0f7ff 100%);
+    }
+
+    .icon-circle {
+        width: 80px;
+        height: 80px;
+        background-color: #4caf50;
+        border-radius: 50%;
+        margin: 0 auto var(--spacing-sm) auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+    }
+
+    .checkmark {
+        color: white;
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    h1 {
+        font-size: 3rem;
+        color: var(--color-primary);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .lead {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .sub {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .btn-primary {
+        display: inline-block;
+        background-color: var(--color-primary);
+        color: white;
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary:hover {
+        background-color: #003399;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .fade-in {
+        animation: fadeIn 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>

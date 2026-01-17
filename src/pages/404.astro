@@ -1,0 +1,77 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import heroImage from "../assets/images/hero-kitchen.png"; // Fallback image
+
+// Detect language from URL
+const { pathname } = Astro.url;
+const lang = pathname.startsWith("/es") ? "es" : "en";
+
+const t = {
+    en: {
+        title: "Page Not Found - KBTony",
+        heading: "404 - Page Not Found",
+        message:
+            "Oops! The page you are looking for doesn't exist or has been moved.",
+        button: "Back to Home",
+        homeLink: "/en",
+    },
+    es: {
+        title: "Página No Encontrada - KBTony",
+        heading: "404 - Página No Encontrada",
+        message: "¡Ups! La página que buscas no existe o ha sido movida.",
+        button: "Volver al Inicio",
+        homeLink: "/es",
+    },
+};
+
+const content = lang === "es" ? t.es : t.en;
+---
+
+<Layout title={content.title} lang={lang}>
+    <main class="error-page">
+        <div class="container">
+            <h1>{content.heading}</h1>
+            <p>{content.message}</p>
+            <a href={content.homeLink} class="btn-primary">{content.button}</a>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    .error-page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 60vh;
+        text-align: center;
+        padding: var(--spacing-lg) 0;
+    }
+
+    h1 {
+        font-size: 3rem;
+        color: var(--color-primary);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    p {
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .btn-primary {
+        display: inline-block;
+        background-color: var(--color-accent);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 4px;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.2s;
+    }
+
+    .btn-primary:hover {
+        background-color: #e55c00;
+    }
+</style>
